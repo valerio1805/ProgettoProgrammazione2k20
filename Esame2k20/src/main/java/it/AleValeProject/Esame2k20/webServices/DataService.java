@@ -1,5 +1,11 @@
 package it.AleValeProject.Esame2k20.webServices;
 
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Component;
+
+import it.AleValeProject.Esame2k20.model.CampoMetaD;
+@Component
 public interface DataService {
 
 	// Start of user code (user defined attributes for DataService)
@@ -9,7 +15,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public abstract void VisulizzaMetadata();
+	public abstract ArrayList<CampoMetaD> VisulizzaMetadata();
 
 	/**
 	 * Description of the method VisalizzaData.

@@ -3,6 +3,8 @@
  */
 package it.AleValeProject.Esame2k20.model;
 
+import java.util.ArrayList;
+
 /**
  * @author vale
  *

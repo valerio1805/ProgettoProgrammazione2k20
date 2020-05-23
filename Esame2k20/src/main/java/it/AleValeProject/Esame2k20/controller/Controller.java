@@ -21,22 +21,22 @@ public class Controller {
 		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);
 	}
 	
-	@GetMapping("/GetData")
+	//@GetMapping("/GetData")
 	
 	
-	@GetMapping("/GetDataWithFilter/")
+	//@GetMapping("/GetDataWithFilter/")
 	
 	
-	@GetMapping("/GetFieldStats")
+	//@GetMapping("/GetFieldStats")
 	
 	
-	@GetMapping("/GetStats")
+	//@GetMapping("/GetStats")
 	
 	
-	@GetMapping("/GetStatsWithFilters")
+	//@GetMapping("/GetStatsWithFilters")
 	
 	
-	@GetMapping("/GetFieldStatsWithFilter")
+	//@GetMapping("/GetFieldStatsWithFilter")
 	
 	
 }

@@ -2,17 +2,21 @@ package it.AleValeProject.Esame2k20.webServices;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
+import it.AleValeProject.Esame2k20.model.CampoMetaD;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
-
+import it.AleValeProject.Esame2k20.varie.MetaData;
+@Component
 public class DataServiceImpl implements DataService {
 
 	/**
 	 * Description of the property database.
 	 */
-	public ArrayList<Record> database = new ArrayList<Record>();
-
+	public ArrayList<Record> database = new ArrayList<Record>() ;
+	private MetaData metaD = new MetaData(); ;
 	/**
 	 * Description of the property starter.
 	 */
@@ -68,9 +72,10 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public void VisulizzaMetadata() {
+	public ArrayList<CampoMetaD> VisulizzaMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
+		return metaD.getMetaDati();
 		
 	}
 

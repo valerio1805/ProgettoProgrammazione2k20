@@ -1,5 +1,8 @@
 package it.AleValeProject.Esame2k20.model;
 
+import org.springframework.stereotype.Component;
+
+
 public class CampoMetaD {
 
 	/**

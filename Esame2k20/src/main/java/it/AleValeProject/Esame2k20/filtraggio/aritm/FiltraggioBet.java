@@ -9,7 +9,7 @@ public class FiltraggioBet {
 	/**
 	 * The constructor.
 	 */
-	public FiltraggioBetw() {
+	public FiltraggioBet() {
 		// Start of user code constructor for FiltraggioBetw)
 		super();
 		// End of user code

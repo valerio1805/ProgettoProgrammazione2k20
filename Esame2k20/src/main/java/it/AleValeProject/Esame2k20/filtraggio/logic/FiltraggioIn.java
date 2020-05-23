@@ -1,5 +1,7 @@
 package it.AleValeProject.Esame2k20.filtraggio.logic;
 
+import java.util.ArrayList;
+
 public class FiltraggioIn {
 
 	// Start of user code (user defined attributes for FiltraggioIn)
@@ -24,6 +26,7 @@ public class FiltraggioIn {
 	public Boolean Filtra (String field, ArrayList<String> values, Record x) {
 		// Start of user code for method Filtra: Boolean
 		// End of user code
+		return false;
 	}
 
 	// Start of user code (user defined methods for FiltraggioIn)
