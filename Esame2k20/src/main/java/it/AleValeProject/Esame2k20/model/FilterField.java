@@ -53,5 +53,11 @@ public class FilterField {
 	public ArrayList<Filter2> getTuttiIFiltri() {
 		return this.tuttiIFiltri;
 	}
-	
+	/**
+	 * Adds a value to ArrayList tuttiIFiltri. 
+	 * @param newFilter2
+	 */
+	public void setTuttiIFiltri(filter2 newFilter2) {
+		this.tuttiIFiltri.add(newFilter2);
+	}
 }

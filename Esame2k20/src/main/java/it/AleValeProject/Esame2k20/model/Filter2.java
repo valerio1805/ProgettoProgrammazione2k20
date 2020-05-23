@@ -37,15 +37,17 @@ public class Filter2 {
 	// End of user code
 	/**
 	 * Returns campo.
-	 * @return campo 
+	 * 
+	 * @return campo
 	 */
 	public String getCampo() {
 		return this.campo;
 	}
 
 	/**
-	 * Sets a value to attribute campo. 
-	 * @param newCampo 
+	 * Sets a value to attribute campo.
+	 * 
+	 * @param newCampo
 	 */
 	public void setCampo(String newCampo) {
 		this.campo = newCampo;
@@ -53,15 +55,17 @@ public class Filter2 {
 
 	/**
 	 * Returns operatore.
-	 * @return operatore 
+	 * 
+	 * @return operatore
 	 */
 	public String getOperatore() {
 		return this.operatore;
 	}
 
 	/**
-	 * Sets a value to attribute operatore. 
-	 * @param newOperatore 
+	 * Sets a value to attribute operatore.
+	 * 
+	 * @param newOperatore
 	 */
 	public void setOperatore(String newOperatore) {
 		this.operatore = newOperatore;
@@ -69,10 +73,19 @@ public class Filter2 {
 
 	/**
 	 * Returns valori.
-	 * @return valori 
+	 * 
+	 * @return valori
 	 */
 	public ArrayList<String> getValori() {
 		return this.valori;
 	}
-	
+	/**
+	 * Sets a value to attribute valori.
+	 * 
+	 * @param newValori
+	 */
+	public void setValori (String[] newValori){
+		(String toadd : newValori)
+		this.valori.add(toadd);
+	}
 }
