@@ -1,8 +1,8 @@
 package it.AleValeProject.Esame2k20.varie;
 
-import filtro.FilterException;
-import model.Filterfields;
-import model.filter2;
+import it.AleValeProject.Esame2k20.eccezioni.FilterException;
+import it.AleValeProject.Esame2k20.model.Filterfield;
+import it.AleValeProject.Esame2k20.model.Filter2;
 
 public class CreazioneFiltro {
 
@@ -24,9 +24,9 @@ public class CreazioneFiltro {
 	 * 
 	 * @param body
 	 */
-	public void FunzioneUniversale(String body) {
+	public FilterField RiconosciFiltro(String body) {
 		// Start of user code for method FunzioneUniversale
-		Filterfields result = new Filterfields();
+		FilterField result = new FilterFields();
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 8).equals("filter={"))
@@ -35,7 +35,7 @@ public class CreazioneFiltro {
 			body = body.substring(7);
 			// controllo il "macroperatore
 			System.out.println(body);
-			String primocampo = ricercastringa(0, body)[1];
+			String primocampo = RiconosciStringa(0, body)[1];
 			if (primocampo.equals("$or"))
 				result.setMacroperatore("$or");
 			else if (primocampo.equals("$and"))
@@ -48,18 +48,18 @@ public class CreazioneFiltro {
 			// compilo l'array di classi filter2 finche non leggo }}}, a meno che il
 			// macroperatore non sia ""
 			int i = 1;
-			filter2 filterdaagg;
+			Filter2 filterdaagg;
 			do {
 				String[] passaggiointermedio = new String[2];
 				filterdaagg = new filter2();
 
 				// trovo il campo
-				passaggiointermedio = ricercastringa(i, body);
+				passaggiointermedio = RiconosciStringa(i, body);
 				filterdaagg.setCampo = passaggiointermedio[1];
 				i = Integer.parseInt(passaggiointermedio[0]);
 
 				// trovo l'operatore
-				passaggiointermedio = ricercastringa(i, body);
+				passaggiointermedio = RiconosciStringa(i, body);
 				filterdaagg.setOperatore = passaggiointermedio[1];
 				i = Integer.parseInt(passaggiointermedio[0]);
 
@@ -78,7 +78,7 @@ public class CreazioneFiltro {
 						x += (body.charAt(i));
 						i++;
 					}
-					filterdaagg.setValori(x.split(","))
+					filterdaagg.setValori(x.split(","));
 					while (body.charAt(i) != '}')
 						i++;
 				} 
@@ -113,7 +113,7 @@ public class CreazioneFiltro {
 	/**
 	 * Description of the method ricercastringa.
 	 */
-	public String[] ricercastringa(String body) {
+	public String[] RiconosciStringa(int i, String body) {
 		// Start of user code for method ricercastringa
 		String[] result = new String[2];
 		try {
@@ -136,7 +136,7 @@ public class CreazioneFiltro {
 	/**
 	 * Description of the method controllo.
 	 */
-	public void controllo() {
+	public boolean Controllo(Filter2 tocheck) {
 		// Start of user code for method controllo
 		boolean[] test = { false, false };
 		String[] operatoripossibili = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
@@ -161,7 +161,7 @@ public class CreazioneFiltro {
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		for (int i = 0; i < 11 && !test[1]; i++) {
-			if (campipossibili.getMetaDati.get(i).getAlias().equals(tocheck.campo))
+			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.campo))
 				test[1] = true;
 			//se c'è corrispondenza e il campo richiedo come tipo stringhe e il filtro presenta operatori matematici ho una eccezione
 			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)&& (j > 2))

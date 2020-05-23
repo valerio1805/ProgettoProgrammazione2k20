@@ -85,7 +85,7 @@ public class Filter2 {
 	 * @param newValori
 	 */
 	public void setValori (String[] newValori){
-		(String toadd : newValori)
+		for(String toadd : newValori)
 		this.valori.add(toadd);
 	}
 }

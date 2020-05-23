@@ -57,7 +57,7 @@ public class FilterField {
 	 * Adds a value to ArrayList tuttiIFiltri. 
 	 * @param newFilter2
 	 */
-	public void setTuttiIFiltri(filter2 newFilter2) {
+	public void setTuttiIFiltri(Filter2 newFilter2) {
 		this.tuttiIFiltri.add(newFilter2);
 	}
 }
