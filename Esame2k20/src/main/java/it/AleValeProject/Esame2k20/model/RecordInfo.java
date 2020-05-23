@@ -9,17 +9,17 @@ import java.util.ArrayList;
  * @author vale
  *
  */
-public class Record {
+public class RecordInfo {
 
 	/**
 	 * Description of the property id.
 	 */
-	private Integer id = Integer.valueOf(0);
+	private Double id = Double.valueOf(0);
 
 	/**
 	 * Description of the property idAutore.
 	 */
-	private Integer idAutore = Integer.valueOf(0);
+	private Double idAutore = Double.valueOf(0);
 
 	/**
 	 * Description of the property dataCreazione.
@@ -35,6 +35,11 @@ public class Record {
 	 * Description of the property sorgente.
 	 */
 	private String sorgente = "";
+	
+	/**
+	 * Description of the property text.
+	 */
+	private String text = "";
 
 	/**
 	 * Description of the property hashtags.
@@ -53,7 +58,7 @@ public class Record {
 	/**
 	 * The constructor.
 	 */
-	public Record() {
+	public RecordInfo() {
 		// Start of user code constructor for Record)
 		super();
 		// End of user code
@@ -66,7 +71,7 @@ public class Record {
 	 * Returns id.
 	 * @return id 
 	 */
-	public Integer getId() {
+	public Double getId() {
 		return this.id;
 	}
 
@@ -74,7 +79,7 @@ public class Record {
 	 * Sets a value to attribute id. 
 	 * @param newId 
 	 */
-	public void setId(Integer newId) {
+	public void setId(Double newId) {
 		this.id = newId;
 	}
 
@@ -82,7 +87,7 @@ public class Record {
 	 * Returns idAutore.
 	 * @return idAutore 
 	 */
-	public Integer getIdAutore() {
+	public Double getIdAutore() {
 		return this.idAutore;
 	}
 
@@ -90,7 +95,7 @@ public class Record {
 	 * Sets a value to attribute idAutore. 
 	 * @param newIdAutore 
 	 */
-	public void setIdAutore(Integer newIdAutore) {
+	public void setIdAutore(Double newIdAutore) {
 		this.idAutore = newIdAutore;
 	}
 
@@ -101,7 +106,20 @@ public class Record {
 	public String getDataCreazione() {
 		return this.dataCreazione;
 	}
+	
+	/**
+	 * Returns text.
+	 * @return text
+	 */
+	public String getTest() {
+		return this.text;
+	}
 
+
+	public void setText(String text) {
+		this.text = text;
+	}
+	
 	/**
 	 * Sets a value to attribute dataCreazione. 
 	 * @param newDataCreazione 
@@ -157,4 +175,29 @@ public class Record {
 	public ArrayList<Immagine> getImmagini() {
 		return this.immagini;
 	}
+	
+	public void setHashatg(String s)
+	{
+		if(!(hashtags.contains(s)))
+			hashtags.add(s);
+		//else
+			//lancioEccezione
+	}
+	public void setImmagini(Immagine imm)
+	{
+		immagini.add(imm);
+	}
+
+	@Override
+	public String toString() {
+		String rit="\nRecordInfo\n [id=" + id + ", idAutore=" + idAutore + ", dataCreazione=" + dataCreazione + ", linguaggio="
+				+ linguaggio + ", sorgente=" + sorgente + ", text=" + text + ", hashtags=" + hashtags + ", immagini="
+				+ immagini + "]";
+		
+		for(int i =0;i<immagini.size();i++)
+			rit+="\n\t"+immagini.get(i).toString();
+		return rit;
+	}
+	
+	
 }

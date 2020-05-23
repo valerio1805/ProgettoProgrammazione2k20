@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.varie;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 
 public class CreazioneStats {
 
@@ -24,7 +24,7 @@ public class CreazioneStats {
 	 * @param data 
 	 * @param campo 
 	 */
-	public void calcoloMedia(ArrayList<Record> data, String campo) {
+	public void calcoloMedia(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloMedia
 		// End of user code
 	}
@@ -34,7 +34,7 @@ public class CreazioneStats {
 	 * @param data 
 	 * @param campo 
 	 */
-	public void calcoloMax(ArrayList<Record> data, String campo) {
+	public void calcoloMax(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloMax
 		// End of user code
 	}
@@ -44,7 +44,7 @@ public class CreazioneStats {
 	 * @param data 
 	 * @param campo 
 	 */
-	public void calcoloMin(ArrayList<Record> data, String campo) {
+	public void calcoloMin(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloMin
 		// End of user code
 	}
@@ -53,7 +53,7 @@ public class CreazioneStats {
 	 * Description of the method calcoloMedia.
 	 * @param data 
 	 */
-	public void calcoloMedia(ArrayList<Record> data) {
+	public void calcoloMedia(ArrayList<RecordInfo> data) {
 		// Start of user code for method calcoloMedia
 		// End of user code
 	}
@@ -62,7 +62,7 @@ public class CreazioneStats {
 	 * Description of the method calcoloMax.
 	 * @param data 
 	 */
-	public void calcoloMax(ArrayList<Record> data) {
+	public void calcoloMax(ArrayList<RecordInfo> data) {
 		// Start of user code for method calcoloMax
 		// End of user code
 	}
@@ -71,7 +71,7 @@ public class CreazioneStats {
 	 * Description of the method calcoloMin.
 	 * @param data 
 	 */
-	public void calcoloMin(ArrayList<Record> data) {
+	public void calcoloMin(ArrayList<RecordInfo> data) {
 		// Start of user code for method calcoloMin
 		// End of user code
 	}
@@ -80,7 +80,7 @@ public class CreazioneStats {
 	 * Description of the method calcoloVar.
 	 * @param data 
 	 */
-	public void calcoloVar(ArrayList<Record> data) {
+	public void calcoloVar(ArrayList<RecordInfo> data) {
 		// Start of user code for method calcoloVar
 		// End of user code
 	}
@@ -90,7 +90,7 @@ public class CreazioneStats {
 	 * @param data 
 	 * @param field 
 	 */
-	public void calcoloVar(ArrayList<Record> data, String field) {
+	public void calcoloVar(ArrayList<RecordInfo> data, String field) {
 		// Start of user code for method calcoloVar
 		// End of user code
 	}

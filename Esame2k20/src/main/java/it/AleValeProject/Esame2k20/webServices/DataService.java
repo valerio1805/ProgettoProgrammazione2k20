@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 @Service
 public interface DataService {
 
@@ -21,7 +22,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public abstract void VisalizzaData();
+	public abstract String VisalizzaData();
 
 	/**
 	 * Description of the method VisulizzaStatistiche.

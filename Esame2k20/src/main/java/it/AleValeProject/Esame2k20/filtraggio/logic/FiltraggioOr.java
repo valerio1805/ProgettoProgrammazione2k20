@@ -1,6 +1,6 @@
 package it.AleValeProject.Esame2k20.filtraggio.logic;
 
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 
 public class FiltraggioOr {
 
@@ -25,7 +25,7 @@ public class FiltraggioOr {
 	 * @param value2 
 	 * @param x 
 	 */
-	public void Filtra(String field1, String field2, String value1, Integer value2, Record x) {
+	public void Filtra(String field1, String field2, String value1, Integer value2, RecordInfo x) {
 		// Start of user code for method Filtra
 		// End of user code
 	}

@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.filtraggio.logic;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 
 public class FiltraggioIn {
 
@@ -25,7 +25,7 @@ public class FiltraggioIn {
 	 * @param values 
 	 * @param x 
 	 */
-	public Boolean Filtra (String field, ArrayList<String> values, Record x) {
+	public Boolean Filtra (String field, ArrayList<String> values, RecordInfo x) {
 		// Start of user code for method Filtra: Boolean
 		// End of user code
 		return false;

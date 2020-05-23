@@ -1,6 +1,6 @@
 package it.AleValeProject.Esame2k20.filtraggio.aritm;
 
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 
 public class FiltraggioMag {
 
@@ -23,7 +23,7 @@ public class FiltraggioMag {
 	 * @param value 
 	 * @param x 
 	 */
-	public void Filtra(String field1, String value, Record x) {
+	public void Filtra(String field1, String value, RecordInfo x) {
 		// Start of user code for method Filtra
 		// End of user code
 	}

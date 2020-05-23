@@ -20,7 +20,7 @@ public class Immagine {
 	/**
 	 * Description of the property idImmagine.
 	 */
-	private Integer idImmagine = Integer.valueOf(0);
+	private String idImmagine = "";
 
 	/**
 	 * Description of the property url.
@@ -95,7 +95,7 @@ public class Immagine {
 	 * Returns idImmagine.
 	 * @return idImmagine 
 	 */
-	public Integer getIdImmagine() {
+	public String getIdImmagine() {
 		return this.idImmagine;
 	}
 
@@ -103,7 +103,7 @@ public class Immagine {
 	 * Sets a value to attribute idImmagine. 
 	 * @param newIdImmagine 
 	 */
-	public void setIdImmagine(Integer newIdImmagine) {
+	public void setIdImmagine(String newIdImmagine) {
 		this.idImmagine = newIdImmagine;
 	}
 
@@ -122,4 +122,12 @@ public class Immagine {
 	public void setUrl(String newUrl) {
 		this.url = newUrl;
 	}
+
+	@Override
+	public String toString() {
+		return "[larghezza=" + larghezza + ", altezza=" + altezza + ", tipo=" + tipo + ", idImmagine="
+				+ idImmagine + ", url=" + url + "]";
+	}
+	
+	
 }

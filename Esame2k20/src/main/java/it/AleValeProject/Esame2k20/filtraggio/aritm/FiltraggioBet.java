@@ -1,8 +1,9 @@
 package it.AleValeProject.Esame2k20.filtraggio.aritm;
 
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 
-public class FiltraggioBet {
+public class FiltraggioBet{
 
 	// Start of user code (user defined attributes for FiltraggioBetw)
 
@@ -24,7 +25,7 @@ public class FiltraggioBet {
 	 * @param value2 
 	 * @param x 
 	 */
-	public void Filtra(String field1, String value, String value2, Record x) {
+	public void Filtra(String field1, String value, String value2, RecordInfo x) {
 		// Start of user code for method Filtra
 		// End of user code
 	}

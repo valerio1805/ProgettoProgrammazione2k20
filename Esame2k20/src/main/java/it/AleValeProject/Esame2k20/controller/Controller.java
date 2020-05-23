@@ -24,7 +24,11 @@ public class Controller {
 		
 	}
 	
-	//@GetMapping("/GetData")
+	@GetMapping("/GetData")
+	public ResponseEntity<Object> getData(){
+		return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
+		
+	}
 	
 	
 	//@GetMapping("/GetDataWithFilter/")

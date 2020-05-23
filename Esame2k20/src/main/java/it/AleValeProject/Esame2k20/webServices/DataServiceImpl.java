@@ -1,6 +1,7 @@
 package it.AleValeProject.Esame2k20.webServices;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
-import it.AleValeProject.Esame2k20.model.Record;
+import it.AleValeProject.Esame2k20.model.RecordInfo;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
 import it.AleValeProject.Esame2k20.varie.MetaData;
 @Service
@@ -17,12 +18,12 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the property database.
 	 */
-	public ArrayList<Record> database = new ArrayList<Record>() ;
+	public ArrayList<RecordInfo> database = new ArrayList<>() ;
 	private MetaData metaD = new MetaData(); ;
 	/**
 	 * Description of the property starter.
 	 */
-	public DownloadInformazioni starter = null;
+	private DownloadInformazioni starter = new DownloadInformazioni();
 
 	/**
 	 * Description of the property creaF.
@@ -43,16 +44,21 @@ public class DataServiceImpl implements DataService {
 	 */
 	public DataServiceImpl() {
 		// Start of user code constructor for DataServiceImpl)
-		super();
+		//super();
+		database = starter.SalvataggioInformazioni();
 		// End of user code
 	}
 
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public void VisalizzaData() {
+	public String VisalizzaData() {
 		// Start of user code for method VisalizzaData
 		// End of user code
+		String rit="";
+		for(int i =0;i <database.size();i++)
+			rit+= database.get(i).toString();
+		return rit;
 	}
 
 	/**
@@ -88,8 +94,8 @@ public class DataServiceImpl implements DataService {
 	 * Returns database.
 	 * @return database 
 	 */
-	public ArrayList<Record> getDatabase() {
-		return this.database;
+	public String getDatabase() {
+		return database.toString();
 	}
 
 	/**
@@ -139,5 +145,6 @@ public class DataServiceImpl implements DataService {
 	public void setFiltring(Filtraggio newFiltring) {
 		this.filtring = newFiltring;
 	}
+	
 	
 }
