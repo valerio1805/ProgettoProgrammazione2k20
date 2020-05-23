@@ -3,9 +3,10 @@ package it.AleValeProject.Esame2k20.webServices;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
-@Component
+@Service
 public interface DataService {
 
 	// Start of user code (user defined attributes for DataService)

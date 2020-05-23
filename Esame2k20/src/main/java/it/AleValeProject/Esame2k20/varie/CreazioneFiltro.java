@@ -23,14 +23,15 @@ public class CreazioneFiltro {
 	 * Description of the method FunzioneUniversale.
 	 * 
 	 * @param body
+	 * @throws FilterException 
 	 */
-	public FilterField RiconosciFiltro(String body) {
+	public FilterField RiconosciFiltro(String body) throws FilterException {
 		// Start of user code for method FunzioneUniversale
 		FilterField result = new FilterField();
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 8).equals("filter={"))
-				throw new FilterException(0);// System.out.println("ERRORE SCRITTURA 0");
+				throw new FilterException();// System.out.println("ERRORE SCRITTURA 0");
 			// elimino la parte "filter="
 			body = body.substring(7);
 			// controllo il "macroperatore
@@ -84,16 +85,16 @@ public class CreazioneFiltro {
 				} 
 				//altrimenti c'� un solo valore
 				else {
-					String x = "";
+					String x[] = new String[1];
 					while (body.charAt(i) != '}') {
-						x += (body.charAt(i));
+						x[0] += (body.charAt(i));
 						i++;
 					}
 					filterdaagg.setValori(x);
 				}
 				//prima di aggiungere
 				if (!Controllo(filterdaagg))
-					throw new FilterException(10);
+					throw new FilterException();
 				result.setTuttiIFiltri(filterdaagg);
 				i++;
 				if (body.charAt(i) != '}')
@@ -102,7 +103,7 @@ public class CreazioneFiltro {
 				if (body.charAt(i) == '}')
 					break;
 
-			} while (!result.getMacroperatore.equals(""));
+			} while (!result.getMacroOperatore().equals(""));
 		} catch (StringIndexOutOfBoundsException e) {
 			System.out.println("ERRORE SCRITTURA 4");
 		}
@@ -144,7 +145,7 @@ public class CreazioneFiltro {
 		int j = 0;
 		//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
 		for (j = 0; j < 8 && !test[0]; j++) {
-			if (tocheck.getOperatore.equals(operatoripossibili[j]))
+			if (tocheck.getOperatore().equals(operatoripossibili[j]))
 				test[0] = true;
 			// se c'� corrispondenza, ed � necessario il controllo, verifico che i valori immessi rispettino il format richiesto
 			if (j >= 3 && test[0]) {
@@ -161,7 +162,7 @@ public class CreazioneFiltro {
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		for (int i = 0; i < 11 && !test[1]; i++) {
-			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.campo))
+			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//se c'� corrispondenza e il campo richiedo come tipo stringhe e il filtro presenta operatori matematici ho una eccezione
 			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)&& (j > 2))

@@ -1,5 +1,7 @@
 package it.AleValeProject.Esame2k20.controller;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ public class Controller {
 	@GetMapping("/GetMetadata")
 	public ResponseEntity<Object> getMetaD(){
 		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);
+		
 	}
 	
 	//@GetMapping("/GetData")

@@ -2,6 +2,8 @@ package it.AleValeProject.Esame2k20.varie;
 
 import java.util.ArrayList;
 
+import it.AleValeProject.Esame2k20.model.Record;
+
 public class CreazioneStats {
 
 	// Start of user code (user defined attributes for CreazioneStats)

@@ -1,5 +1,7 @@
 package it.AleValeProject.Esame2k20.filtraggio.logic;
 
+import it.AleValeProject.Esame2k20.model.Record;
+
 public class FiltraggioAnd {
 
 	// Start of user code (user defined attributes for FiltraggioAnd)

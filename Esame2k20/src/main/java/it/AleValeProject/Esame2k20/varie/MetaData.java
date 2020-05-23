@@ -27,7 +27,7 @@ public class MetaData {
 	 */
 	public MetaData() {
 		// Start of user code constructor for MetaData)
-		CampoMetaD[] campi = new CampoMetaD[50];
+		CampoMetaD campi;
 		BufferedReader lettore;
 		int i=0;
 		int j=0;
@@ -38,16 +38,16 @@ public class MetaData {
 			app = lettore.readLine();
 			metaDatiImportati= app.split(",");
 			while(j<metaDatiImportati.length) {
-				campi[i].setAlias(metaDatiImportati[j]);
+				campi = new CampoMetaD();
+				campi.setAlias(metaDatiImportati[j]);
 				j++;
-				campi[i].setSourceField(metaDatiImportati[j]);
+				campi.setSourceField(metaDatiImportati[j]);
 				j++;
-				campi[i].setType(metaDatiImportati[j]);
+				campi.setType(metaDatiImportati[j]);
 				i++;
 				j++;
+				metaDati.add(campi);
 			}
-			for(CampoMetaD x : campi)
-				metaDati.add(x);
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -55,9 +55,6 @@ public class MetaData {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
-		//metaDati.add(0,);
 		// End of user code
 	}
 

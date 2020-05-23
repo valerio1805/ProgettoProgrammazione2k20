@@ -3,13 +3,15 @@ package it.AleValeProject.Esame2k20.webServices;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
+import it.AleValeProject.Esame2k20.model.Record;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
 import it.AleValeProject.Esame2k20.varie.MetaData;
-@Component
+@Service
 public class DataServiceImpl implements DataService {
 
 	/**

@@ -1,5 +1,7 @@
 package it.AleValeProject.Esame2k20.filtraggio.aritm;
 
+import it.AleValeProject.Esame2k20.model.Record;
+
 public class FiltraggioMag {
 
 	// Start of user code (user defined attributes for FiltraggioMag)
