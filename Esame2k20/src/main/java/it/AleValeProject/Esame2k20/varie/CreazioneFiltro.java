@@ -31,7 +31,7 @@ public class CreazioneFiltro {
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 8).equals("filter={"))
-				throw new FilterException();// System.out.println("ERRORE SCRITTURA 0");
+				throw new FilterException("l'inizio del filtro deve essere \"filter={\"");
 			// elimino la parte "filter="
 			body = body.substring(7);
 			// controllo il "macroperatore
@@ -66,10 +66,10 @@ public class CreazioneFiltro {
 
 				// trovo il/i valori
 				if (body.charAt(i) != ':')
-					System.out.println("ERRORE SCRITTURA 1");
+					throw new FilterException("non sono presenti correttamente i \":\" prima dei valori");
 				i++;
 				if (body.charAt(i) != ' ')
-					System.out.println("ERRORE SCRITTURA 2");
+					throw new FilterException("tra i due punti e i valori deve essere presente uno spazio");
 				i++;
 				//in caso ci sia un array
 				if (body.charAt(i) == '[') {
@@ -94,18 +94,18 @@ public class CreazioneFiltro {
 				}
 				//prima di aggiungere
 				if (!Controllo(filterdaagg))
-					throw new FilterException();
+					throw new FilterException("ricontrollare i campi e operatori inseriti e verificare di usare gli operatori con i campi e i valori corretti");
 				result.setTuttiIFiltri(filterdaagg);
 				i++;
 				if (body.charAt(i) != '}')
-					System.out.println("ERRORE SCRITTURA 3");
+					throw new FilterException("manca una parantesi graffa \"}\"");
 				i++;
 				if (body.charAt(i) == '}')
 					break;
 
 			} while (!result.getMacroOperatore().equals(""));
 		} catch (StringIndexOutOfBoundsException e) {
-			System.out.println("ERRORE SCRITTURA 4");
+			throw new FilterException("il filtro inserito non è riconoscibile correttamente");
 		}
 		return result;
 		// End of user code
@@ -165,7 +165,7 @@ public class CreazioneFiltro {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//se c'� corrispondenza e il campo richiedo come tipo stringhe e il filtro presenta operatori matematici ho una eccezione
-			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)&& (j > 2))
+			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10))
 				test[1] = false;
 		}
 		//solo se rispetto entrambi i controlli ritorno true
