@@ -22,7 +22,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public abstract String VisalizzaData();
+	public abstract ArrayList<RecordInfo> VisalizzaData();
 
 	/**
 	 * Description of the method VisulizzaStatistiche.

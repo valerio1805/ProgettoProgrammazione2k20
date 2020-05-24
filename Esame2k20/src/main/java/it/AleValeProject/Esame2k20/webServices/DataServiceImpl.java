@@ -52,13 +52,15 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public String VisalizzaData() {
+	public ArrayList<RecordInfo> VisalizzaData() {
 		// Start of user code for method VisalizzaData
 		// End of user code
+		return this.database;
+		/*
 		String rit="";
 		for(int i =0;i <database.size();i++)
 			rit+= database.get(i).toString();
-		return rit;
+		return rit;*/
 	}
 
 	/**
