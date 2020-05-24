@@ -10,6 +10,7 @@ import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
 import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.model.Stats;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
 import it.AleValeProject.Esame2k20.varie.MetaData;
 @Service
@@ -20,6 +21,7 @@ public class DataServiceImpl implements DataService {
 	 */
 	public ArrayList<RecordInfo> database = new ArrayList<>() ;
 	private MetaData metaD = new MetaData(); ;
+	private Stats[] statistiche = new Stats[2];
 	/**
 	 * Description of the property starter.
 	 */
@@ -46,6 +48,9 @@ public class DataServiceImpl implements DataService {
 		// Start of user code constructor for DataServiceImpl)
 		//super();
 		database = starter.SalvataggioInformazioni();
+		statistiche[0]=new Stats(this.database, "larghezza");
+		statistiche[1]=new Stats(this.database, "altezza");
+		
 		// End of user code
 	}
 
@@ -74,9 +79,10 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
-	public void VisulizzaStatistiche() {
+	public Stats[] VisulizzaStatistiche() {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
+		return this.statistiche;
 	}
 
 	/**

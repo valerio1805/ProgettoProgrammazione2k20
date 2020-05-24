@@ -37,8 +37,10 @@ public class Controller {
 	//@GetMapping("/GetFieldStats")
 	
 	
-	//@GetMapping("/GetStats")
-	
+	@GetMapping("/GetStats")
+	public ResponseEntity<Object> getStats(){
+		return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(),HttpStatus.OK);	
+	}
 	
 	//@GetMapping("/GetStatsWithFilters")
 	
