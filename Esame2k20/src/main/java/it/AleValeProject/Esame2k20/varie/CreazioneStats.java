@@ -27,14 +27,8 @@ public class CreazioneStats {
 	 * @param campo
 	 */
 	public double calcoloMedia(ArrayList<RecordInfo> data, String campo) {
-		// dibi thought it could be smaller and faster with less memory to initialize
 
-		boolean contr = false;
-		if (campo.equals("larghezza"))
-			contr = true;
-
-		// but what if we use calcoloSomma?
-		return calcoloSomma(data, campo) / ValueListOfImmagini(data, contr).size();
+		return calcoloSomma(data, campo) / ValueListOfImmagini(data, campo).size();
 
 	}
 
@@ -48,12 +42,9 @@ public class CreazioneStats {
 		// Start of user code for method calcoloMedia
 		// End of user code
 
-		boolean contr = false;
 		double somma = 0;
-		if (campo.equals("larghezza"))
-			contr = true;
-		for (int i = 0; i < ValueListOfImmagini(data, contr).size(); i++)
-			somma += ValueListOfImmagini(data, contr).get(i);
+		for (int i = 0; i < ValueListOfImmagini(data, campo).size(); i++)
+			somma += ValueListOfImmagini(data, campo).get(i);
 		return somma;
 
 	}
@@ -67,12 +58,9 @@ public class CreazioneStats {
 	public double calcoloMax(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloMax
 		// End of user code
-		boolean contr = false;
-		if (campo.equals("larghezza"))
-			contr = true;
 
 		double max = Double.MIN_VALUE;
-		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
+		ArrayList<Double> appoggio = ValueListOfImmagini(data, campo);
 		for (int i = 0; i < appoggio.size(); i++) {
 			if (appoggio.get(i) > max)
 				max = appoggio.get(i);
@@ -89,12 +77,9 @@ public class CreazioneStats {
 	public double calcoloMin(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloMin
 		// End of user code
-		boolean contr = false;
-		if (campo.equals("larghezza"))
-			contr = true;
 
 		double min = Double.MAX_VALUE;
-		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
+		ArrayList<Double> appoggio = ValueListOfImmagini(data, campo);
 		for (int i = 0; i < appoggio.size(); i++) {
 			if (appoggio.get(i) < min)
 				min = appoggio.get(i);
@@ -108,31 +93,29 @@ public class CreazioneStats {
 	 * @param data
 	 * @param field
 	 */
-	public double calcoloVar(ArrayList<RecordInfo> data, String field) {
+	public double calcoloVar(ArrayList<RecordInfo> data, String campo) {
 		// Start of user code for method calcoloVar
 		// End of user code
-		double media = calcoloMedia(data, field);
-		boolean contr = false;
-		//int ne = 0;
-		if (field.equals("larghezza"))
-			contr = true;
+		double media = calcoloMedia(data, campo);
 		double varianza = 0;
 
-		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
+		ArrayList<Double> appoggio = ValueListOfImmagini(data, campo);
 		for (int i=0; i<appoggio.size();i++) {
 			varianza += Math.pow((appoggio.get(i) + media), 2);
 		}
 		return varianza / appoggio.size();
 	}
 
-	public ArrayList<Integer> ValueListOfImmagini(ArrayList<RecordInfo> data,boolean truewithaltezza){
-		ArrayList<Integer> result = new ArrayList<Integer>();
+	public ArrayList<Double> ValueListOfImmagini(ArrayList<RecordInfo> data, String campo){
+		ArrayList<Double> result = new ArrayList<Double>();
 		for(int i =0; i < data.size();i++) {
 			for(int j=0;j<data.get(i).getImmagini().size();j++)
-				if(truewithaltezza)
-					result.add(data.get(i).getImmagini().get(j).getAltezza());
-				else
-					result.add(data.get(i).getImmagini().get(j).getLarghezza());
+				if(campo.equals("altezza"))
+					result.add((double)data.get(i).getImmagini().get(j).getAltezza());
+				else if(campo.equals("larghezza"))
+					result.add((double)data.get(i).getImmagini().get(j).getLarghezza());
+				else if(campo.equals("megapixel"))
+					result.add(data.get(i).getImmagini().get(j).getMegapixel());
 		}
 		return result;
 	}

@@ -21,7 +21,7 @@ public class DataServiceImpl implements DataService {
 	 */
 	public ArrayList<RecordInfo> database = new ArrayList<>() ;
 	private MetaData metaD = new MetaData(); ;
-	private Stats[] statistiche = new Stats[2];
+	private Stats[] statistiche = new Stats[3];
 	/**
 	 * Description of the property starter.
 	 */
@@ -50,6 +50,7 @@ public class DataServiceImpl implements DataService {
 		database = starter.SalvataggioInformazioni();
 		statistiche[0]=new Stats(this.database, "larghezza");
 		statistiche[1]=new Stats(this.database, "altezza");
+		statistiche[2]=new Stats(this.database,"megapixel");
 		
 		// End of user code
 	}

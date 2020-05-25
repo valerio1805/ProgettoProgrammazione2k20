@@ -31,12 +31,10 @@ public class MetaData {
 		BufferedReader lettore;
 		int i=0;
 		int j=0;
-		String app;
 		String[] metaDatiImportati = new String[50];
 		try {
 			lettore = new BufferedReader(new FileReader("MetaData.txt"));
-			app = lettore.readLine();
-			metaDatiImportati= app.split(",");
+			metaDatiImportati= lettore.readLine().split(",");
 			while(j<metaDatiImportati.length) {
 				campi = new CampoMetaD();
 				campi.setAlias(metaDatiImportati[j]);

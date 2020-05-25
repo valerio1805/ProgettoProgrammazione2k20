@@ -11,6 +11,11 @@ public class Immagine {
 	 * Description of the property altezza.
 	 */
 	private Integer altezza = Integer.valueOf(0);
+	
+	/**
+	 * Description of the property megapixel.
+	 */
+	private Double megapixel = Double.valueOf(0);
 
 	/**
 	 * Description of the property tipo.
@@ -74,7 +79,20 @@ public class Immagine {
 	public void setAltezza(Integer newAltezza) {
 		this.altezza = newAltezza;
 	}
+	
+	/**
+	 * @return the megapixel
+	 */
+	public Double getMegapixel() {
+		return megapixel;
+	}
 
+	/**
+	 * @param newMegapixel the megapixel to set
+	 */
+	public void setMegapixel(Double newMegapixel) {
+		this.megapixel = newMegapixel;
+	}
 	/**
 	 * Returns tipo.
 	 * @return tipo 

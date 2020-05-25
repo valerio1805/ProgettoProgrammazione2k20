@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import it.AleValeProject.Esame2k20.varie.CreazioneStats;
 
-public class Stats {
+public class Stats extends CreazioneStats{
 
 	/**
 	 * Description of the property media.
@@ -19,13 +19,14 @@ public class Stats {
 	
 	public Stats(ArrayList<RecordInfo> rec,String field) {
 		this.campo=field;
-		ArrayList<Integer> app = creator.ValueListOfImmagini(rec, true);
+		ArrayList<Double> app = ValueListOfImmagini(rec, this.campo);
 		numImmaginiEsaminate=app.size();
-		stat.put("min", creator.calcoloMax(rec, this.campo));
-		stat.put("max", creator.calcoloMin(rec, this.campo));
-		stat.put("somma", creator.calcoloSomma(rec, this.campo));
-		stat.put("media", creator.calcoloMedia(rec, this.campo));
-		stat.put("varianza", creator.calcoloVar(rec, this.campo));
+		stat.put("min", calcoloMin(rec, this.campo));
+		stat.put("max", calcoloMax(rec, this.campo));
+		stat.put("somma", calcoloSomma(rec, this.campo));
+		stat.put("media", calcoloMedia(rec, this.campo));
+		stat.put("varianza", calcoloVar(rec, this.campo));
+		stat.put("deviazione standard",Math.pow(calcoloVar(rec,this.campo),0.5));
 	}
 	
 	public String getCampo() {

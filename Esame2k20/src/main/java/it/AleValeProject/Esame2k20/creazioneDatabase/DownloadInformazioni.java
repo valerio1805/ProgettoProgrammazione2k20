@@ -144,6 +144,7 @@ public class DownloadInformazioni {
 		        		imm.setUrl(array2.getJSONObject(k).getString("url"));
 		        	imm.setAltezza(array2.getJSONObject(k).getInt("height"));
 		        	imm.setLarghezza(array2.getJSONObject(k).getInt("width"));
+		        	imm.setMegapixel((double)(array2.getJSONObject(k).getInt("height")*array2.getJSONObject(k).getInt("width"))/1000000);
 		        	imm.setIdImmagine(array2.getJSONObject(k).getString("media_key"));
 		        	imm.setTipo(array2.getJSONObject(k).getString("type"));
 		        	x.setImmagini(imm);
