@@ -182,6 +182,7 @@ public class CreazioneStats {
 					result.add(data.get(i).getImmagini().get(j).getAltezza());
 				else
 					result.add(data.get(i).getImmagini().get(j).getLarghezza());
+		}
 		return result;
 	}
 
