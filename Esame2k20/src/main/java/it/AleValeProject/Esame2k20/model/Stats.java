@@ -10,13 +10,17 @@ public class Stats {
 	/**
 	 * Description of the property media.
 	 */
+	private int numImmaginiEsaminate;
 	private String campo;
+	
 
 	private HashMap<String, Double> stat = new HashMap<String, Double>();
 	private CreazioneStats creator = new CreazioneStats();;
 	
 	public Stats(ArrayList<RecordInfo> rec,String field) {
 		this.campo=field;
+		ArrayList<Integer> app = creator.ValueListOfImmagini(rec, true);
+		numImmaginiEsaminate=app.size();
 		stat.put("min", creator.calcoloMax(rec, this.campo));
 		stat.put("max", creator.calcoloMin(rec, this.campo));
 		stat.put("somma", creator.calcoloSomma(rec, this.campo));
@@ -30,12 +34,22 @@ public class Stats {
 	public void setCampo(String campo) {
 		this.campo = campo;
 	}
+	
 	public HashMap<String, Double> getStat() {
 		return stat;
 	}
 	public void setStat(HashMap<String, Double> stat) {
 		this.stat = stat;
 	}
+
+	public int getNumImmaginiEsaminate() {
+		return numImmaginiEsaminate;
+	}
+
+	public void setNumImmaginiEsaminate(int numImmaginiEsaminate) {
+		this.numImmaginiEsaminate = numImmaginiEsaminate;
+	}
+	
 	
 	
 

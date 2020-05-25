@@ -32,19 +32,10 @@ public class CreazioneStats {
 		boolean contr = false;
 		if (campo.equals("larghezza"))
 			contr = true;
-		/*
-		 * double somma = 0; int quantita = ValueListOfImmagini(data, contr).size(); for
-		 * (int i = 0; i < quantita; i++) somma += ValueListOfImmagini(data,
-		 * contr).get(i); return somma / quantita;
-		 */
+
 		// but what if we use calcoloSomma?
 		return calcoloSomma(data, campo) / ValueListOfImmagini(data, contr).size();
-		/*
-		 * RecordInfo x = new RecordInfo(); Immagine imm; ArrayList<Immagine> app;
-		 * for(int i =0; i < data.size();i++) { x=data.get(i); app=x.getImmagini();
-		 * for(int j =0;j<x.getImmagini().size();j++) { imm=app.get(j); ne++; if(contr)
-		 * somma=imm.getLarghezza(); else somma=imm.getAltezza(); } return somma/ne; }
-		 */
+
 	}
 
 	/**
@@ -65,16 +56,6 @@ public class CreazioneStats {
 			somma += ValueListOfImmagini(data, contr).get(i);
 		return somma;
 
-		/*
-		 * boolean contr = false; if (campo.equals("larghezza")) contr = true; double
-		 * somma = 0; RecordInfo x = new RecordInfo(); Immagine imm; ArrayList<Immagine>
-		 * app; for (int i = 0; i < data.size(); i++) { x = data.get(i); app =
-		 * x.getImmagini(); for (int j = 0; j < x.getImmagini().size(); j++) { imm =
-		 * app.get(j); if (contr) somma = imm.getLarghezza(); else somma =
-		 * imm.getAltezza(); }
-		 * 
-		 * } return somma;
-		 */
 	}
 
 	/**
@@ -89,15 +70,7 @@ public class CreazioneStats {
 		boolean contr = false;
 		if (campo.equals("larghezza"))
 			contr = true;
-		/*
-		 * double num = 0; RecordInfo x = new RecordInfo(); Immagine imm;
-		 * ArrayList<Immagine> app; for (int i = 0; i < data.size(); i++) { x =
-		 * data.get(i); app = x.getImmagini(); for (int j = 0; j <
-		 * x.getImmagini().size(); j++) { imm = app.get(j); if (contr) num =
-		 * imm.getLarghezza(); else num = imm.getAltezza(); if (num > max) max = num; }
-		 *
-		 * } return max;
-		 */
+
 		double max = Double.MIN_VALUE;
 		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
 		for (int i = 0; i < appoggio.size(); i++) {
@@ -119,14 +92,7 @@ public class CreazioneStats {
 		boolean contr = false;
 		if (campo.equals("larghezza"))
 			contr = true;
-		/*
-		 * double min = Double.MAX_VALUE; double num = 0; RecordInfo x = new
-		 * RecordInfo(); Immagine imm; ArrayList<Immagine> app; for (int i = 0; i <
-		 * data.size(); i++) { x = data.get(i); app = x.getImmagini(); for (int j = 0; j
-		 * < x.getImmagini().size(); j++) { imm = app.get(j); if (contr) num =
-		 * imm.getLarghezza(); else num = imm.getAltezza(); if (num < min) min = num; }
-		 * }
-		 */
+
 		double min = Double.MAX_VALUE;
 		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
 		for (int i = 0; i < appoggio.size(); i++) {
@@ -147,26 +113,11 @@ public class CreazioneStats {
 		// End of user code
 		double media = calcoloMedia(data, field);
 		boolean contr = false;
-		int ne = 0;
+		//int ne = 0;
 		if (field.equals("larghezza"))
 			contr = true;
 		double varianza = 0;
-		/* x = new RecordInfo();
-		Immagine imm;
-		ArrayList<Immagine> app;
-		for (int i = 0; i < data.size(); i++) {
-			app = data.get(i).getImmagini();
-			for (int j = 0; j < x.getImmagini().size(); j++) {
-				imm = app.get(j);
-				ne++;
-				if (contr)
-					somma = Math.pow((imm.getLarghezza() + media), 2);
-				else
-					somma = Math.pow((imm.getAltezza() + media), 2);
-			}
 
-		}
-		*/
 		ArrayList<Integer> appoggio = ValueListOfImmagini(data, contr);
 		for (int i=0; i<appoggio.size();i++) {
 			varianza += Math.pow((appoggio.get(i) + media), 2);
@@ -174,7 +125,7 @@ public class CreazioneStats {
 		return varianza / appoggio.size();
 	}
 
-	private ArrayList<Integer> ValueListOfImmagini(ArrayList<RecordInfo> data,boolean truewithaltezza){
+	public ArrayList<Integer> ValueListOfImmagini(ArrayList<RecordInfo> data,boolean truewithaltezza){
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		for(int i =0; i < data.size();i++) {
 			for(int j=0;j<data.get(i).getImmagini().size();j++)

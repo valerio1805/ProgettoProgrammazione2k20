@@ -115,40 +115,45 @@ public class DownloadInformazioni {
 		ArrayList<RecordInfo> informazioni = new ArrayList<RecordInfo>();
 		for(int i =0;i<daParsare.length;i++) {
 			RecordInfo  x = new RecordInfo();
-	
-			JSONObject obj = new JSONObject(daParsare[i]);
-			JSONArray arr = obj.getJSONArray("data");
-	        for (int j = 0; j < arr.length(); j++) {
-		        String idAuto = arr.getJSONObject(j).getString("author_id");
-		        x.setIdAutore(Double.parseDouble(idAuto));
-		        String id = arr.getJSONObject(j).getString("id");
-		        x.setId(Double.parseDouble(idAuto));
-		        x.setDataCreazione(arr.getJSONObject(j).getString("created_at"));
-		        x.setLinguaggio(arr.getJSONObject(j).getString("lang"));
-		        x.setSorgente(arr.getJSONObject(j).getString("source"));
-		        x.setText(arr.getJSONObject(j).getString("text"));
-	        
-		        if(daParsare[i].contains("hashtags")) {
-		        	JSONObject related = arr.getJSONObject(j).getJSONObject("entities");
-		        	JSONArray hash = related.getJSONArray("hashtags");
-		        	for(int f=0;f<hash.length();f++)
-		        		x.setHashatg(hash.getJSONObject(f).getString("tag"));
+			try {
+				JSONObject obj = new JSONObject(daParsare[i]);
+				JSONArray arr = obj.getJSONArray("data");
+		        for (int j = 0; j < arr.length(); j++) {
+		        
+			        String idAuto = arr.getJSONObject(j).getString("author_id");
+			        x.setIdAutore(Double.parseDouble(idAuto));
+			        String id = arr.getJSONObject(j).getString("id");
+			        x.setId(Double.parseDouble(idAuto));
+			        x.setDataCreazione(arr.getJSONObject(j).getString("created_at"));
+			        x.setLinguaggio(arr.getJSONObject(j).getString("lang"));
+			        x.setSorgente(arr.getJSONObject(j).getString("source"));
+			        x.setText(arr.getJSONObject(j).getString("text"));
+		        
+			        if(daParsare[i].contains("hashtags")) {
+			        	JSONObject related = arr.getJSONObject(j).getJSONObject("entities");
+			        	JSONArray hash = related.getJSONArray("hashtags");
+			        	for(int f=0;f<hash.length();f++)
+			        		x.setHashatg(hash.getJSONObject(f).getString("tag"));
+			        }
 		        }
-	        }
-	        JSONObject ob2 = obj.getJSONObject("includes");
-	        JSONArray array2 = ob2.getJSONArray("media");
-	        for(int k=0;k<array2.length();k++) {
-	        	imm = new Immagine();
-	        	String app;
-	        	//if(daParsare[i].contains("\"url\""))
-	        		//imm.setUrl(array2.getJSONObject(k).getString("url"));
-	        	imm.setAltezza(array2.getJSONObject(k).getInt("height"));
-	        	imm.setLarghezza(array2.getJSONObject(k).getInt("width"));
-	        	imm.setIdImmagine(array2.getJSONObject(k).getString("media_key"));
-	        	imm.setTipo(array2.getJSONObject(k).getString("type"));
-	        	x.setImmagini(imm);
-	        }
-	        informazioni.add(x);
+		        JSONObject ob2 = obj.getJSONObject("includes");
+		        JSONArray array2 = ob2.getJSONArray("media");
+		        for(int k=0;k<array2.length();k++) {
+		        	imm = new Immagine();
+		        	if(daParsare[i].contains("\"url\":"))
+		        		imm.setUrl(array2.getJSONObject(k).getString("url"));
+		        	imm.setAltezza(array2.getJSONObject(k).getInt("height"));
+		        	imm.setLarghezza(array2.getJSONObject(k).getInt("width"));
+		        	imm.setIdImmagine(array2.getJSONObject(k).getString("media_key"));
+		        	imm.setTipo(array2.getJSONObject(k).getString("type"));
+		        	x.setImmagini(imm);
+		        }
+		        
+		        informazioni.add(x);
+			}catch(Exception io)
+			{
+				i++;
+			}
 		}
 		return informazioni;
 	// Start of user code (user defined methods for DownloadInformazioni)
