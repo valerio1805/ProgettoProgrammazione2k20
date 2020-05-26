@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.AleValeProject.Esame2k20.eccezioni.FilterException;
 import it.AleValeProject.Esame2k20.webServices.DataService;
 import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
 
@@ -36,7 +37,7 @@ public class Controller {
 	}
 	
 	@GetMapping("/GetDataFilter")
-	public ResponseEntity<Object> getData(@RequestParam(name="filter")String filtro){
+	public ResponseEntity<Object> getData(@RequestParam(name="filter")String filtro) throws FilterException{
 		if(filtro==null)
 			return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
 		else

@@ -30,10 +30,10 @@ public class CreazioneFiltro {
 		FilterField result = new FilterField();
 		try {
 			// la prima char deve essere una '{'
-			if (!body.substring(0, 8).equals("filter={"))
-				throw new FilterException("l'inizio del filtro deve essere \"filter={\"");
+			if (!body.substring(0, 1).equals("{"))
+				throw new FilterException("l'inizio del filtro deve essere \"{\"");
 			// elimino la parte "filter="
-			body = body.substring(7);
+			//body = body.substring(1);
 			// controllo il "macroperatore
 			System.out.println(body);
 			String primocampo = RiconosciStringa(0, body)[1];
@@ -125,7 +125,7 @@ public class CreazioneFiltro {
 				appoggio += (body.charAt(i));
 				i++;
 			}
-			result[0] = "" + i;
+			result[0] = ""+i;
 			result[1] = (appoggio.split("\""))[1];
 		} catch (StringIndexOutOfBoundsException e) {
 			System.out.println("ERRORE SCRITTURA 4");
@@ -157,7 +157,7 @@ public class CreazioneFiltro {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//per i campi che richiedono un numero verifico il format
-			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)){
+			if ((test[1]) &&(i <= 5 || i == 8 || i == 10)){
 				try {
 					double isitanumber;
 					for (int x = 1; x < tocheck.getValori().size(); x++)

@@ -23,13 +23,19 @@ public class Instruction {
 		SingleInstruction toadd;
 		try {
 			BufferedReader lettore = new BufferedReader(new FileReader("Istruzioni.txt"));
-			String[] tutteLeIstruzioni= lettore.readLine().split("£");
+			StringBuilder temp = new StringBuilder();
+			int endvalue=lettore.read();
+			do{
+				temp.append((char)endvalue);
+				endvalue=lettore.read();
+			}while(endvalue!=-1);
+			String[] tutteLeIstruzioni=temp.toString().split("£\r\n");
 			int j=0;
 			while(j<tutteLeIstruzioni.length) {
 				toadd = new SingleInstruction();
 				toadd.setIntro(tutteLeIstruzioni[j]);
 				j++;
-				String[] appoggio=tutteLeIstruzioni[j].split(";");
+				String[] appoggio=tutteLeIstruzioni[j].split(";\r\n");
 				toadd.setPossibilità(appoggio);
 				j++;
 				librettoDelleIstruzioni.add(toadd);

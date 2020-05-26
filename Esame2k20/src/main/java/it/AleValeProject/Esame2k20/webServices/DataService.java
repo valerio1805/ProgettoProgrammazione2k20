@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import it.AleValeProject.Esame2k20.eccezioni.FilterException;
 import it.AleValeProject.Esame2k20.model.CampoMetaD;
 import it.AleValeProject.Esame2k20.model.RecordInfo;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
@@ -25,7 +26,7 @@ public interface DataService {
 	 * Description of the method VisalizzaData.
 	 */
 	public abstract ArrayList<RecordInfo> VisalizzaData();
-	public abstract ArrayList<RecordInfo> VisulizzaData(String filtroPassato);
+	public abstract ArrayList<RecordInfo> VisulizzaData(String filtroDaRiconoscere)throws FilterException;
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
