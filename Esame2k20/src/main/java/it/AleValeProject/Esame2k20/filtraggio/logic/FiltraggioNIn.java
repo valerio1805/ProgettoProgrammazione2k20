@@ -2,9 +2,10 @@ package it.AleValeProject.Esame2k20.filtraggio.logic;
 
 import java.util.ArrayList;
 
+import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.RecordInfo;
 
-public class FiltraggioNIn {
+public class FiltraggioNIn implements Filtraggio {
 	// Start of user code (user defined attributes for FiltraggioNIn)
 
 	// End of user code
@@ -20,15 +21,12 @@ public class FiltraggioNIn {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * @param field 
-	 * @param values 
-	 * @param x 
+	 * @param field1
+	 * @param value
+	 * @param x
 	 */
-	public Boolean Filtra(String field, ArrayList<String> values, RecordInfo x) {
-		// Start of user code for method Filtra: Boolean
-		// End of user code
-		return false;
-	}
+	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
+		return null;}
 
 	// Start of user code (user defined methods for FiltraggioNIn)
 

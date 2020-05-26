@@ -35,7 +35,6 @@ public class CreazioneFiltro {
 			// elimino la parte "filter="
 			//body = body.substring(1);
 			// controllo il "macroperatore
-			System.out.println(body);
 			String primocampo = RiconosciStringa(0, body)[1];
 			if (primocampo.equals("$or"))
 				result.setMacroOperatore("$or");
@@ -86,6 +85,7 @@ public class CreazioneFiltro {
 				//altrimenti c'� un solo valore
 				else {
 					String x[] = new String[1];
+					x[0]="";
 					while (body.charAt(i) != '}') {
 						x[0] += (body.charAt(i));
 						i++;
@@ -149,7 +149,7 @@ public class CreazioneFiltro {
 			if (tocheck.getOperatore().equals(operatoripossibili[j]))
 				test[0] = true;
 			//controllo che siano inseriti un numero esatto di valori
-			if (test[0]&&(!((j > 3 && tocheck.getValori().size() == 1) || (j==3&&tocheck.getValori().size() == 2))))
+			if (test[0]&&j>=3&&!((j > 3 && tocheck.getValori().size() == 1) || (j==3&&tocheck.getValori().size() == 2)))
 				test[0] = false;
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
@@ -157,16 +157,15 @@ public class CreazioneFiltro {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//per i campi che richiedono un numero verifico il format
-			if ((test[1]) &&!(i <= 5 || i == 8 || i == 10)){
+			if (test[1]&&i>6&&i<10){
 				try {
 					double isitanumber;
-					for (int x = 1; x < tocheck.getValori().size(); x++)
+					for (int x = 0; x < tocheck.getValori().size(); x++)
 						isitanumber = Double.parseDouble(tocheck.getValori().get(x));
 				} catch (NumberFormatException a) {
 					test[1] = false;
 				}
 			}
-			test[1] = false;
 		}
 		//solo se rispetto entrambi i controlli ritorno true
 		return test[0] && test[1];

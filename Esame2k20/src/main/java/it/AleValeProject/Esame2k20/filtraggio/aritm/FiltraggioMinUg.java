@@ -1,8 +1,11 @@
 package it.AleValeProject.Esame2k20.filtraggio.aritm;
 
+import java.util.ArrayList;
+
+import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.RecordInfo;
 
-public class FiltraggioMinUg {
+public class FiltraggioMinUg implements Filtraggio {
 
 	// Start of user code (user defined attributes for FiltraggioMinUg)
 
@@ -18,15 +21,13 @@ public class FiltraggioMinUg {
 	}
 
 	/**
-	 * Description of the method Filtra.
-	 * @param field1 
-	 * @param value 
-	 * @param x 
+	 * Description of the method Filtra: Boolean.
+	 * @param field1
+	 * @param value
+	 * @param x
 	 */
-	public void Filtra(String field1, String value, RecordInfo x) {
-		// Start of user code for method Filtra
-		// End of user code
-	}
+	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
+		return null;}
 
 	// Start of user code (user defined methods for FiltraggioMinUg)
 

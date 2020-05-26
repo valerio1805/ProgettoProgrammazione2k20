@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.eccezioni.FilterException;
+import it.AleValeProject.Esame2k20.filtraggio.ElaborazioneFiltro;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
 import it.AleValeProject.Esame2k20.model.*;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
@@ -70,6 +71,8 @@ public class DataServiceImpl implements DataService {
 		// End of user code
 		CreazioneFiltro riconoscitore= new CreazioneFiltro();
 		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtroDaRiconoscere);
+		ElaborazioneFiltro esecutore = new ElaborazioneFiltro();
+		ArrayList<RecordInfo> filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
 		//implementare controllo filtroPassato
 		//assegnazione controllo filtroPassato ad una variabile filterField(?)
 		//controllo sul tipo di operatore
