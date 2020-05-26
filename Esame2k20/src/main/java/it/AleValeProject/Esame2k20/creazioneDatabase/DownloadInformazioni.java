@@ -42,7 +42,7 @@ public class DownloadInformazioni {
 		// End of user code
 		BufferedReader lettore;
 		String app;
-		String[] idImportati = new String[50];
+		String[] idImportati = new String[150];
 		try {
 			lettore = new BufferedReader(new FileReader("IdList.txt"));
 			app = lettore.readLine();
@@ -65,7 +65,7 @@ public class DownloadInformazioni {
 		// Start of user code for method RichiestaInformazioni
 		// End of user code
 		String[] id =RichiestaId();
-		String[] info = new String[50];
+		String[] info = new String[150];
 		int ne=0;
 		for (int i = 0; i < id.length; i++) {
 			StringBuilder content = new StringBuilder();
