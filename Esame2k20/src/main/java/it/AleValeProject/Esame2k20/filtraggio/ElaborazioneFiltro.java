@@ -62,7 +62,7 @@ public class ElaborazioneFiltro {
 						if(!(result.get(j).getId().equals(contain[i].get(k).getId())))
 							result.addAll(contain[i]);
 			}
-		return database;
+		return result;
 	}
 	
 	

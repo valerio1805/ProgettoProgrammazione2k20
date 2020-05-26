@@ -62,28 +62,24 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public ArrayList<RecordInfo> VisalizzaData() {
+	public ArrayList<RecordInfo> VisualizzaData() {
 		// Start of user code for method VisalizzaData
 		// End of user code
 		return this.database;
 
 	}
 	
-	public ArrayList<RecordInfo> VisulizzaData(String filtroDaRiconoscere) throws FilterException {
+	public ArrayList<RecordInfo> VisualizzaData(String filtroDaRiconoscere) throws FilterException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
 		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtroDaRiconoscere);
 		if(filtroRiconosciuto.getMacroOperatore()=="")
 			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
-		else
-			if(filtroRiconosciuto.getMacroOperatore()=="and")
-				filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
-			else
-				if(filtroRiconosciuto.getMacroOperatore()=="or")
-					filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);
-					
+		else if(filtroRiconosciuto.getMacroOperatore()=="and")
+			filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperatore()=="or")
+			filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);	
 		return filtrato;
-		
 	}
 	
 	/**

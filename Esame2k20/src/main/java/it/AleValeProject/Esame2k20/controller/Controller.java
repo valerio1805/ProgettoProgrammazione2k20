@@ -31,17 +31,17 @@ public class Controller {
 		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);
 	}
 	
-	@GetMapping("/GetData")
-	public ResponseEntity<Object> getData(){
-		return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
+	@GetMapping("/GetData/{filter}")
+	public ResponseEntity<Object> getData(@PathVariable("filter")String filtro) throws FilterException{
+		return new ResponseEntity<>(serviziodati.VisualizzaData(filtro),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetDataFilter")
-	public ResponseEntity<Object> getData(@RequestParam(name="filter")String filtro) throws FilterException{
+	public ResponseEntity<Object> getDataWithFilter(@RequestParam(name="filter")String filtro) throws FilterException{
 		if(filtro==null)
-			return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
+			return new ResponseEntity<>(serviziodati.VisualizzaData(),HttpStatus.OK);
 		else
-			return new ResponseEntity<>(serviziodati.VisulizzaData(filtro),HttpStatus.OK);
+			return new ResponseEntity<>(serviziodati.VisualizzaData(filtro),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetStats")

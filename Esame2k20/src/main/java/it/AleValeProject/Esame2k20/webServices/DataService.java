@@ -25,14 +25,14 @@ public interface DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public abstract ArrayList<RecordInfo> VisalizzaData();
-	public abstract ArrayList<RecordInfo> VisulizzaData(String filtroDaRiconoscere)throws FilterException;
+	public abstract ArrayList<RecordInfo> VisualizzaData();
+	public abstract ArrayList<RecordInfo> VisualizzaData(String filtroDaRiconoscere)throws FilterException;
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
-	public abstract Stats[] VisulizzaStatistiche();
-	public abstract Stats[] VisulizzaStatistiche(String filtroPassato,String campo);
+	public abstract Stats[] VisualizzaStatistiche();
+	public abstract Stats[] VisualizzaStatistiche(String filtroPassato,String campo);
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.
