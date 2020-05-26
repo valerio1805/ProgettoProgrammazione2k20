@@ -85,14 +85,13 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
-	public Stats[] VisulizzaStatistiche() {
+	public Stats[] VisualizzaStatistiche() {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
 		return this.statistiche;
 	}
 	
-	public Stats[] VisulizzaStatistiche(String filtroPassato,String campo)
-	{
+	public Stats[] VisualizzaStatistiche(String filtroPassato,String campo){
 		
 		filtroPassato = "filter="+filtroPassato;
 		
@@ -184,6 +183,5 @@ public class DataServiceImpl implements DataService {
 	public void setFiltring(Filtraggio newFiltring) {
 		this.filtring = newFiltring;
 	}
-	
-	
+
 }

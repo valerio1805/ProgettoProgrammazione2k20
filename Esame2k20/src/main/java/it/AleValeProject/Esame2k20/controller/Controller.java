@@ -46,14 +46,14 @@ public class Controller {
 	
 	@GetMapping("/GetStats")
 	public ResponseEntity<Object> getStats(){
-		return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(),HttpStatus.OK);	
+		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(),HttpStatus.OK);	
 	}
 	
 	@GetMapping("/GetStatsField&Filter")
 	public ResponseEntity<Object> getStats(@RequestParam(name="filter")String filtro,@RequestParam(name="field")String campo ){
 		if(filtro==null&&campo==null)
-			return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(),HttpStatus.OK);	
+			return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(),HttpStatus.OK);	
 		else
-			return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(filtro,campo),HttpStatus.OK);
+			return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
 	}	
 }
