@@ -157,7 +157,7 @@ public class CreazioneFiltro {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//per i campi che richiedono un numero verifico il format
-			if ((test[1]) &&(i <= 5 || i == 8 || i == 10)){
+			if ((test[1]) &&!(i <= 5 || i == 8 || i == 10)){
 				try {
 					double isitanumber;
 					for (int x = 1; x < tocheck.getValori().size(); x++)
