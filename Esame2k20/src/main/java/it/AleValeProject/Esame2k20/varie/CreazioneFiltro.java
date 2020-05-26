@@ -143,30 +143,30 @@ public class CreazioneFiltro {
 		String[] operatoripossibili = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
 		MetaData campipossibili = new MetaData();
 		int j = 0;
-		//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
+		
 		for (j = 0; j < 8 && !test[0]; j++) {
+			//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
 			if (tocheck.getOperatore().equals(operatoripossibili[j]))
 				test[0] = true;
-			// se c'� corrispondenza, ed � necessario il controllo, verifico che i valori immessi rispettino il format richiesto
-			if (j >= 3 && test[0]) {
-				if (!((j > 3 && tocheck.getValori().size() == 1) || tocheck.getValori().size() == 2))
-					test[0] = false;
-				try {
-					int isitanumber;
-					for (int i = 1; i < tocheck.getValori().size(); i++)
-						isitanumber = Integer.parseInt(tocheck.getValori().get(i));
-				} catch (NumberFormatException a) {
-					test[0] = false;
-				}
-			}
+			//controllo che siano inseriti un numero esatto di valori
+			if (test[0]&&(!((j > 3 && tocheck.getValori().size() == 1) || (j==3&&tocheck.getValori().size() == 2))))
+				test[0] = false;
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		for (int i = 0; i < 11 && !test[1]; i++) {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
-			//se c'� corrispondenza e il campo richiedo come tipo stringhe e il filtro presenta operatori matematici ho una eccezione
-			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)&&(j>2))
-				test[1] = false;
+			//per i campi che richiedono un numero verifico il format
+			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)){
+				try {
+					double isitanumber;
+					for (int x = 1; x < tocheck.getValori().size(); x++)
+						isitanumber = Double.parseDouble(tocheck.getValori().get(x));
+				} catch (NumberFormatException a) {
+					test[1] = false;
+				}
+			}
+			test[1] = false;
 		}
 		//solo se rispetto entrambi i controlli ritorno true
 		return test[0] && test[1];
