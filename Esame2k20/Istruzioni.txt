@@ -1,0 +1,1 @@
+Sono possibili diversi comandi:;GetMetadata	per visualizzare la corrispondenza tra variabili significato e tipo,GetData 	per visualizzare tutti i dati sui quali verrà eseguito il lavoro

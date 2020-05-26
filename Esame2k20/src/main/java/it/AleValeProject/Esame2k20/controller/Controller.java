@@ -18,6 +18,11 @@ public class Controller {
 	@Autowired
 	private DataService serviziodati;
 	
+	@GetMapping("/GetInstructions")
+	public ResponseEntity<Object> getinst(){
+		return new ResponseEntity<>(serviziodati.VisulizzaIstruzioni(),HttpStatus.OK);
+		
+	}
 	@GetMapping("/GetMetadata")
 	public ResponseEntity<Object> getMetaD(){
 		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);

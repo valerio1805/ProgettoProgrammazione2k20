@@ -29,12 +29,10 @@ public class MetaData {
 		// Start of user code constructor for MetaData)
 		CampoMetaD campi;
 		BufferedReader lettore;
-		int i=0;
 		int j=0;
-		String[] metaDatiImportati = new String[50];
 		try {
 			lettore = new BufferedReader(new FileReader("MetaData.txt"));
-			metaDatiImportati= lettore.readLine().split(",");
+			String[] metaDatiImportati= lettore.readLine().split(",");
 			while(j<metaDatiImportati.length) {
 				campi = new CampoMetaD();
 				campi.setAlias(metaDatiImportati[j]);
@@ -42,7 +40,6 @@ public class MetaData {
 				campi.setSourceField(metaDatiImportati[j]);
 				j++;
 				campi.setType(metaDatiImportati[j]);
-				i++;
 				j++;
 				metaDati.add(campi);
 			}

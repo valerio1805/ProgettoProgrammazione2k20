@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 
 import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
 import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
-import it.AleValeProject.Esame2k20.model.CampoMetaD;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
-import it.AleValeProject.Esame2k20.model.Stats;
+import it.AleValeProject.Esame2k20.model.*;
 import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
+import it.AleValeProject.Esame2k20.varie.Instruction;
 import it.AleValeProject.Esame2k20.varie.MetaData;
 @Service
 public class DataServiceImpl implements DataService {
@@ -22,6 +21,7 @@ public class DataServiceImpl implements DataService {
 	public ArrayList<RecordInfo> database = new ArrayList<>() ;
 	private MetaData metaD = new MetaData(); ;
 	private Stats[] statistiche = new Stats[3];
+	private Instruction istruzioni =new Instruction();
 	/**
 	 * Description of the property starter.
 	 */
@@ -51,7 +51,6 @@ public class DataServiceImpl implements DataService {
 		statistiche[0]=new Stats(this.database, "larghezza");
 		statistiche[1]=new Stats(this.database, "altezza");
 		statistiche[2]=new Stats(this.database,"megapixel");
-		
 		// End of user code
 	}
 
@@ -93,6 +92,16 @@ public class DataServiceImpl implements DataService {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
 		return metaD.getMetaDati();
+		
+	}
+	
+	/**
+	 * Description of the method VisulizzaIstruzioni.
+	 */
+	public ArrayList<SingleInstruction> VisulizzaIstruzioni() {
+		// Start of user code for method VisulizzaIstruzioni
+		// End of user code
+		return istruzioni.getLibrettoDelleIstruzioni();
 		
 	}
 

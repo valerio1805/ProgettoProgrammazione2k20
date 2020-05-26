@@ -165,7 +165,7 @@ public class CreazioneFiltro {
 			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
 				test[1] = true;
 			//se c'� corrispondenza e il campo richiedo come tipo stringhe e il filtro presenta operatori matematici ho una eccezione
-			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10))
+			if ((test[1]) &&(i >= 2 && i <= 5 || i == 8 || i == 10)&&(j>2))
 				test[1] = false;
 		}
 		//solo se rispetto entrambi i controlli ritorno true
