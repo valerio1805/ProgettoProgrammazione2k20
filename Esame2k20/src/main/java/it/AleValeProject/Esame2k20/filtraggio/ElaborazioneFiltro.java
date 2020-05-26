@@ -31,4 +31,39 @@ public class ElaborazioneFiltro {
 		}
 		return result;
 	}
+	
+	public ArrayList<RecordInfo> RiconosciOperatoreAnd (ArrayList<RecordInfo> database, FilterField filterToAnalize){
+		FilterField ap;
+		for(int i =0;i<filterToAnalize.getTuttiIFiltri().size();i++) {
+			ap = new FilterField();
+			ap.setMacroOperatore("");
+			ap.setTuttiIFiltri(filterToAnalize.getTuttiIFiltri().get(i));
+			database = RiconosciOperatore(database, ap);
+		}
+		return database;
+	}
+	
+	public ArrayList<RecordInfo> RiconosciOperatoreOr (ArrayList<RecordInfo> database, FilterField filterToAnalize){
+		FilterField ap;
+		ArrayList<RecordInfo>[] contain = new ArrayList[30];
+		for(int i =0;i<filterToAnalize.getTuttiIFiltri().size();i++) {
+			ap = new FilterField();
+			ap.setMacroOperatore("");
+			ap.setTuttiIFiltri(filterToAnalize.getTuttiIFiltri().get(i));
+			contain[i] = RiconosciOperatore(database, ap);
+		}
+		ArrayList<RecordInfo> result = new ArrayList<RecordInfo>();
+		for(int i =0;i<contain.length;i++)
+			for(int k=0;k<contain[i].size();k++) {
+				if(result.size()==0)
+					result.addAll(contain[i]);
+				else
+					for(int j =0; j<result.size();j++)
+						if(!(result.get(j).getId().equals(contain[i].get(k).getId())))
+							result.addAll(contain[i]);
+			}
+		return database;
+	}
+	
+	
 }

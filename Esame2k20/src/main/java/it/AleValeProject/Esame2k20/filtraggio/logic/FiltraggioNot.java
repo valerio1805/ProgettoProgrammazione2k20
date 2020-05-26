@@ -27,7 +27,11 @@ public class FiltraggioNot implements Filtraggio {
 	 * @param x
 	 */
 	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
-		return null;}
+		for(int j=0; j<x.getHashtags().size();j++)
+			if(x.getHashtags().get(j).equals(value.get(0)))
+				return false;
+		return true;
+	}
 
 	// Start of user code (user defined methods for FiltraggioNot)
 

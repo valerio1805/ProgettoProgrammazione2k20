@@ -28,7 +28,32 @@ public class FiltraggioBet implements Filtraggio {
 	 * @param x
 	 */
 	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
-		return null;}
+		double num1=Double.parseDouble(value.get(0));
+		double num2=Double.parseDouble(value.get(1));
+		double min;
+		double max;
+		if(num1>num2) {
+			max=num1;
+			min=num2;
+		}
+		else {
+			max=num2;
+			min=num1;
+		}
+		if(field1.equals("altezza"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(min<x.getImmagini().get(i).getAltezza() && max>x.getImmagini().get(i).getAltezza())
+					return true;
+		if(field1.equals("larghezza"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(min<x.getImmagini().get(i).getLarghezza() && max>x.getImmagini().get(i).getLarghezza())
+					return true;
+		if(field1.equals("megapixel"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(min<x.getImmagini().get(i).getMegapixel() && max>x.getImmagini().get(i).getMegapixel())
+					return true;
+		return false;
+		}
 
 	// Start of user code (user defined methods for FiltraggioBetw)
 

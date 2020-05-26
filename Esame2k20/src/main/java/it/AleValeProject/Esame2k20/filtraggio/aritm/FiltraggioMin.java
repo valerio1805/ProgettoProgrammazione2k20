@@ -27,7 +27,19 @@ public class FiltraggioMin implements Filtraggio {
 	 * @param x
 	 */
 	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
-		return null;}
+		if(field1.equals("altezza"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getAltezza())
+					return true;
+		if(field1.equals("larghezza"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getLarghezza())
+					return true;
+		if(field1.equals("megapixel"))
+			for(int i =0;i<x.getImmagini().size();i++)
+				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getMegapixel())
+					return true;
+		return false;}
 
 	// Start of user code (user defined methods for FiltraggioMin)
 

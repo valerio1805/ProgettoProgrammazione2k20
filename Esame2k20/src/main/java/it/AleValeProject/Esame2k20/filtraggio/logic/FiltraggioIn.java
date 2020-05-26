@@ -27,7 +27,13 @@ public class FiltraggioIn implements Filtraggio {
 	 * @param x
 	 */
 	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
-		return null;}
+		
+		for(int i =0;i<value.size();i++)
+			for(int j=0; j<x.getHashtags().size();j++)
+				if(x.getHashtags().get(j).equals(value.get(j)))
+					return true;
+		return false;
+		}
 
 	// Start of user code (user defined methods for FiltraggioIn)
 

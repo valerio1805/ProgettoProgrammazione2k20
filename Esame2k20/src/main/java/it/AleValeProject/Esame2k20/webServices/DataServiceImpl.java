@@ -24,6 +24,9 @@ public class DataServiceImpl implements DataService {
 	private MetaData metaD = new MetaData(); ;
 	private Stats[] statistiche = new Stats[3];
 	private Instruction istruzioni =new Instruction();
+	private ArrayList<RecordInfo> filtrato = new ArrayList<RecordInfo>();
+	private CreazioneFiltro riconoscitore= new CreazioneFiltro();
+	private ElaborazioneFiltro esecutore = new ElaborazioneFiltro();
 	/**
 	 * Description of the property starter.
 	 */
@@ -69,19 +72,17 @@ public class DataServiceImpl implements DataService {
 	public ArrayList<RecordInfo> VisulizzaData(String filtroDaRiconoscere) throws FilterException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
-		CreazioneFiltro riconoscitore= new CreazioneFiltro();
 		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtroDaRiconoscere);
-		ElaborazioneFiltro esecutore = new ElaborazioneFiltro();
-		ArrayList<RecordInfo> filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
-		//implementare controllo filtroPassato
-		//assegnazione controllo filtroPassato ad una variabile filterField(?)
-		//controllo sul tipo di operatore
-		//creazione istanza di Filtra opportuna
-		//passaggio Record per record per vedere se rispettano parametri
-		//ritornare il database filtrato
-		
-		
-		return this.database;
+		if(filtroRiconosciuto.getMacroOperatore()=="")
+			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
+		else
+			if(filtroRiconosciuto.getMacroOperatore()=="and")
+				filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
+			else
+				if(filtroRiconosciuto.getMacroOperatore()=="or")
+					filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);
+					
+		return filtrato;
 		
 	}
 	
