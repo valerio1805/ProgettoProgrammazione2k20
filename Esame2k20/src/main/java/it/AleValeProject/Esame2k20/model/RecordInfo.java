@@ -14,12 +14,12 @@ public class RecordInfo {
 	/**
 	 * Description of the property id.
 	 */
-	private Double id = Double.valueOf(0);
+	private String id = "";
 
 	/**
 	 * Description of the property idAutore.
 	 */
-	private Double idAutore = Double.valueOf(0);
+	private String idAutore = "";
 
 	/**
 	 * Description of the property dataCreazione.
@@ -71,7 +71,7 @@ public class RecordInfo {
 	 * Returns id.
 	 * @return id 
 	 */
-	public Double getId() {
+	public String getId() {
 		return this.id;
 	}
 
@@ -79,7 +79,7 @@ public class RecordInfo {
 	 * Sets a value to attribute id. 
 	 * @param newId 
 	 */
-	public void setId(Double newId) {
+	public void setId(String newId) {
 		this.id = newId;
 	}
 
@@ -87,7 +87,7 @@ public class RecordInfo {
 	 * Returns idAutore.
 	 * @return idAutore 
 	 */
-	public Double getIdAutore() {
+	public String getIdAutore() {
 		return this.idAutore;
 	}
 
@@ -95,7 +95,7 @@ public class RecordInfo {
 	 * Sets a value to attribute idAutore. 
 	 * @param newIdAutore 
 	 */
-	public void setIdAutore(Double newIdAutore) {
+	public void setIdAutore(String newIdAutore) {
 		this.idAutore = newIdAutore;
 	}
 

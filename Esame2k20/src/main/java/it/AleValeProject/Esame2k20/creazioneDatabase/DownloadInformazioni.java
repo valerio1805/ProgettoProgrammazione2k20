@@ -120,10 +120,8 @@ public class DownloadInformazioni {
 				JSONArray arr = obj.getJSONArray("data");
 		        for (int j = 0; j < arr.length(); j++) {
 		        
-			        String idAuto = arr.getJSONObject(j).getString("author_id");
-			        x.setIdAutore(Double.parseDouble(idAuto));
-			        String id = arr.getJSONObject(j).getString("id");
-			        x.setId(Double.parseDouble(idAuto));
+		        	x.setIdAutore(arr.getJSONObject(j).getString("author_id"));
+		        	x.setId(arr.getJSONObject(j).getString("id"));
 			        x.setDataCreazione(arr.getJSONObject(j).getString("created_at"));
 			        x.setLinguaggio(arr.getJSONObject(j).getString("lang"));
 			        x.setSorgente(arr.getJSONObject(j).getString("source"));

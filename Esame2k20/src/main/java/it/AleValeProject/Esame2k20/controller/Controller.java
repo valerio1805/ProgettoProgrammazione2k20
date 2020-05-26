@@ -31,6 +31,11 @@ public class Controller {
 	}
 	
 	@GetMapping("/GetData")
+	public ResponseEntity<Object> getData(){
+		return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
+	}
+	
+	@GetMapping("/GetDataFilter")
 	public ResponseEntity<Object> getData(@RequestParam(name="filter")String filtro){
 		if(filtro==null)
 			return new ResponseEntity<>(serviziodati.VisalizzaData(),HttpStatus.OK);
@@ -39,6 +44,11 @@ public class Controller {
 	}
 	
 	@GetMapping("/GetStats")
+	public ResponseEntity<Object> getStats(){
+		return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(),HttpStatus.OK);	
+	}
+	
+	@GetMapping("/GetStatsField&Filter")
 	public ResponseEntity<Object> getStats(@RequestParam(name="filter")String filtro,@RequestParam(name="field")String campo ){
 		if(filtro==null&&campo==null)
 			return new ResponseEntity<>(serviziodati.VisulizzaStatistiche(),HttpStatus.OK);	
