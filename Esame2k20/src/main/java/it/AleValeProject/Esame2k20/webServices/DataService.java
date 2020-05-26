@@ -25,16 +25,20 @@ public interface DataService {
 	 * Description of the method VisalizzaData.
 	 */
 	public abstract ArrayList<RecordInfo> VisalizzaData();
+	public abstract ArrayList<RecordInfo> VisulizzaData(String filtroPassato);
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public abstract Stats[] VisulizzaStatistiche();
+	public abstract Stats[] VisulizzaStatistiche(String filtroPassato,String campo);
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.
 	 */
 	public abstract ArrayList<SingleInstruction> VisulizzaIstruzioni();
+	
+	
 
 	// Start of user code (user defined methods for DataService)
 

@@ -61,27 +61,48 @@ public class DataServiceImpl implements DataService {
 		// Start of user code for method VisalizzaData
 		// End of user code
 		return this.database;
-		/*
-		String rit="";
-		for(int i =0;i <database.size();i++)
-			rit+= database.get(i).toString();
-		return rit;*/
-	}
 
-	/**
-	 * Description of the method DataService.
-	 */
-	public void DataService() {
-		// Start of user code for method DataService
+	}
+	
+	public ArrayList<RecordInfo> VisulizzaData(String filtroPassato) {
+		// Start of user code for method VisulizzaStatistiche
 		// End of user code
+		
+		filtroPassato = "filter="+filtroPassato;
+		
+		//implementare controllo filtroPassato
+		//assegnazione controllo filtroPassato ad una variabile filterField(?)
+		//controllo sul tipo di operatore
+		//creazione istanza di Filtra opportuna
+		//passaggio Record per record per vedere se rispettano parametri
+		//ritornare il database filtrato
+		
+		
+		return this.database;
+		
 	}
-
+	
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public Stats[] VisulizzaStatistiche() {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
+		return this.statistiche;
+	}
+	
+	public Stats[] VisulizzaStatistiche(String filtroPassato,String campo)
+	{
+		
+		filtroPassato = "filter="+filtroPassato;
+		
+		//implementare controllo filtroPassato
+		//assegnazione controllo filtroPassato ad una variabile filterField(?)
+		//controllo sul tipo di operatore
+		//creazione istanza di Filtra opportuna
+		//passaggio Record per record per vedere se rispettano parametri
+		//ritornare il database filtrato
+		
 		return this.statistiche;
 	}
 
