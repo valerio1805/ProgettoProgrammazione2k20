@@ -20,4 +20,4 @@ Per poter usare più filtri insieme si ha la possibilità di usare i macro-opera
 $or    si prendono in considerazione solo i post che soddisfano almeno una delle condizioni;
 $and   si prendono in considerazione solo i post che soddisfano tutte le condizioni;£
 Per una descrizione completa della applicazione visitare la pagina:£
-https://github.com/valerio1805/ProgettoProgrammazione2k20 provapervalerio
+https://github.com/valerio1805/ProgettoProgrammazione2k20

@@ -29,6 +29,7 @@ public class Instruction {
 				temp.append((char)endvalue);
 				endvalue=lettore.read();
 			}while(endvalue!=-1);
+			lettore.close();
 			String[] tutteLeIstruzioni=temp.toString().split("£\r\n");
 			int j=0;
 			while(j<tutteLeIstruzioni.length) {
