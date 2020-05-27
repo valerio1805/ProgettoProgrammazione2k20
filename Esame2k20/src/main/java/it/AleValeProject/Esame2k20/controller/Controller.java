@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,17 +32,15 @@ public class Controller {
 		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);
 	}
 	
-	@GetMapping("/GetData/{filter}")
-	public ResponseEntity<Object> getData(@PathVariable("filter")String filtro) throws FilterException{
+	@PostMapping("/GetData")
+	public ResponseEntity<Object> getMetaD(@RequestBody String filtro) throws FilterException{
 		return new ResponseEntity<>(serviziodati.VisualizzaData(filtro),HttpStatus.OK);
+			
 	}
 	
-	@GetMapping("/GetDataFilter")
-	public ResponseEntity<Object> getDataWithFilter(@RequestParam(name="filter")String filtro) throws FilterException{
-		if(filtro==null)
-			return new ResponseEntity<>(serviziodati.VisualizzaData(),HttpStatus.OK);
-		else
-			return new ResponseEntity<>(serviziodati.VisualizzaData(filtro),HttpStatus.OK);
+	@GetMapping("/GetData")
+	public ResponseEntity<Object> getProva(){
+		return new ResponseEntity<>(serviziodati.VisualizzaData(),HttpStatus.OK);	
 	}
 	
 	@GetMapping("/GetStats")
@@ -49,11 +48,14 @@ public class Controller {
 		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(),HttpStatus.OK);	
 	}
 	
-	@GetMapping("/GetStatsField&Filter")
-	public ResponseEntity<Object> getStats(@RequestParam(name="filter")String filtro,@RequestParam(name="field")String campo ){
-		if(filtro==null&&campo==null)
-			return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(),HttpStatus.OK);	
-		else
-			return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
+	@PostMapping("/GetStats")
+	public ResponseEntity<Object> getStatsFiltrate(@RequestBody String filtro) throws FilterException{
+		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro),HttpStatus.OK);
+			
+	}
+	
+	@PostMapping("/GetStats2")
+	public ResponseEntity<Object> getStatsFieldFiltra(@RequestBody String filtro, @RequestParam(name="field")String campo ){
+		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
 	}	
 }

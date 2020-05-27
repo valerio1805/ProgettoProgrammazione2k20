@@ -33,6 +33,7 @@ public interface DataService {
 	 */
 	public abstract Stats[] VisualizzaStatistiche();
 	public abstract Stats[] VisualizzaStatistiche(String filtroPassato,String campo);
+	public abstract Stats[] VisualizzaStatistiche(String filtroPassato) throws FilterException;
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.

@@ -27,6 +27,7 @@ public class DataServiceImpl implements DataService {
 	private ArrayList<RecordInfo> filtrato = new ArrayList<RecordInfo>();
 	private CreazioneFiltro riconoscitore= new CreazioneFiltro();
 	private ElaborazioneFiltro esecutore = new ElaborazioneFiltro();
+	private Stats[] statsFilt = new Stats[3];
 	/**
 	 * Description of the property starter.
 	 */
@@ -72,37 +73,25 @@ public class DataServiceImpl implements DataService {
 	public ArrayList<RecordInfo> VisualizzaData(String filtroDaRiconoscere) throws FilterException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
-		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtroDaRiconoscere);
-		if(filtroRiconosciuto.getMacroOperatore()=="")
-			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="and")
-			filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="or")
-			filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);	
-		return filtrato;
+		return TrovaRec(filtroDaRiconoscere);
 	}
 	
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public Stats[] VisualizzaStatistiche() {
-		// Start of user code for method VisulizzaStatistiche
-		// End of user code
 		return this.statistiche;
 	}
-	
 	public Stats[] VisualizzaStatistiche(String filtroPassato,String campo){
 		
 		filtroPassato = "filter="+filtroPassato;
-		
-		//implementare controllo filtroPassato
-		//assegnazione controllo filtroPassato ad una variabile filterField(?)
-		//controllo sul tipo di operatore
-		//creazione istanza di Filtra opportuna
-		//passaggio Record per record per vedere se rispettano parametri
-		//ritornare il database filtrato
-		
 		return this.statistiche;
+	}
+	public Stats[] VisualizzaStatistiche(String filtroPassato) throws FilterException{
+		statsFilt[0]=new Stats(TrovaRec(filtroPassato), "larghezza");
+		statsFilt[1]=new Stats(TrovaRec(filtroPassato), "altezza");
+		statsFilt[2]=new Stats(TrovaRec(filtroPassato),"megapixel");
+		return statsFilt;
 	}
 
 	/**
@@ -183,5 +172,18 @@ public class DataServiceImpl implements DataService {
 	public void setFiltring(Filtraggio newFiltring) {
 		this.filtring = newFiltring;
 	}
+	
+	private ArrayList<RecordInfo> TrovaRec(String filtro) throws FilterException
+	{
+		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
+		if(filtroRiconosciuto.getMacroOperatore()=="")
+			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperatore()=="and")
+			filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperatore()=="or")
+			filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);	
+		return filtrato;
+	}
+	
 
 }
