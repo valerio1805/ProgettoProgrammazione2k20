@@ -178,9 +178,9 @@ public class DataServiceImpl implements DataService {
 		TotalFilters filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
 		if(filtroRiconosciuto.getMacroOperatore()=="")
 			filtrato = esecutore.RecognizeOperator(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="and")
+		else if(filtroRiconosciuto.getMacroOperatore()=="$and")
 			filtrato = esecutore.OperatorAnd(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="or")
+		else if(filtroRiconosciuto.getMacroOperatore()=="$or")
 			filtrato = esecutore.OperatorOr(database,filtroRiconosciuto);	
 		return filtrato;
 	}

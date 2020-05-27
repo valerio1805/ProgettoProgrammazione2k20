@@ -100,7 +100,7 @@ public class FilterCreation {
 				if (body.charAt(i) != '}')
 					throw new FilterException("manca una parantesi graffa \"}\"");
 				i++;
-				if (body.charAt(i) == '}')
+				if (body.charAt(i) == '}' || body.charAt(i+1)=='}') 
 					break;
 
 			} while (!result.getMacroOperatore().equals(""));
