@@ -23,39 +23,39 @@ public class Controller {
 	private DataService dataservice;
 	
 	@GetMapping("/GetInstructions")
-	public ResponseEntity<Object> getinst(){
+	public ResponseEntity<Object> getInstruction(){
 		return new ResponseEntity<>(dataservice.VisulizzaIstruzioni(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetMetadata")
-	public ResponseEntity<Object> getMetaD(){
+	public ResponseEntity<Object> getMetadata(){
 		return new ResponseEntity<>(dataservice.VisulizzaMetadata(),HttpStatus.OK);
 	}
 	
-	@PostMapping("/GetData")
-	public ResponseEntity<Object> getMetaD(@RequestBody String filtro) throws FilterException{
-		return new ResponseEntity<>(dataservice.VisualizzaData(filtro),HttpStatus.OK);
-			
-	}
-	
 	@GetMapping("/GetData")
-	public ResponseEntity<Object> getProva(){
+	public ResponseEntity<Object> getData(){
 		return new ResponseEntity<>(dataservice.VisualizzaData(),HttpStatus.OK);	
 	}
 	
+	@PostMapping("/GetData")
+	public ResponseEntity<Object> getFilteredData(@RequestBody String filter) throws FilterException{
+		return new ResponseEntity<>(dataservice.VisualizzaData(filter),HttpStatus.OK);
+			
+	}
+	
 	@GetMapping("/GetStats")
-	public ResponseEntity<Object> getStats(){
+	public ResponseEntity<Object> getStatistics(){
 		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(),HttpStatus.OK);	
 	}
 	
 	@PostMapping("/GetStats")
-	public ResponseEntity<Object> getStatsFiltrate(@RequestBody String filtro) throws FilterException{
-		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filtro),HttpStatus.OK);
+	public ResponseEntity<Object> getFilteredStatistics(@RequestBody String filter) throws FilterException{
+		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filter),HttpStatus.OK);
 			
 	}
 	
 	@PostMapping("/GetStats2")
-	public ResponseEntity<Object> getStatsFieldFiltra(@RequestBody String filtro, @RequestParam(name="field")String campo ){
+	public ResponseEntity<Object> getFilteredFieldedStatistic(@RequestBody String filtro, @RequestParam(name="field")String campo ){
 		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
 	}	
 }

@@ -23,13 +23,13 @@ public class FiltraggioBet implements Filtering {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * @param field1
-	 * @param value
-	 * @param x
+	 * @param fieldToPass
+	 * @param valueToPass
+	 * @param recordToPass
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
-		double num1=Double.parseDouble(value.get(0));
-		double num2=Double.parseDouble(value.get(1));
+	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+		double num1=Double.parseDouble(valueToPass.get(0));
+		double num2=Double.parseDouble(valueToPass.get(1));
 		double min;
 		double max;
 		if(num1>num2) {
@@ -40,17 +40,17 @@ public class FiltraggioBet implements Filtering {
 			max=num2;
 			min=num1;
 		}
-		if(field1.equals("altezza"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(min<x.getImmagini().get(i).getAltezza() && max>x.getImmagini().get(i).getAltezza())
+		if(fieldToPass.equals("altezza"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(min<recordToPass.getImmagini().get(i).getAltezza() && max>recordToPass.getImmagini().get(i).getAltezza())
 					return true;
-		if(field1.equals("larghezza"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(min<x.getImmagini().get(i).getLarghezza() && max>x.getImmagini().get(i).getLarghezza())
+		if(fieldToPass.equals("larghezza"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(min<recordToPass.getImmagini().get(i).getLarghezza() && max>recordToPass.getImmagini().get(i).getLarghezza())
 					return true;
-		if(field1.equals("megapixel"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(min<x.getImmagini().get(i).getMegapixel() && max>x.getImmagini().get(i).getMegapixel())
+		if(fieldToPass.equals("megapixel"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(min<recordToPass.getImmagini().get(i).getMegapixel() && max>recordToPass.getImmagini().get(i).getMegapixel())
 					return true;
 		return false;
 		}

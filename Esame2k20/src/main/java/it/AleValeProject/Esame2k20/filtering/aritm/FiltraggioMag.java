@@ -22,23 +22,23 @@ public class FiltraggioMag implements Filtering {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * @param field1
-	 * @param value
-	 * @param x
+	 * @param fieldToPass
+	 * @param valueToPass
+	 * @param recordToPass
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
+	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		
-		if(field1.equals("altezza"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getAltezza())
+		if(fieldToPass.equals("altezza"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getAltezza())
 					return true;
-		if(field1.equals("larghezza"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getLarghezza())
+		if(fieldToPass.equals("larghezza"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getLarghezza())
 					return true;
-		if(field1.equals("megapixel"))
-			for(int i =0;i<x.getImmagini().size();i++)
-				if(Double.parseDouble(value.get(0))<x.getImmagini().get(i).getMegapixel())
+		if(fieldToPass.equals("megapixel"))
+			for(int i =0;i<recordToPass.getImmagini().size();i++)
+				if(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getMegapixel())
 					return true;
 		return false;}
 

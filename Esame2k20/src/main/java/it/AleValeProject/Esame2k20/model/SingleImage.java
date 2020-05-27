@@ -3,14 +3,14 @@ package it.AleValeProject.Esame2k20.model;
 public class SingleImage {
 
 	/**
-	 * Description of the property larghezza.
+	 * Description of the property width.
 	 */
-	private Integer larghezza = Integer.valueOf(0);
+	private Integer width = Integer.valueOf(0);
 
 	/**
-	 * Description of the property altezza.
+	 * Description of the property height.
 	 */
-	private Integer altezza = Integer.valueOf(0);
+	private Integer height = Integer.valueOf(0);
 	
 	/**
 	 * Description of the property megapixel.
@@ -18,14 +18,14 @@ public class SingleImage {
 	private Double megapixel = Double.valueOf(0);
 
 	/**
-	 * Description of the property tipo.
+	 * Description of the property type.
 	 */
-	private String tipo = "";
+	private String type = "";
 
 	/**
-	 * Description of the property idImmagine.
+	 * Description of the property idImage.
 	 */
-	private String idImmagine = "";
+	private String idImage = "";
 
 	/**
 	 * Description of the property url.
@@ -49,11 +49,11 @@ public class SingleImage {
 
 	// End of user code
 	/**
-	 * Returns larghezza.
-	 * @return larghezza 
+	 * Returns width.
+	 * @return width 
 	 */
 	public Integer getLarghezza() {
-		return this.larghezza;
+		return this.width;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class SingleImage {
 	 * @param newLarghezza 
 	 */
 	public void setLarghezza(Integer newLarghezza) {
-		this.larghezza = newLarghezza;
+		this.width = newLarghezza;
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class SingleImage {
 	 * @return altezza 
 	 */
 	public Integer getAltezza() {
-		return this.altezza;
+		return this.height;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class SingleImage {
 	 * @param newAltezza 
 	 */
 	public void setAltezza(Integer newAltezza) {
-		this.altezza = newAltezza;
+		this.height = newAltezza;
 	}
 	
 	/**
@@ -98,7 +98,7 @@ public class SingleImage {
 	 * @return tipo 
 	 */
 	public String getTipo() {
-		return this.tipo;
+		return this.type;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class SingleImage {
 	 * @param newTipo 
 	 */
 	public void setTipo(String newTipo) {
-		this.tipo = newTipo;
+		this.type = newTipo;
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class SingleImage {
 	 * @return idImmagine 
 	 */
 	public String getIdImmagine() {
-		return this.idImmagine;
+		return this.idImage;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class SingleImage {
 	 * @param newIdImmagine 
 	 */
 	public void setIdImmagine(String newIdImmagine) {
-		this.idImmagine = newIdImmagine;
+		this.idImage = newIdImmagine;
 	}
 
 	/**
@@ -143,8 +143,8 @@ public class SingleImage {
 
 	@Override
 	public String toString() {
-		return "[larghezza=" + larghezza + ", altezza=" + altezza + ", tipo=" + tipo + ", idImmagine="
-				+ idImmagine + ", url=" + url + "]";
+		return "[larghezza=" + width + ", altezza=" + height + ", tipo=" + type + ", idImmagine="
+				+ idImage + ", url=" + url + "]";
 	}
 	
 	

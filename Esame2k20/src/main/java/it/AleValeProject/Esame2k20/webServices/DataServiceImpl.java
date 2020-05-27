@@ -6,11 +6,11 @@ import java.util.Arrays;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.databaseCreation.DownloadInfo;
 import it.AleValeProject.Esame2k20.exception.FilterException;
 import it.AleValeProject.Esame2k20.filtering.ProcessingFilter;
 import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.*;
+import it.AleValeProject.Esame2k20.util.DatabaseCreation;
 import it.AleValeProject.Esame2k20.util.FilterCreation;
 import it.AleValeProject.Esame2k20.util.InstructionCreation;
 import it.AleValeProject.Esame2k20.util.MetaDataCreation;
@@ -31,7 +31,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the property starter.
 	 */
-	private DownloadInfo starter = new DownloadInfo();
+	private DatabaseCreation starter = new DatabaseCreation();
 
 	/**
 	 * Description of the property creaF.
@@ -129,7 +129,7 @@ public class DataServiceImpl implements DataService {
 	 * Returns starter.
 	 * @return starter 
 	 */
-	public DownloadInfo getStarter() {
+	public DatabaseCreation getStarter() {
 		return this.starter;
 	}
 
@@ -137,7 +137,7 @@ public class DataServiceImpl implements DataService {
 	 * Sets a value to attribute starter. 
 	 * @param newStarter 
 	 */
-	public void setStarter(DownloadInfo newStarter) {
+	public void setStarter(DatabaseCreation newStarter) {
 		this.starter = newStarter;
 	}
 
@@ -177,11 +177,11 @@ public class DataServiceImpl implements DataService {
 	{
 		TotalFilters filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
 		if(filtroRiconosciuto.getMacroOperatore()=="")
-			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
+			filtrato = esecutore.RecognizeOperator(database,filtroRiconosciuto);
 		else if(filtroRiconosciuto.getMacroOperatore()=="and")
-			filtrato = esecutore.RiconosciOperatoreAnd(database,filtroRiconosciuto);
+			filtrato = esecutore.OperatorAnd(database,filtroRiconosciuto);
 		else if(filtroRiconosciuto.getMacroOperatore()=="or")
-			filtrato = esecutore.RiconosciOperatoreOr(database,filtroRiconosciuto);	
+			filtrato = esecutore.OperatorOr(database,filtroRiconosciuto);	
 		return filtrato;
 	}
 	

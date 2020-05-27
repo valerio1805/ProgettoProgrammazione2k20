@@ -1,4 +1,4 @@
-package it.AleValeProject.Esame2k20.databaseCreation;
+package it.AleValeProject.Esame2k20.util;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -19,7 +19,7 @@ import it.AleValeProject.Esame2k20.model.SingleMetaData;
 import it.AleValeProject.Esame2k20.model.SingleImage;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class DownloadInfo {
+public class DatabaseCreation {
 
 	// Start of user code (user defined attributes for DownloadInformazioni)
 
@@ -28,7 +28,7 @@ public class DownloadInfo {
 	/**
 	 * The constructor.
 	 */
-	public DownloadInfo() {
+	public DatabaseCreation() {
 		// Start of user code constructor for DownloadInformazioni)
 		super();
 		// End of user code

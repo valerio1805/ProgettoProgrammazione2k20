@@ -55,12 +55,12 @@ public class FilterCreation {
 
 				// trovo il campo
 				passaggiointermedio = RiconosciStringa(i, body);
-				filterdaagg.setCampo ( passaggiointermedio[1]);
+				filterdaagg.setField ( passaggiointermedio[1]);
 				i = Integer.parseInt(passaggiointermedio[0]);
 
 				// trovo l'operatore
 				passaggiointermedio = RiconosciStringa(i, body);
-				filterdaagg.setOperatore ( passaggiointermedio[1]);
+				filterdaagg.setOperator ( passaggiointermedio[1]);
 				i = Integer.parseInt(passaggiointermedio[0]);
 
 				// trovo il/i valori
@@ -78,7 +78,7 @@ public class FilterCreation {
 						x += (body.charAt(i));
 						i++;
 					}
-					filterdaagg.setValori(x.split(","));
+					filterdaagg.setValues(x.split(","));
 					while (body.charAt(i) != '}')
 						i++;
 				} 
@@ -90,7 +90,7 @@ public class FilterCreation {
 						x[0] += (body.charAt(i));
 						i++;
 					}
-					filterdaagg.setValori(x);
+					filterdaagg.setValues(x);
 				}
 				//prima di aggiungere
 				if (!Controllo(filterdaagg))
@@ -146,22 +146,22 @@ public class FilterCreation {
 		
 		for (j = 0; j < 8 && !test[0]; j++) {
 			//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
-			if (tocheck.getOperatore().equals(operatoripossibili[j]))
+			if (tocheck.getOperator().equals(operatoripossibili[j]))
 				test[0] = true;
 			//controllo che siano inseriti un numero esatto di valori
-			if (test[0]&&j>=3&&!((j > 3 && tocheck.getValori().size() == 1) || (j==3&&tocheck.getValori().size() == 2)))
+			if (test[0]&&j>=3&&!((j > 3 && tocheck.getValues().size() == 1) || (j==3&&tocheck.getValues().size() == 2)))
 				test[0] = false;
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		for (int i = 0; i < 11 && !test[1]; i++) {
-			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getCampo()))
+			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getField()))
 				test[1] = true;
 			//per i campi che richiedono un numero verifico il format
 			if (test[1]&&i>6&&i<10){
 				try {
 					double isitanumber;
-					for (int x = 0; x < tocheck.getValori().size(); x++)
-						isitanumber = Double.parseDouble(tocheck.getValori().get(x));
+					for (int x = 0; x < tocheck.getValues().size(); x++)
+						isitanumber = Double.parseDouble(tocheck.getValues().get(x));
 				} catch (NumberFormatException a) {
 					test[1] = false;
 				}

@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class SingleFilter {
 
 	/**
-	 * Description of the property campo.
+	 * Description of the property field.
 	 */
-	private String campo = "";
+	private String field = "";
 
 	/**
-	 * Description of the property operatore.
+	 * Description of the property operator.
 	 */
-	private String operatore = "";
+	private String operator = "";
 
 	/**
-	 * Description of the property valori.
+	 * Description of the property value.
 	 */
-	private ArrayList<String> valori = new ArrayList<String>();
+	private ArrayList<String> values = new ArrayList<String>();
 
 	// Start of user code (user defined attributes for Filter2)
 
@@ -36,56 +36,56 @@ public class SingleFilter {
 
 	// End of user code
 	/**
-	 * Returns campo.
+	 * Returns field.
 	 * 
-	 * @return campo
+	 * @return field
 	 */
-	public String getCampo() {
-		return this.campo;
+	public String getField() {
+		return this.field;
 	}
 
 	/**
-	 * Sets a value to attribute campo.
+	 * Sets a value to attribute field.
 	 * 
-	 * @param newCampo
+	 * @param newField
 	 */
-	public void setCampo(String newCampo) {
-		this.campo = newCampo;
+	public void setField(String newField) {
+		this.field = newField;
 	}
 
 	/**
-	 * Returns operatore.
+	 * Returns operator.
 	 * 
-	 * @return operatore
+	 * @return operator
 	 */
-	public String getOperatore() {
-		return this.operatore;
+	public String getOperator() {
+		return this.operator;
 	}
 
 	/**
-	 * Sets a value to attribute operatore.
+	 * Sets a value to attribute operator.
 	 * 
-	 * @param newOperatore
+	 * @param newOperator
 	 */
-	public void setOperatore(String newOperatore) {
-		this.operatore = newOperatore;
+	public void setOperator(String newOperator) {
+		this.operator = newOperator;
 	}
 
 	/**
-	 * Returns valori.
+	 * Returns values.
 	 * 
-	 * @return valori
+	 * @return values
 	 */
-	public ArrayList<String> getValori() {
-		return this.valori;
+	public ArrayList<String> getValues() {
+		return this.values;
 	}
 	/**
-	 * Sets a value to attribute valori.
+	 * Sets a value to attribute values.
 	 * 
 	 * @param newValori
 	 */
-	public void setValori (String[] newValori){
-		for(String toadd : newValori)
-		this.valori.add(toadd);
+	public void setValues (String[] newValues){
+		for(String toadd : newValues)
+		this.values.add(toadd);
 	}
 }

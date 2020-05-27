@@ -12,7 +12,7 @@ public interface Filtering {
 	/**
 	 * Description of the method Filtra.
 	 */
-	public abstract Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x);
+	public abstract Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
 
 	// Start of user code (user defined methods for Filtraggio)
 

@@ -22,15 +22,15 @@ public class FiltraggioIn implements Filtering {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * @param field1
-	 * @param value
-	 * @param x
+	 * @param fieldToPass
+	 * @param valueToPass
+	 * @param recordToPass
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
+	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		
-		for(int i =0;i<value.size();i++)
-			for(int j=0; j<x.getHashtags().size();j++)
-				if(x.getHashtags().get(j).equals(value.get(j)))
+		for(int i =0;i<valueToPass.size();i++)
+			for(int j=0; j<recordToPass.getHashtags().size();j++)
+				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(j)))
 					return true;
 		return false;
 		}
