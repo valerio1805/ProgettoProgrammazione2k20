@@ -82,10 +82,16 @@ public class DataServiceImpl implements DataService {
 	public Stats[] DisplayStatistics() {
 		return this.statistics;
 	}
-	public Stats[] DisplayStatistics(String filterToRecognize,String fieldToRecognize){
-		
-		return this.statistics;
+	public Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FilterException{
+		if(fieldToRecognize.equals("\"larghezza\"") )
+			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
+		if(fieldToRecognize.equals("\"altezza\""))
+			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
+		if(fieldToRecognize.equals("\"megapixel\""))
+			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "megapixel");	
+		return this.filteredStatistics[0];
 	}
+	
 	public Stats[] DisplayStatistics(String filterToRecognize) throws FilterException{
 		filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
 		filteredStatistics[1]=new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
@@ -175,12 +181,10 @@ public class DataServiceImpl implements DataService {
 	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FilterException
 	{
 		TotalFilters filtroRiconosciuto= recognizer.TranslateFilter(filtro);
-		if(filtroRiconosciuto.getMacroOperator()=="")
-			filteredDatabase = executor.ApplyFilter(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperator()=="$and")
-			filteredDatabase = executor.ApplyFilterAnd(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperator()=="$or")
+		if(filtroRiconosciuto.getMacroOperator()=="$or")
 			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	
+		else
+			filteredDatabase = executor.ApplyFilterGen(database,filtroRiconosciuto);
 		return filteredDatabase;
 	}
 	

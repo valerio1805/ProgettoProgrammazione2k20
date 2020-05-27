@@ -32,7 +32,7 @@ public interface DataService {
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public abstract Stats[] DisplayStatistics();
-	public abstract Stats[] DisplayStatistics(String filterToRecognize,String fieldToRecognize);
+	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FilterException;;
 	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FilterException;
 	
 	/**

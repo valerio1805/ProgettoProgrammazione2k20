@@ -20,7 +20,7 @@ public class ProcessingFilter {
 	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize,int i) {
 		Filtering result;
 		switch(filterToAnalize.getAllFilters().get(i).getOperator()) {
-		case "$not":result = new FiltraggioNot(); break;
+		case "$not":result = new FiltraggioNIn(); break;
 		case "$in": result = new FiltraggioIn(); break;
 		case "$nin":result = new FiltraggioNIn(); break;
 		case "$lte":result = new FiltraggioMinUg(); break;
@@ -32,7 +32,7 @@ public class ProcessingFilter {
 		return result;
 	}
 	
-	public ArrayList<SingleRecordInfo> ApplyFilterAnd (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
+	public ArrayList<SingleRecordInfo> ApplyFilterGen (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
 		TotalFilters support;
 		ArrayList<SingleRecordInfo> result = database;
 		for(int i =0;i<filterToAnalize.getAllFilters().size();i++) {
@@ -46,7 +46,7 @@ public class ProcessingFilter {
 	
 	public ArrayList<SingleRecordInfo> ApplyFilterOr (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
 		TotalFilters support;
-		ArrayList<SingleRecordInfo>[] container = new ArrayList[30];
+		ArrayList<SingleRecordInfo>[] container = new ArrayList[5];
 		for(int i =0;i<filterToAnalize.getAllFilters().size();i++) {
 			support = new TotalFilters();
 			support.setMacroOperator("");

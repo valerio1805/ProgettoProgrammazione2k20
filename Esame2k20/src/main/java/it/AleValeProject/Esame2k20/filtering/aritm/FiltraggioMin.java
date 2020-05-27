@@ -39,6 +39,11 @@ public class FiltraggioMin implements Filtering {
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
 				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getMegapixel()))
 					return false;
+		if(fieldToPass.equals("hashtags[]"))
+			if(recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
+					return true;
+			else
+				return false;
 		return true;}
 
 	// Start of user code (user defined methods for FiltraggioMin)

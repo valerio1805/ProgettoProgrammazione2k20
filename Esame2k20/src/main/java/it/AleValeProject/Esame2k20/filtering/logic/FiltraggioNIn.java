@@ -28,7 +28,7 @@ public class FiltraggioNIn implements Filtering {
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for(int i =0;i<valueToPass.size();i++)
 			for(int j=0; j<recordToPass.getHashtags().size();j++)
-				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(j)))
+				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(i)))
 					return false;
 		return true;
 	}
