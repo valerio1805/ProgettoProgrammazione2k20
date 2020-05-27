@@ -129,7 +129,7 @@ public class FilterCreation {
 			}
 			result[0] = ""+i;
 			result[1] = (support.split("\""))[1];
-		} catch (StringIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			throw new FilterException("il filtro inserito non è riconoscibile correttamente");
 		}
 		return result;
@@ -138,14 +138,15 @@ public class FilterCreation {
 
 	/**
 	 * Description of the method Check.
+	 * @throws FilterException 
 	 */
-	private boolean Check(SingleFilter tocheck) {
+	private boolean Check(SingleFilter tocheck) throws FilterException {
 		// Start of user code for method controllo
 		boolean[] test = { false, false };
 		String[] possibleOperator = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
 		MetadataCreation possibleField = new MetadataCreation();
 		int j = 0;
-		
+		try {
 		for (j = 0; j < 8 && !test[0]; j++) {
 			//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
 			if (tocheck.getOperator().equals(possibleOperator[j]))
@@ -168,6 +169,9 @@ public class FilterCreation {
 					test[1] = false;
 				}
 			}
+		}
+		}catch(Exception IO) {
+			throw new FilterException("Filtro non è riconoscibile correttamente");
 		}
 		//solo se rispetto entrambi i controlli ritorno true
 		return test[0] && test[1];

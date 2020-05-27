@@ -42,17 +42,17 @@ public class FiltraggioBet implements Filtering {
 		}
 		if(fieldToPass.equals("altezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(min<recordToPass.getImmagini().get(i).getHeight() && max>recordToPass.getImmagini().get(i).getHeight())
-					return true;
+				if(!(min<recordToPass.getImmagini().get(i).getHeight() && max>recordToPass.getImmagini().get(i).getHeight()))
+					return false;
 		if(fieldToPass.equals("larghezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(min<recordToPass.getImmagini().get(i).getWidth() && max>recordToPass.getImmagini().get(i).getWidth())
-					return true;
+				if(!(min<recordToPass.getImmagini().get(i).getWidth() && max>recordToPass.getImmagini().get(i).getWidth()))
+					return false;
 		if(fieldToPass.equals("megapixel"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(min<recordToPass.getImmagini().get(i).getMegapixel() && max>recordToPass.getImmagini().get(i).getMegapixel())
-					return true;
-		return false;
+				if(!(min<recordToPass.getImmagini().get(i).getMegapixel() && max>recordToPass.getImmagini().get(i).getMegapixel()))
+					return false;
+		return true;
 		}
 
 	// Start of user code (user defined methods for FiltraggioBetw)
