@@ -13,7 +13,7 @@ import it.AleValeProject.Esame2k20.model.*;
 import it.AleValeProject.Esame2k20.util.DatabaseCreation;
 import it.AleValeProject.Esame2k20.util.FilterCreation;
 import it.AleValeProject.Esame2k20.util.InstructionCreation;
-import it.AleValeProject.Esame2k20.util.MetaDataCreation;
+import it.AleValeProject.Esame2k20.util.MetadataCreation;
 @Service
 public class DataServiceImpl implements DataService {
 
@@ -21,7 +21,7 @@ public class DataServiceImpl implements DataService {
 	 * Description of the property database.
 	 */
 	public ArrayList<SingleRecordInfo> database = new ArrayList<>() ;
-	private MetaDataCreation metaD = new MetaDataCreation(); ;
+	private MetadataCreation metaD = new MetadataCreation(); ;
 	private Stats[] statistiche = new Stats[3];
 	private InstructionCreation istruzioni =new InstructionCreation();
 	private ArrayList<SingleRecordInfo> filtrato = new ArrayList<SingleRecordInfo>();
@@ -100,7 +100,7 @@ public class DataServiceImpl implements DataService {
 	public ArrayList<SingleMetaData> VisulizzaMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
-		return metaD.getMetaDati();
+		return metaD.getMetadata();
 		
 	}
 	
@@ -110,7 +110,7 @@ public class DataServiceImpl implements DataService {
 	public ArrayList<SingleInstruction> VisulizzaIstruzioni() {
 		// Start of user code for method VisulizzaIstruzioni
 		// End of user code
-		return istruzioni.getLibrettoDelleIstruzioni();
+		return istruzioni.getInstructionsManual();
 		
 	}
 
@@ -175,13 +175,13 @@ public class DataServiceImpl implements DataService {
 	
 	private ArrayList<SingleRecordInfo> TrovaRec(String filtro) throws FilterException
 	{
-		TotalFilters filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
-		if(filtroRiconosciuto.getMacroOperatore()=="")
-			filtrato = esecutore.RecognizeOperator(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="and")
-			filtrato = esecutore.OperatorAnd(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperatore()=="or")
-			filtrato = esecutore.OperatorOr(database,filtroRiconosciuto);	
+		TotalFilters filtroRiconosciuto= riconoscitore.TranslateFilter(filtro);
+		if(filtroRiconosciuto.getMacroOperator()=="")
+			filtrato = esecutore.ApplyFilter(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperator()=="and")
+			filtrato = esecutore.ApplyFilterAnd(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperator()=="or")
+			filtrato = esecutore.ApplyFilterOr(database,filtroRiconosciuto);	
 		return filtrato;
 	}
 	

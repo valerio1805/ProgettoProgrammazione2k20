@@ -52,32 +52,32 @@ public class SingleImage {
 	 * Returns width.
 	 * @return width 
 	 */
-	public Integer getLarghezza() {
+	public Integer getWidth() {
 		return this.width;
 	}
 
 	/**
-	 * Sets a value to attribute larghezza. 
-	 * @param newLarghezza 
+	 * Sets a value to attribute width. 
+	 * @param newWidth 
 	 */
-	public void setLarghezza(Integer newLarghezza) {
-		this.width = newLarghezza;
+	public void setWidth(Integer newWidth) {
+		this.width = newWidth;
 	}
 
 	/**
-	 * Returns altezza.
-	 * @return altezza 
+	 * Returns height.
+	 * @return height 
 	 */
-	public Integer getAltezza() {
+	public Integer getHeight() {
 		return this.height;
 	}
 
 	/**
-	 * Sets a value to attribute altezza. 
-	 * @param newAltezza 
+	 * Sets a value to attribute height. 
+	 * @param newHeight 
 	 */
-	public void setAltezza(Integer newAltezza) {
-		this.height = newAltezza;
+	public void SetHeight(Integer newHeight) {
+		this.height = newHeight;
 	}
 	
 	/**
@@ -94,35 +94,35 @@ public class SingleImage {
 		this.megapixel = newMegapixel;
 	}
 	/**
-	 * Returns tipo.
-	 * @return tipo 
+	 * Returns type.
+	 * @return type 
 	 */
-	public String getTipo() {
+	public String getType() {
 		return this.type;
 	}
 
 	/**
-	 * Sets a value to attribute tipo. 
-	 * @param newTipo 
+	 * Sets a value to attribute type. 
+	 * @param newType 
 	 */
-	public void setTipo(String newTipo) {
-		this.type = newTipo;
+	public void setTipo(String newType) {
+		this.type = newType;
 	}
 
 	/**
-	 * Returns idImmagine.
-	 * @return idImmagine 
+	 * Returns idImage.
+	 * @return idImage 
 	 */
-	public String getIdImmagine() {
+	public String getIdImage() {
 		return this.idImage;
 	}
 
 	/**
-	 * Sets a value to attribute idImmagine. 
-	 * @param newIdImmagine 
+	 * Sets a value to attribute idImage. 
+	 * @param newIdImage 
 	 */
-	public void setIdImmagine(String newIdImmagine) {
-		this.idImage = newIdImmagine;
+	public void setIdImage(String newIdImage) {
+		this.idImage = newIdImage;
 	}
 
 	/**

@@ -42,11 +42,11 @@ public class FiltraggioBet implements Filtering {
 		}
 		if(fieldToPass.equals("altezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(min<recordToPass.getImmagini().get(i).getAltezza() && max>recordToPass.getImmagini().get(i).getAltezza())
+				if(min<recordToPass.getImmagini().get(i).getHeight() && max>recordToPass.getImmagini().get(i).getHeight())
 					return true;
 		if(fieldToPass.equals("larghezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(min<recordToPass.getImmagini().get(i).getLarghezza() && max>recordToPass.getImmagini().get(i).getLarghezza())
+				if(min<recordToPass.getImmagini().get(i).getWidth() && max>recordToPass.getImmagini().get(i).getWidth())
 					return true;
 		if(fieldToPass.equals("megapixel"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)

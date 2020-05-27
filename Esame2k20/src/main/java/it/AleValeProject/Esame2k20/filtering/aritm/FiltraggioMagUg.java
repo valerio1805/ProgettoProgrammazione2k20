@@ -30,11 +30,11 @@ public class FiltraggioMagUg implements Filtering {
 		
 		if(fieldToPass.equals("altezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getAltezza())
+				if(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getHeight())
 					return true;
 		if(fieldToPass.equals("larghezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getLarghezza())
+				if(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getWidth())
 					return true;
 		if(fieldToPass.equals("megapixel"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)

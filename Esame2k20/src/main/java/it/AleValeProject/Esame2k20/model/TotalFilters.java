@@ -7,12 +7,12 @@ public class TotalFilters {
 	/**
 	 * Description of the property macroOperatore.
 	 */
-	private String macroOperatore = "";
+	private String macroOperator = "";
 
 	/**
 	 * Description of the property tuttiIFiltri.
 	 */
-	private ArrayList<SingleFilter> tuttiIFiltri = new ArrayList<SingleFilter>();
+	private ArrayList<SingleFilter> allFilters = new ArrayList<SingleFilter>();
 
 	// Start of user code (user defined attributes for FilterField)
 
@@ -31,33 +31,33 @@ public class TotalFilters {
 
 	// End of user code
 	/**
-	 * Returns macroOperatore.
-	 * @return macroOperatore 
+	 * Returns macroOperator.
+	 * @return macroOperator 
 	 */
-	public String getMacroOperatore() {
-		return this.macroOperatore;
+	public String getMacroOperator() {
+		return this.macroOperator;
 	}
 
 	/**
-	 * Sets a value to attribute macroOperatore. 
-	 * @param newMacroOperatore 
+	 * Sets a value to attribute macroOperator. 
+	 * @param newMacroOperator 
 	 */
-	public void setMacroOperatore(String newMacroOperatore) {
-		this.macroOperatore = newMacroOperatore;
+	public void setMacroOperator(String newMacroOperator) {
+		this.macroOperator = newMacroOperator;
 	}
 
 	/**
-	 * Returns tuttiIFiltri.
-	 * @return tuttiIFiltri 
+	 * Returns allFilters.
+	 * @return allFilters 
 	 */
-	public ArrayList<SingleFilter> getTuttiIFiltri() {
-		return this.tuttiIFiltri;
+	public ArrayList<SingleFilter> getAllFilters() {
+		return this.allFilters;
 	}
 	/**
-	 * Adds a value to ArrayList tuttiIFiltri. 
-	 * @param newFilter2
+	 * Adds a value to ArrayList allFilters. 
+	 * @param newSingleFilter
 	 */
-	public void setTuttiIFiltri(SingleFilter newFilter2) {
-		this.tuttiIFiltri.add(newFilter2);
+	public void setAllFilters(SingleFilter newSingleFilter) {
+		this.allFilters.add(newSingleFilter);
 	}
 }

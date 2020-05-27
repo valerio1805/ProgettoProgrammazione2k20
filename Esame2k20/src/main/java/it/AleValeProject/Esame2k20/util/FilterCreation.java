@@ -20,12 +20,12 @@ public class FilterCreation {
 	}
 
 	/**
-	 * Description of the method FunzioneUniversale.
+	 * Description of the method TranslateFilter.
 	 * 
 	 * @param body
 	 * @throws FilterException 
 	 */
-	public TotalFilters RiconosciFiltro(String body) throws FilterException {
+	public TotalFilters TranslateFilter(String body) throws FilterException {
 		// Start of user code for method FunzioneUniversale
 		TotalFilters result = new TotalFilters();
 		try {
@@ -35,33 +35,33 @@ public class FilterCreation {
 			// elimino la parte "filter="
 			//body = body.substring(1);
 			// controllo il "macroperatore
-			String primocampo = RiconosciStringa(0, body)[1];
+			String primocampo = RecognizeWord(0, body)[1];
 			if (primocampo.equals("$or"))
-				result.setMacroOperatore("$or");
+				result.setMacroOperator("$or");
 			else if (primocampo.equals("$and"))
-				result.setMacroOperatore("$and");
+				result.setMacroOperator("$and");
 			else {
 				body = "{ [" + body + "] }";
-				result.setMacroOperatore("");
+				result.setMacroOperator("");
 			}
 
 			// compilo l'array di classi filter2 finche non leggo }}}, a meno che il
 			// macroperatore non sia ""
 			int i = 1;
-			SingleFilter filterdaagg;
+			SingleFilter filterToAdd;
 			do {
-				String[] passaggiointermedio = new String[2];
-				filterdaagg = new SingleFilter();
+				String[] supportString = new String[2];
+				filterToAdd = new SingleFilter();
 
 				// trovo il campo
-				passaggiointermedio = RiconosciStringa(i, body);
-				filterdaagg.setField ( passaggiointermedio[1]);
-				i = Integer.parseInt(passaggiointermedio[0]);
+				supportString = RecognizeWord(i, body);
+				filterToAdd.setField ( supportString[1]);
+				i = Integer.parseInt(supportString[0]);
 
 				// trovo l'operatore
-				passaggiointermedio = RiconosciStringa(i, body);
-				filterdaagg.setOperator ( passaggiointermedio[1]);
-				i = Integer.parseInt(passaggiointermedio[0]);
+				supportString = RecognizeWord(i, body);
+				filterToAdd.setOperator ( supportString[1]);
+				i = Integer.parseInt(supportString[0]);
 
 				// trovo il/i valori
 				if (body.charAt(i) != ':')
@@ -78,32 +78,32 @@ public class FilterCreation {
 						x += (body.charAt(i));
 						i++;
 					}
-					filterdaagg.setValues(x.split(","));
+					filterToAdd.setValues(x.split(","));
 					while (body.charAt(i) != '}')
 						i++;
 				} 
 				//altrimenti c'� un solo valore
 				else {
-					String x[] = new String[1];
-					x[0]="";
+					String supportValue[] = new String[1];
+					supportValue[0]="";
 					while (body.charAt(i) != '}') {
-						x[0] += (body.charAt(i));
+						supportValue[0] += (body.charAt(i));
 						i++;
 					}
-					filterdaagg.setValues(x);
+					filterToAdd.setValues(supportValue);
 				}
 				//prima di aggiungere
-				if (!Controllo(filterdaagg))
+				if (!Check(filterToAdd))
 					throw new FilterException("ricontrollare i campi e operatori inseriti e verificare di usare gli operatori con i campi e i valori corretti");
-				result.setTuttiIFiltri(filterdaagg);
+				result.setAllFilters(filterToAdd);
 				i++;
 				if (body.charAt(i) != '}')
 					throw new FilterException("manca una parantesi graffa \"}\"");
 				i++;
-				if (body.charAt(i) == '}')
+				if (body.charAt(i) == '}'||body.charAt(i+1) == '}')
 					break;
 
-			} while (!result.getMacroOperatore().equals(""));
+			} while (!result.getMacroOperator().equals(""));
 		} catch (StringIndexOutOfBoundsException e) {
 			throw new FilterException("il filtro inserito non è riconoscibile correttamente");
 		}
@@ -112,41 +112,42 @@ public class FilterCreation {
 	}
 
 	/**
-	 * Description of the method ricercastringa.
+	 * Description of the method RecognizeWord.
+	 * @throws FilterException 
 	 */
-	public String[] RiconosciStringa(int i, String body) {
+	private String[] RecognizeWord(int i, String body) throws FilterException {
 		// Start of user code for method ricercastringa
 		String[] result = new String[2];
 		try {
 			while (body.charAt(i) != '{')
 				i++;
-			String appoggio = new String();
+			String support = new String();
 			while (body.charAt(i) != ':') {
-				appoggio += (body.charAt(i));
+				support += (body.charAt(i));
 				i++;
 			}
 			result[0] = ""+i;
-			result[1] = (appoggio.split("\""))[1];
+			result[1] = (support.split("\""))[1];
 		} catch (StringIndexOutOfBoundsException e) {
-			System.out.println("ERRORE SCRITTURA 4");
+			throw new FilterException("il filtro inserito non è riconoscibile correttamente");
 		}
 		return result;
 		// End of user code
 	}
 
 	/**
-	 * Description of the method controllo.
+	 * Description of the method Check.
 	 */
-	public boolean Controllo(SingleFilter tocheck) {
+	private boolean Check(SingleFilter tocheck) {
 		// Start of user code for method controllo
 		boolean[] test = { false, false };
-		String[] operatoripossibili = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
-		MetaDataCreation campipossibili = new MetaDataCreation();
+		String[] possibleOperator = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
+		MetadataCreation possibleField = new MetadataCreation();
 		int j = 0;
 		
 		for (j = 0; j < 8 && !test[0]; j++) {
 			//controllo ci sia una corrispondenza tra l'operatore inserito e uno accettabile
-			if (tocheck.getOperator().equals(operatoripossibili[j]))
+			if (tocheck.getOperator().equals(possibleOperator[j]))
 				test[0] = true;
 			//controllo che siano inseriti un numero esatto di valori
 			if (test[0]&&j>=3&&!((j > 3 && tocheck.getValues().size() == 1) || (j==3&&tocheck.getValues().size() == 2)))
@@ -154,14 +155,14 @@ public class FilterCreation {
 		}
 		//controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		for (int i = 0; i < 11 && !test[1]; i++) {
-			if (campipossibili.getMetaDati().get(i).getAlias().equals(tocheck.getField()))
+			if (possibleField.getMetadata().get(i).getAlias().equals(tocheck.getField()))
 				test[1] = true;
 			//per i campi che richiedono un numero verifico il format
 			if (test[1]&&i>6&&i<10){
 				try {
-					double isitanumber;
+					double tryToConvertInNumber;
 					for (int x = 0; x < tocheck.getValues().size(); x++)
-						isitanumber = Double.parseDouble(tocheck.getValues().get(x));
+						tryToConvertInNumber = Double.parseDouble(tocheck.getValues().get(x));
 				} catch (NumberFormatException a) {
 					test[1] = false;
 				}

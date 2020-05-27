@@ -76,14 +76,14 @@ public class DatabaseCreation {
 				// create a url object
 				URL url = new URL("https://wd4hfxnxxa.execute-api.us-east-2.amazonaws.com/dev/api/labs/2/tweets?ids="+id[i]+ "&expansions=attachments.media_keys&tweet.fields=attachments,author_id,created_at,geo,id,lang,source,public_metrics,text,entities&media.fields=duration_ms,height,media_key,non_public_metrics,preview_image_url,public_metrics,type,url,width&user.fields=location");
 
-				// create a urlconnection object
+				// create a url connection object
 				URLConnection urlConnection = url.openConnection();
 
-				// wrap the urlconnection in a bufferedreader
+				// wrap the url connection in a bufferedreader
 				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 				String line;
 
-				// read from the urlconnection via the bufferedreader
+				// read from the url connection via the bufferedreader
 				while ((line = bufferedReader.readLine()) != null) {
 					content.append(line + "\n");
 				}
@@ -139,10 +139,10 @@ public class DatabaseCreation {
 		        	imagineSupport = new SingleImage();
 		        	if(toParse[i].contains("\"url\":"))
 		        		imagineSupport.setUrl(arraySupport2.getJSONObject(k).getString("url"));
-		        	imagineSupport.setAltezza(arraySupport2.getJSONObject(k).getInt("height"));
-		        	imagineSupport.setLarghezza(arraySupport2.getJSONObject(k).getInt("width"));
+		        	imagineSupport.SetHeight(arraySupport2.getJSONObject(k).getInt("height"));
+		        	imagineSupport.setWidth(arraySupport2.getJSONObject(k).getInt("width"));
 		        	imagineSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
-		        	imagineSupport.setIdImmagine(arraySupport2.getJSONObject(k).getString("media_key"));
+		        	imagineSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
 		        	imagineSupport.setTipo(arraySupport2.getJSONObject(k).getString("type"));
 		        	recordSupport.setImmagini(imagineSupport);
 		        }

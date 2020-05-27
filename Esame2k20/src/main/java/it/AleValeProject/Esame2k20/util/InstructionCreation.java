@@ -12,9 +12,9 @@ import it.AleValeProject.Esame2k20.model.SingleInstruction;
 public class InstructionCreation {
 
 	/**
-	 * Description of the property librettoDelleIstruzioni.
+	 * Description of the property istructionsManual.
 	 */
-	private ArrayList<SingleInstruction> librettoDelleIstruzioni = new ArrayList<SingleInstruction>();
+	private ArrayList<SingleInstruction> istructionsManual = new ArrayList<SingleInstruction>();
 
 	/**
 	 * The constructor.
@@ -22,17 +22,17 @@ public class InstructionCreation {
 	public InstructionCreation() {
 		SingleInstruction toadd;
 		try {
-			BufferedReader lettore = new BufferedReader(new FileReader("Istruzioni.txt"));
-			String[] tutteLeIstruzioni=lettore.readLine().split("£");
+			BufferedReader reader = new BufferedReader(new FileReader("Istruction.txt"));
+			String[] allTheIstructions=reader.readLine().split("£");
 			int j=0;
-			while(j<tutteLeIstruzioni.length) {
+			while(j<allTheIstructions.length) {
 				toadd = new SingleInstruction();
-				toadd.setIntro(tutteLeIstruzioni[j]);
+				toadd.setIntroduction(allTheIstructions[j]);
 				j++;
-				String[] appoggio=tutteLeIstruzioni[j].split(";");
-				toadd.setPossibilità(appoggio);
+				String[] appoggio=allTheIstructions[j].split(";");
+				toadd.setPossibility(appoggio);
 				j++;
-				librettoDelleIstruzioni.add(toadd);
+				istructionsManual.add(toadd);
 			}
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -44,9 +44,9 @@ public class InstructionCreation {
 	}
 
 	/**
-	 * @return the librettoDelleIstruzioni
+	 * @return the istructionsManual
 	 */
-	public ArrayList<SingleInstruction> getLibrettoDelleIstruzioni() {
-		return librettoDelleIstruzioni;
+	public ArrayList<SingleInstruction> getInstructionsManual() {
+		return istructionsManual;
 	}
 }

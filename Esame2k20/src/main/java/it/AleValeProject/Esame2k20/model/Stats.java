@@ -10,50 +10,49 @@ public class Stats extends StatsCreation{
 	/**
 	 * Description of the property media.
 	 */
-	private int numImmaginiEsaminate;
-	private String campo;
-	
+	private int ImmaginiEsaminate;
+	private String statsField;
 
-	private HashMap<String, Double> stat = new HashMap<String, Double>();
-	private StatsCreation creator = new StatsCreation();;
+	private HashMap<String, Double> statistics = new HashMap<String, Double>();
 	
-	public Stats(ArrayList<SingleRecordInfo> rec,String field) {
-		this.campo=field;
-		ArrayList<Double> app = ValueListOfImmagini(rec, this.campo);
-		numImmaginiEsaminate=app.size();
-		stat.put("min", calcoloMin(rec, this.campo));
-		stat.put("max", calcoloMax(rec, this.campo));
-		stat.put("somma", calcoloSomma(rec, this.campo));
-		stat.put("media", calcoloMedia(rec, this.campo));
-		stat.put("varianza", calcoloVar(rec, this.campo));
-		stat.put("deviazione standard",Math.pow(calcoloVar(rec,this.campo),0.5));
-	}
-	
-	public String getCampo() {
-		return campo;
-	}
-	public void setCampo(String campo) {
-		this.campo = campo;
+	public Stats(ArrayList<SingleRecordInfo> recordToPass,String fieldToPass) {
+		this.statsField=fieldToPass;
+		ArrayList<Double> support = ValueListOfImmagini(recordToPass, this.statsField);
+		ImmaginiEsaminate=support.size();
+		statistics.put("min", ComputeMin(recordToPass, this.statsField));
+		statistics.put("max", ComputeMax(recordToPass, this.statsField));
+		statistics.put("somma", ComputeSum(recordToPass, this.statsField));
+		statistics.put("media", ComputeAverage(recordToPass, this.statsField));
+		statistics.put("varianza", ComputeVariance(recordToPass, this.statsField));
+		statistics.put("deviazione standard",Math.pow(ComputeVariance(recordToPass,this.statsField),0.5));
 	}
 	
-	public HashMap<String, Double> getStat() {
-		return stat;
+	public String getStatsField() {
+		return statsField;
 	}
-	public void setStat(HashMap<String, Double> stat) {
-		this.stat = stat;
+	public void setStatsField(String newStatsField) {
+		this.statsField = newStatsField;
+	}
+	
+	public HashMap<String, Double> getStatistics() {
+		return statistics;
+	}
+	public void setStatistics(HashMap<String, Double> newStatistics) {
+		this.statistics = newStatistics;
 	}
 
-	public int getNumImmaginiEsaminate() {
-		return numImmaginiEsaminate;
+	public int getNumberOfExaminedImages() {
+		return ImmaginiEsaminate;
 	}
 
-	public void setNumImmaginiEsaminate(int numImmaginiEsaminate) {
-		this.numImmaginiEsaminate = numImmaginiEsaminate;
+	public void setNumberOfExaminedImages(int newImmaginiEsaminate) {
+		this.ImmaginiEsaminate = newImmaginiEsaminate;
 	}
 	
 	
 	
-
+//	private StatsCreation creator = new StatsCreation();
+//	
 //	private double media = 0D;
 //
 //	/**

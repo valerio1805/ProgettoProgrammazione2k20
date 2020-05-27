@@ -16,30 +16,30 @@ public class SingleInstruction {
 	/**
 	 * @return the intro
 	 */
-	public String getIntro() {
+	public String getIntroduction() {
 		return intro;
 	}
 
 	/**
 	 * @param intro the intro to set
 	 */
-	public void setIntro(String intro) {
+	public void setIntroduction(String intro) {
 		this.intro = intro;
 	}
 
 	/**
 	 * @return the possibilità
 	 */
-	public ArrayList<String> getPossibilità() {
+	public ArrayList<String> getPossibility() {
 		return possibilità;
 	}
 
 	/**
-	 * @param possibilità the possibilità to set
+	 * @param possibility the possibilità to set
 	 */
-	public void setPossibilità(String[] possibilità) {
-		for(int i=0;i<possibilità.length;i++)
-			this.possibilità.add(possibilità[i]);
+	public void setPossibility(String[] possibility) {
+		for(int i=0;i<possibility.length;i++)
+			this.possibilità.add(possibility[i]);
 	}
 	
 	
