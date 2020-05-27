@@ -24,38 +24,38 @@ public class Controller {
 	
 	@GetMapping("/GetInstructions")
 	public ResponseEntity<Object> getInstruction(){
-		return new ResponseEntity<>(dataservice.VisulizzaIstruzioni(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayInstructions(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetMetadata")
 	public ResponseEntity<Object> getMetadata(){
-		return new ResponseEntity<>(dataservice.VisulizzaMetadata(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayMetadata(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetData")
 	public ResponseEntity<Object> getData(){
-		return new ResponseEntity<>(dataservice.VisualizzaData(),HttpStatus.OK);	
+		return new ResponseEntity<>(dataservice.DisplayData(),HttpStatus.OK);	
 	}
 	
 	@PostMapping("/GetData")
 	public ResponseEntity<Object> getFilteredData(@RequestBody String filter) throws FilterException{
-		return new ResponseEntity<>(dataservice.VisualizzaData(filter),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayData(filter),HttpStatus.OK);
 			
 	}
 	
 	@GetMapping("/GetStats")
 	public ResponseEntity<Object> getStatistics(){
-		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(),HttpStatus.OK);	
+		return new ResponseEntity<>(dataservice.DisplayStatistics(),HttpStatus.OK);	
 	}
 	
 	@PostMapping("/GetStats")
 	public ResponseEntity<Object> getFilteredStatistics(@RequestBody String filter) throws FilterException{
-		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filter),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayStatistics(filter),HttpStatus.OK);
 			
 	}
 	
 	@PostMapping("/GetStats2")
 	public ResponseEntity<Object> getFilteredFieldedStatistic(@RequestBody String filtro, @RequestParam(name="field")String campo ){
-		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayStatistics(filtro,campo),HttpStatus.OK);
 	}	
 }

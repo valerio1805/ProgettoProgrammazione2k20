@@ -34,7 +34,7 @@ public class FilterCreation {
 				throw new FilterException("l'inizio del filtro deve essere \"{\"");
 			// elimino la parte "filter="
 			//body = body.substring(1);
-			// controllo il "macroperatore
+			// controllo il "macroperatore"
 			String primocampo = RecognizeWord(0, body)[1];
 			if (primocampo.equals("$or"))
 				result.setMacroOperator("$or");
@@ -100,7 +100,8 @@ public class FilterCreation {
 				if (body.charAt(i) != '}')
 					throw new FilterException("manca una parantesi graffa \"}\"");
 				i++;
-				if (body.charAt(i) == '}'||body.charAt(i+1) == '}')
+
+				if (body.charAt(i) == '}' || body.charAt(i+1)=='}')
 					break;
 
 			} while (!result.getMacroOperator().equals(""));

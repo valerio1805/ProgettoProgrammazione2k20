@@ -21,27 +21,27 @@ public class DataServiceImpl implements DataService {
 	 * Description of the property database.
 	 */
 	public ArrayList<SingleRecordInfo> database = new ArrayList<>() ;
-	private MetadataCreation metaD = new MetadataCreation(); ;
-	private Stats[] statistiche = new Stats[3];
-	private InstructionCreation istruzioni =new InstructionCreation();
-	private ArrayList<SingleRecordInfo> filtrato = new ArrayList<SingleRecordInfo>();
-	private FilterCreation riconoscitore= new FilterCreation();
-	private ProcessingFilter esecutore = new ProcessingFilter();
-	private Stats[] statsFilt = new Stats[3];
+	private MetadataCreation metadata = new MetadataCreation(); ;
+	private Stats[] statistics = new Stats[3];
+	private InstructionCreation instructions =new InstructionCreation();
+	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
+	private FilterCreation recognizer= new FilterCreation();
+	private ProcessingFilter executor = new ProcessingFilter();
+	private Stats[] filteredStatistics = new Stats[3];
 	/**
 	 * Description of the property starter.
 	 */
-	private DatabaseCreation starter = new DatabaseCreation();
+	private DatabaseCreation databaseCreator = new DatabaseCreation();
 
 	/**
 	 * Description of the property creaF.
 	 */
-	public FilterCreation creaF = null;
+	public FilterCreation filterCreator = null;
 
 	/**
 	 * Description of the property filtring.
 	 */
-	public Filtering filtring = null;
+	public Filtering filtering = null;
 
 	// Start of user code (user defined attributes for DataServiceImpl)
 
@@ -53,64 +53,63 @@ public class DataServiceImpl implements DataService {
 	public DataServiceImpl() {
 		// Start of user code constructor for DataServiceImpl)
 		//super();
-		database = starter.SavingInformation();
-		statistiche[0]=new Stats(this.database, "larghezza");
-		statistiche[1]=new Stats(this.database, "altezza");
-		statistiche[2]=new Stats(this.database,"megapixel");
+		database = databaseCreator.SavingInformation();
+		statistics[0]=new Stats(this.database, "larghezza");
+		statistics[1]=new Stats(this.database, "altezza");
+		statistics[2]=new Stats(this.database,"megapixel");
 		// End of user code
 	}
 
 	/**
-	 * Description of the method VisalizzaData.
+	 * Description of the method DisplayData.
 	 */
-	public ArrayList<SingleRecordInfo> VisualizzaData() {
+	public ArrayList<SingleRecordInfo> DisplayData() {
 		// Start of user code for method VisalizzaData
 		// End of user code
 		return this.database;
 
 	}
 	
-	public ArrayList<SingleRecordInfo> VisualizzaData(String filtroDaRiconoscere) throws FilterException {
+	public ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize) throws FilterException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
-		return TrovaRec(filtroDaRiconoscere);
+		return FindFilteredDatabase(filterToRecognize);
 	}
 	
 	/**
-	 * Description of the method VisulizzaStatistiche.
+	 * Description of the method DisplayStatistics.
 	 */
-	public Stats[] VisualizzaStatistiche() {
-		return this.statistiche;
+	public Stats[] DisplayStatistics() {
+		return this.statistics;
 	}
-	public Stats[] VisualizzaStatistiche(String filtroPassato,String campo){
+	public Stats[] DisplayStatistics(String filterToRecognize,String fieldToRecognize){
 		
-		filtroPassato = "filter="+filtroPassato;
-		return this.statistiche;
+		return this.statistics;
 	}
-	public Stats[] VisualizzaStatistiche(String filtroPassato) throws FilterException{
-		statsFilt[0]=new Stats(TrovaRec(filtroPassato), "larghezza");
-		statsFilt[1]=new Stats(TrovaRec(filtroPassato), "altezza");
-		statsFilt[2]=new Stats(TrovaRec(filtroPassato),"megapixel");
-		return statsFilt;
+	public Stats[] DisplayStatistics(String filterToRecognize) throws FilterException{
+		filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
+		filteredStatistics[1]=new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
+		filteredStatistics[2]=new Stats(FindFilteredDatabase(filterToRecognize),"megapixel");
+		return filteredStatistics;
 	}
 
 	/**
-	 * Description of the method VisulizzaMetadata.
+	 * Description of the method DisplayMetadata.
 	 */
-	public ArrayList<SingleMetaData> VisulizzaMetadata() {
+	public ArrayList<SingleMetaData> DisplayMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
-		return metaD.getMetadata();
+		return metadata.getMetadata();
 		
 	}
 	
 	/**
-	 * Description of the method VisulizzaIstruzioni.
+	 * Description of the method DisplayInstructions.
 	 */
-	public ArrayList<SingleInstruction> VisulizzaIstruzioni() {
+	public ArrayList<SingleInstruction> DisplayInstructions() {
 		// Start of user code for method VisulizzaIstruzioni
 		// End of user code
-		return istruzioni.getInstructionsManual();
+		return instructions.getInstructionsManual();
 		
 	}
 
@@ -126,63 +125,63 @@ public class DataServiceImpl implements DataService {
 	}
 
 	/**
-	 * Returns starter.
-	 * @return starter 
+	 * Returns DatabaseCreator.
+	 * @return DatabaseCreator 
 	 */
-	public DatabaseCreation getStarter() {
-		return this.starter;
+	public DatabaseCreation getDatabaseCreator() {
+		return this.databaseCreator;
 	}
 
 	/**
-	 * Sets a value to attribute starter. 
-	 * @param newStarter 
+	 * Sets a value to attribute DatabaseCreator. 
+	 * @param newDatabaseCreator 
 	 */
-	public void setStarter(DatabaseCreation newStarter) {
-		this.starter = newStarter;
+	public void setDatabaseCreator(DatabaseCreation newDatabaseCreator) {
+		this.databaseCreator = newDatabaseCreator;
 	}
 
 	/**
-	 * Returns creaF.
-	 * @return creaF 
+	 * Returns filterCreator.
+	 * @return filterCreator 
 	 */
-	public FilterCreation getCreaF() {
-		return this.creaF;
+	public FilterCreation getFilterCreator() {
+		return this.filterCreator;
 	}
 
 	/**
-	 * Sets a value to attribute creaF. 
-	 * @param newCreaF 
+	 * Sets a value to attribute filterCreator. 
+	 * @param newFilterCreator 
 	 */
-	public void setCreaF(FilterCreation newCreaF) {
-		this.creaF = newCreaF;
+	public void setFilterCreator(FilterCreation newFilterCreator) {
+		this.filterCreator = newFilterCreator;
 	}
 
 	/**
-	 * Returns filtring.
-	 * @return filtring 
+	 * Returns filtering.
+	 * @return filtering 
 	 */
-	public Filtering getFiltring() {
-		return this.filtring;
+	public Filtering getFiltering() {
+		return this.filtering;
 	}
 
 	/**
-	 * Sets a value to attribute filtring. 
-	 * @param newFiltring 
+	 * Sets a value to attribute filtering. 
+	 * @param newFiltering 
 	 */
-	public void setFiltring(Filtering newFiltring) {
-		this.filtring = newFiltring;
+	public void setFiltering(Filtering newFiltering) {
+		this.filtering = newFiltering;
 	}
 	
-	private ArrayList<SingleRecordInfo> TrovaRec(String filtro) throws FilterException
+	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FilterException
 	{
-		TotalFilters filtroRiconosciuto= riconoscitore.TranslateFilter(filtro);
+		TotalFilters filtroRiconosciuto= recognizer.TranslateFilter(filtro);
 		if(filtroRiconosciuto.getMacroOperator()=="")
-			filtrato = esecutore.ApplyFilter(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperator()=="and")
-			filtrato = esecutore.ApplyFilterAnd(database,filtroRiconosciuto);
-		else if(filtroRiconosciuto.getMacroOperator()=="or")
-			filtrato = esecutore.ApplyFilterOr(database,filtroRiconosciuto);	
-		return filtrato;
+			filteredDatabase = executor.ApplyFilter(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperator()=="$and")
+			filteredDatabase = executor.ApplyFilterAnd(database,filtroRiconosciuto);
+		else if(filtroRiconosciuto.getMacroOperator()=="$or")
+			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	
+		return filteredDatabase;
 	}
 	
 

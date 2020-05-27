@@ -20,25 +20,25 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public abstract ArrayList<SingleMetaData> VisulizzaMetadata();
+	public abstract ArrayList<SingleMetaData> DisplayMetadata();
 
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public abstract ArrayList<SingleRecordInfo> VisualizzaData();
-	public abstract ArrayList<SingleRecordInfo> VisualizzaData(String filtroDaRiconoscere)throws FilterException;
+	public abstract ArrayList<SingleRecordInfo> DisplayData();
+	public abstract ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize)throws FilterException;
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
-	public abstract Stats[] VisualizzaStatistiche();
-	public abstract Stats[] VisualizzaStatistiche(String filtroPassato,String campo);
-	public abstract Stats[] VisualizzaStatistiche(String filtroPassato) throws FilterException;
+	public abstract Stats[] DisplayStatistics();
+	public abstract Stats[] DisplayStatistics(String filterToRecognize,String fieldToRecognize);
+	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FilterException;
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.
 	 */
-	public abstract ArrayList<SingleInstruction> VisulizzaIstruzioni();
+	public abstract ArrayList<SingleInstruction> DisplayInstructions();
 	
 	
 
