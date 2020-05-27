@@ -6,42 +6,42 @@ import java.util.Arrays;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.creazioneDatabase.DownloadInformazioni;
-import it.AleValeProject.Esame2k20.eccezioni.FilterException;
-import it.AleValeProject.Esame2k20.filtraggio.ElaborazioneFiltro;
-import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
+import it.AleValeProject.Esame2k20.databaseCreation.DownloadInfo;
+import it.AleValeProject.Esame2k20.exception.FilterException;
+import it.AleValeProject.Esame2k20.filtering.ProcessingFilter;
+import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.*;
-import it.AleValeProject.Esame2k20.varie.CreazioneFiltro;
-import it.AleValeProject.Esame2k20.varie.Instruction;
-import it.AleValeProject.Esame2k20.varie.MetaData;
+import it.AleValeProject.Esame2k20.util.FilterCreation;
+import it.AleValeProject.Esame2k20.util.InstructionCreation;
+import it.AleValeProject.Esame2k20.util.MetaDataCreation;
 @Service
 public class DataServiceImpl implements DataService {
 
 	/**
 	 * Description of the property database.
 	 */
-	public ArrayList<RecordInfo> database = new ArrayList<>() ;
-	private MetaData metaD = new MetaData(); ;
+	public ArrayList<SingleRecordInfo> database = new ArrayList<>() ;
+	private MetaDataCreation metaD = new MetaDataCreation(); ;
 	private Stats[] statistiche = new Stats[3];
-	private Instruction istruzioni =new Instruction();
-	private ArrayList<RecordInfo> filtrato = new ArrayList<RecordInfo>();
-	private CreazioneFiltro riconoscitore= new CreazioneFiltro();
-	private ElaborazioneFiltro esecutore = new ElaborazioneFiltro();
+	private InstructionCreation istruzioni =new InstructionCreation();
+	private ArrayList<SingleRecordInfo> filtrato = new ArrayList<SingleRecordInfo>();
+	private FilterCreation riconoscitore= new FilterCreation();
+	private ProcessingFilter esecutore = new ProcessingFilter();
 	private Stats[] statsFilt = new Stats[3];
 	/**
 	 * Description of the property starter.
 	 */
-	private DownloadInformazioni starter = new DownloadInformazioni();
+	private DownloadInfo starter = new DownloadInfo();
 
 	/**
 	 * Description of the property creaF.
 	 */
-	public CreazioneFiltro creaF = null;
+	public FilterCreation creaF = null;
 
 	/**
 	 * Description of the property filtring.
 	 */
-	public Filtraggio filtring = null;
+	public Filtering filtring = null;
 
 	// Start of user code (user defined attributes for DataServiceImpl)
 
@@ -53,7 +53,7 @@ public class DataServiceImpl implements DataService {
 	public DataServiceImpl() {
 		// Start of user code constructor for DataServiceImpl)
 		//super();
-		database = starter.SalvataggioInformazioni();
+		database = starter.SavingInformation();
 		statistiche[0]=new Stats(this.database, "larghezza");
 		statistiche[1]=new Stats(this.database, "altezza");
 		statistiche[2]=new Stats(this.database,"megapixel");
@@ -63,14 +63,14 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public ArrayList<RecordInfo> VisualizzaData() {
+	public ArrayList<SingleRecordInfo> VisualizzaData() {
 		// Start of user code for method VisalizzaData
 		// End of user code
 		return this.database;
 
 	}
 	
-	public ArrayList<RecordInfo> VisualizzaData(String filtroDaRiconoscere) throws FilterException {
+	public ArrayList<SingleRecordInfo> VisualizzaData(String filtroDaRiconoscere) throws FilterException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
 		return TrovaRec(filtroDaRiconoscere);
@@ -97,7 +97,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public ArrayList<CampoMetaD> VisulizzaMetadata() {
+	public ArrayList<SingleMetaData> VisulizzaMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
 		return metaD.getMetaDati();
@@ -129,7 +129,7 @@ public class DataServiceImpl implements DataService {
 	 * Returns starter.
 	 * @return starter 
 	 */
-	public DownloadInformazioni getStarter() {
+	public DownloadInfo getStarter() {
 		return this.starter;
 	}
 
@@ -137,7 +137,7 @@ public class DataServiceImpl implements DataService {
 	 * Sets a value to attribute starter. 
 	 * @param newStarter 
 	 */
-	public void setStarter(DownloadInformazioni newStarter) {
+	public void setStarter(DownloadInfo newStarter) {
 		this.starter = newStarter;
 	}
 
@@ -145,7 +145,7 @@ public class DataServiceImpl implements DataService {
 	 * Returns creaF.
 	 * @return creaF 
 	 */
-	public CreazioneFiltro getCreaF() {
+	public FilterCreation getCreaF() {
 		return this.creaF;
 	}
 
@@ -153,7 +153,7 @@ public class DataServiceImpl implements DataService {
 	 * Sets a value to attribute creaF. 
 	 * @param newCreaF 
 	 */
-	public void setCreaF(CreazioneFiltro newCreaF) {
+	public void setCreaF(FilterCreation newCreaF) {
 		this.creaF = newCreaF;
 	}
 
@@ -161,7 +161,7 @@ public class DataServiceImpl implements DataService {
 	 * Returns filtring.
 	 * @return filtring 
 	 */
-	public Filtraggio getFiltring() {
+	public Filtering getFiltring() {
 		return this.filtring;
 	}
 
@@ -169,13 +169,13 @@ public class DataServiceImpl implements DataService {
 	 * Sets a value to attribute filtring. 
 	 * @param newFiltring 
 	 */
-	public void setFiltring(Filtraggio newFiltring) {
+	public void setFiltring(Filtering newFiltring) {
 		this.filtring = newFiltring;
 	}
 	
-	private ArrayList<RecordInfo> TrovaRec(String filtro) throws FilterException
+	private ArrayList<SingleRecordInfo> TrovaRec(String filtro) throws FilterException
 	{
-		FilterField filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
+		TotalFilters filtroRiconosciuto= riconoscitore.RiconosciFiltro(filtro);
 		if(filtroRiconosciuto.getMacroOperatore()=="")
 			filtrato = esecutore.RiconosciOperatore(database,filtroRiconosciuto);
 		else if(filtroRiconosciuto.getMacroOperatore()=="and")

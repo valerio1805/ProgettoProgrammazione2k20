@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author vale
  *
  */
-public class RecordInfo {
+public class SingleRecordInfo {
 
 	/**
 	 * Description of the property id.
@@ -49,7 +49,7 @@ public class RecordInfo {
 	/**
 	 * Description of the property immagini.
 	 */
-	private ArrayList<Immagine> immagini = new ArrayList<Immagine>();
+	private ArrayList<SingleImage> immagini = new ArrayList<SingleImage>();
 
 	// Start of user code (user defined attributes for Record)
 
@@ -58,7 +58,7 @@ public class RecordInfo {
 	/**
 	 * The constructor.
 	 */
-	public RecordInfo() {
+	public SingleRecordInfo() {
 		// Start of user code constructor for Record)
 		super();
 		// End of user code
@@ -172,7 +172,7 @@ public class RecordInfo {
 	 * Returns immagini.
 	 * @return immagini 
 	 */
-	public ArrayList<Immagine> getImmagini() {
+	public ArrayList<SingleImage> getImmagini() {
 		return this.immagini;
 	}
 	
@@ -183,7 +183,7 @@ public class RecordInfo {
 		//else
 			//lancioEccezione
 	}
-	public void setImmagini(Immagine imm)
+	public void setImmagini(SingleImage imm)
 	{
 		immagini.add(imm);
 	}

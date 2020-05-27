@@ -1,6 +1,6 @@
 package it.AleValeProject.Esame2k20.model;
 
-public class Immagine {
+public class SingleImage {
 
 	/**
 	 * Description of the property larghezza.
@@ -39,7 +39,7 @@ public class Immagine {
 	/**
 	 * The constructor.
 	 */
-	public Immagine() {
+	public SingleImage() {
 		// Start of user code constructor for Immagine)
 		super();
 		// End of user code

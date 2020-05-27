@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
-public class Filter2 {
+public class SingleFilter {
 
 	/**
 	 * Description of the property campo.
@@ -26,7 +26,7 @@ public class Filter2 {
 	/**
 	 * The constructor.
 	 */
-	public Filter2() {
+	public SingleFilter() {
 		// Start of user code constructor for Filter2)
 		super();
 		// End of user code

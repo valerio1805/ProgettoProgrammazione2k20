@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.eccezioni.FilterException;
-import it.AleValeProject.Esame2k20.model.CampoMetaD;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.exception.FilterException;
+import it.AleValeProject.Esame2k20.model.SingleMetaData;
+import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
 import it.AleValeProject.Esame2k20.model.Stats;
 @Service
@@ -20,13 +20,13 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public abstract ArrayList<CampoMetaD> VisulizzaMetadata();
+	public abstract ArrayList<SingleMetaData> VisulizzaMetadata();
 
 	/**
 	 * Description of the method VisalizzaData.
 	 */
-	public abstract ArrayList<RecordInfo> VisualizzaData();
-	public abstract ArrayList<RecordInfo> VisualizzaData(String filtroDaRiconoscere)throws FilterException;
+	public abstract ArrayList<SingleRecordInfo> VisualizzaData();
+	public abstract ArrayList<SingleRecordInfo> VisualizzaData(String filtroDaRiconoscere)throws FilterException;
 
 	/**
 	 * Description of the method VisulizzaStatistiche.

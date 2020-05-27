@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
-public class FilterField {
+public class TotalFilters {
 
 	/**
 	 * Description of the property macroOperatore.
@@ -12,7 +12,7 @@ public class FilterField {
 	/**
 	 * Description of the property tuttiIFiltri.
 	 */
-	private ArrayList<Filter2> tuttiIFiltri = new ArrayList<Filter2>();
+	private ArrayList<SingleFilter> tuttiIFiltri = new ArrayList<SingleFilter>();
 
 	// Start of user code (user defined attributes for FilterField)
 
@@ -21,7 +21,7 @@ public class FilterField {
 	/**
 	 * The constructor.
 	 */
-	public FilterField() {
+	public TotalFilters() {
 		// Start of user code constructor for FilterField)
 		super();
 		// End of user code
@@ -50,14 +50,14 @@ public class FilterField {
 	 * Returns tuttiIFiltri.
 	 * @return tuttiIFiltri 
 	 */
-	public ArrayList<Filter2> getTuttiIFiltri() {
+	public ArrayList<SingleFilter> getTuttiIFiltri() {
 		return this.tuttiIFiltri;
 	}
 	/**
 	 * Adds a value to ArrayList tuttiIFiltri. 
 	 * @param newFilter2
 	 */
-	public void setTuttiIFiltri(Filter2 newFilter2) {
+	public void setTuttiIFiltri(SingleFilter newFilter2) {
 		this.tuttiIFiltri.add(newFilter2);
 	}
 }

@@ -1,11 +1,11 @@
-package it.AleValeProject.Esame2k20.filtraggio.aritm;
+package it.AleValeProject.Esame2k20.filtering.aritm;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.filtering.Filtering;
+import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioBet implements Filtraggio {
+public class FiltraggioBet implements Filtering {
 
 	// Start of user code (user defined attributes for FiltraggioBetw)
 
@@ -27,7 +27,7 @@ public class FiltraggioBet implements Filtraggio {
 	 * @param value
 	 * @param x
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
+	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
 		double num1=Double.parseDouble(value.get(0));
 		double num2=Double.parseDouble(value.get(1));
 		double min;

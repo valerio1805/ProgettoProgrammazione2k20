@@ -1,11 +1,11 @@
-package it.AleValeProject.Esame2k20.varie;
+package it.AleValeProject.Esame2k20.util;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.Immagine;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.model.SingleImage;
+import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class CreazioneStats {
+public class StatsCreation {
 
 	// Start of user code (user defined attributes for CreazioneStats)
 
@@ -14,7 +14,7 @@ public class CreazioneStats {
 	/**
 	 * The constructor.
 	 */
-	public CreazioneStats() {
+	public StatsCreation() {
 		// Start of user code constructor for CreazioneStats)
 		super();
 		// End of user code
@@ -26,7 +26,7 @@ public class CreazioneStats {
 	 * @param data
 	 * @param campo
 	 */
-	public double calcoloMedia(ArrayList<RecordInfo> data, String campo) {
+	public double calcoloMedia(ArrayList<SingleRecordInfo> data, String campo) {
 
 		return calcoloSomma(data, campo) / ValueListOfImmagini(data, campo).size();
 
@@ -38,7 +38,7 @@ public class CreazioneStats {
 	 * @param data
 	 * @param campo
 	 */
-	public double calcoloSomma(ArrayList<RecordInfo> data, String campo) {
+	public double calcoloSomma(ArrayList<SingleRecordInfo> data, String campo) {
 		// Start of user code for method calcoloMedia
 		// End of user code
 
@@ -55,7 +55,7 @@ public class CreazioneStats {
 	 * @param data
 	 * @param campo
 	 */
-	public double calcoloMax(ArrayList<RecordInfo> data, String campo) {
+	public double calcoloMax(ArrayList<SingleRecordInfo> data, String campo) {
 		// Start of user code for method calcoloMax
 		// End of user code
 
@@ -74,7 +74,7 @@ public class CreazioneStats {
 	 * @param data
 	 * @param campo
 	 */
-	public double calcoloMin(ArrayList<RecordInfo> data, String campo) {
+	public double calcoloMin(ArrayList<SingleRecordInfo> data, String campo) {
 		// Start of user code for method calcoloMin
 		// End of user code
 
@@ -93,7 +93,7 @@ public class CreazioneStats {
 	 * @param data
 	 * @param field
 	 */
-	public double calcoloVar(ArrayList<RecordInfo> data, String campo) {
+	public double calcoloVar(ArrayList<SingleRecordInfo> data, String campo) {
 		// Start of user code for method calcoloVar
 		// End of user code
 		double media = calcoloMedia(data, campo);
@@ -106,7 +106,7 @@ public class CreazioneStats {
 		return varianza / appoggio.size();
 	}
 
-	public ArrayList<Double> ValueListOfImmagini(ArrayList<RecordInfo> data, String campo){
+	public ArrayList<Double> ValueListOfImmagini(ArrayList<SingleRecordInfo> data, String campo){
 		ArrayList<Double> result = new ArrayList<Double>();
 		for(int i =0; i < data.size();i++) {
 			for(int j=0;j<data.get(i).getImmagini().size();j++)

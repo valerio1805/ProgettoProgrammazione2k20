@@ -1,10 +1,10 @@
-package it.AleValeProject.Esame2k20.varie;
+package it.AleValeProject.Esame2k20.util;
 
-import it.AleValeProject.Esame2k20.eccezioni.FilterException;
-import it.AleValeProject.Esame2k20.model.FilterField;
-import it.AleValeProject.Esame2k20.model.Filter2;
+import it.AleValeProject.Esame2k20.model.TotalFilters;
+import it.AleValeProject.Esame2k20.exception.FilterException;
+import it.AleValeProject.Esame2k20.model.SingleFilter;
 
-public class CreazioneFiltro {
+public class FilterCreation {
 
 	// Start of user code (user defined attributes for CreazioneFiltro)
 
@@ -13,7 +13,7 @@ public class CreazioneFiltro {
 	/**
 	 * The constructor.
 	 */
-	public CreazioneFiltro() {
+	public FilterCreation() {
 		// Start of user code constructor for CreazioneFiltro)
 		super();
 		// End of user code
@@ -25,9 +25,9 @@ public class CreazioneFiltro {
 	 * @param body
 	 * @throws FilterException 
 	 */
-	public FilterField RiconosciFiltro(String body) throws FilterException {
+	public TotalFilters RiconosciFiltro(String body) throws FilterException {
 		// Start of user code for method FunzioneUniversale
-		FilterField result = new FilterField();
+		TotalFilters result = new TotalFilters();
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 1).equals("{"))
@@ -48,10 +48,10 @@ public class CreazioneFiltro {
 			// compilo l'array di classi filter2 finche non leggo }}}, a meno che il
 			// macroperatore non sia ""
 			int i = 1;
-			Filter2 filterdaagg;
+			SingleFilter filterdaagg;
 			do {
 				String[] passaggiointermedio = new String[2];
-				filterdaagg = new Filter2();
+				filterdaagg = new SingleFilter();
 
 				// trovo il campo
 				passaggiointermedio = RiconosciStringa(i, body);
@@ -137,11 +137,11 @@ public class CreazioneFiltro {
 	/**
 	 * Description of the method controllo.
 	 */
-	public boolean Controllo(Filter2 tocheck) {
+	public boolean Controllo(SingleFilter tocheck) {
 		// Start of user code for method controllo
 		boolean[] test = { false, false };
 		String[] operatoripossibili = { "$not", "$in", "$nin", "$bt", "$gt", "$gte", "$lt", "$lte" };
-		MetaData campipossibili = new MetaData();
+		MetaDataCreation campipossibili = new MetaDataCreation();
 		int j = 0;
 		
 		for (j = 0; j < 8 && !test[0]; j++) {

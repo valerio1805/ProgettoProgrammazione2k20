@@ -1,11 +1,11 @@
-package it.AleValeProject.Esame2k20.filtraggio.logic;
+package it.AleValeProject.Esame2k20.filtering.logic;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.filtering.Filtering;
+import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioIn implements Filtraggio {
+public class FiltraggioIn implements Filtering {
 
 	// Start of user code (user defined attributes for FiltraggioIn)
 
@@ -26,7 +26,7 @@ public class FiltraggioIn implements Filtraggio {
 	 * @param value
 	 * @param x
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
+	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
 		
 		for(int i =0;i<value.size();i++)
 			for(int j=0; j<x.getHashtags().size();j++)

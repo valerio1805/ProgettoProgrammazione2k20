@@ -3,7 +3,7 @@ package it.AleValeProject.Esame2k20.model;
 import org.springframework.stereotype.Component;
 
 
-public class CampoMetaD {
+public class SingleMetaData {
 
 	/**
 	 * Description of the property alias.
@@ -27,7 +27,7 @@ public class CampoMetaD {
 	/**
 	 * The constructor.
 	 */
-	public CampoMetaD() {
+	public SingleMetaData() {
 		// Start of user code constructor for campoMetaD)
 		super();
 		// End of user code

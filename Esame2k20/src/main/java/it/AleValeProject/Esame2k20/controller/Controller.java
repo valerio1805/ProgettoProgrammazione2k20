@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.AleValeProject.Esame2k20.eccezioni.FilterException;
+import it.AleValeProject.Esame2k20.exception.FilterException;
 import it.AleValeProject.Esame2k20.webServices.DataService;
 import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
 
@@ -20,42 +20,42 @@ import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
 public class Controller {
 	
 	@Autowired
-	private DataService serviziodati;
+	private DataService dataservice;
 	
 	@GetMapping("/GetInstructions")
 	public ResponseEntity<Object> getinst(){
-		return new ResponseEntity<>(serviziodati.VisulizzaIstruzioni(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.VisulizzaIstruzioni(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetMetadata")
 	public ResponseEntity<Object> getMetaD(){
-		return new ResponseEntity<>(serviziodati.VisulizzaMetadata(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.VisulizzaMetadata(),HttpStatus.OK);
 	}
 	
 	@PostMapping("/GetData")
 	public ResponseEntity<Object> getMetaD(@RequestBody String filtro) throws FilterException{
-		return new ResponseEntity<>(serviziodati.VisualizzaData(filtro),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.VisualizzaData(filtro),HttpStatus.OK);
 			
 	}
 	
 	@GetMapping("/GetData")
 	public ResponseEntity<Object> getProva(){
-		return new ResponseEntity<>(serviziodati.VisualizzaData(),HttpStatus.OK);	
+		return new ResponseEntity<>(dataservice.VisualizzaData(),HttpStatus.OK);	
 	}
 	
 	@GetMapping("/GetStats")
 	public ResponseEntity<Object> getStats(){
-		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(),HttpStatus.OK);	
+		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(),HttpStatus.OK);	
 	}
 	
 	@PostMapping("/GetStats")
 	public ResponseEntity<Object> getStatsFiltrate(@RequestBody String filtro) throws FilterException{
-		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filtro),HttpStatus.OK);
 			
 	}
 	
 	@PostMapping("/GetStats2")
 	public ResponseEntity<Object> getStatsFieldFiltra(@RequestBody String filtro, @RequestParam(name="field")String campo ){
-		return new ResponseEntity<>(serviziodati.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.VisualizzaStatistiche(filtro,campo),HttpStatus.OK);
 	}	
 }

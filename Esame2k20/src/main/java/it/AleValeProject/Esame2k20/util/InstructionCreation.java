@@ -1,4 +1,4 @@
-package it.AleValeProject.Esame2k20.varie;
+package it.AleValeProject.Esame2k20.util;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,10 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.CampoMetaD;
+import it.AleValeProject.Esame2k20.model.SingleMetaData;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
 
-public class Instruction {
+public class InstructionCreation {
 
 	/**
 	 * Description of the property librettoDelleIstruzioni.
@@ -19,7 +19,7 @@ public class Instruction {
 	/**
 	 * The constructor.
 	 */
-	public Instruction() {
+	public InstructionCreation() {
 		SingleInstruction toadd;
 		try {
 			BufferedReader lettore = new BufferedReader(new FileReader("Istruzioni.txt"));

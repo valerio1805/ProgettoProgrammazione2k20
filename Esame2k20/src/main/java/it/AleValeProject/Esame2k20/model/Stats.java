@@ -3,9 +3,9 @@ package it.AleValeProject.Esame2k20.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import it.AleValeProject.Esame2k20.varie.CreazioneStats;
+import it.AleValeProject.Esame2k20.util.StatsCreation;
 
-public class Stats extends CreazioneStats{
+public class Stats extends StatsCreation{
 
 	/**
 	 * Description of the property media.
@@ -15,9 +15,9 @@ public class Stats extends CreazioneStats{
 	
 
 	private HashMap<String, Double> stat = new HashMap<String, Double>();
-	private CreazioneStats creator = new CreazioneStats();;
+	private StatsCreation creator = new StatsCreation();;
 	
-	public Stats(ArrayList<RecordInfo> rec,String field) {
+	public Stats(ArrayList<SingleRecordInfo> rec,String field) {
 		this.campo=field;
 		ArrayList<Double> app = ValueListOfImmagini(rec, this.campo);
 		numImmaginiEsaminate=app.size();

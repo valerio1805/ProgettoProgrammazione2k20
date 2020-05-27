@@ -1,4 +1,4 @@
-package it.AleValeProject.Esame2k20.eccezioni;
+package it.AleValeProject.Esame2k20.exception;
 
 public class RootException extends Exception {
 

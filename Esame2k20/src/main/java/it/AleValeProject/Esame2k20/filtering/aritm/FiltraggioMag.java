@@ -1,11 +1,11 @@
-package it.AleValeProject.Esame2k20.filtraggio.aritm;
+package it.AleValeProject.Esame2k20.filtering.aritm;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtraggio.Filtraggio;
-import it.AleValeProject.Esame2k20.model.RecordInfo;
+import it.AleValeProject.Esame2k20.filtering.Filtering;
+import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMag implements Filtraggio {
+public class FiltraggioMag implements Filtering {
 
 	// Start of user code (user defined attributes for FiltraggioMag)
 
@@ -26,7 +26,7 @@ public class FiltraggioMag implements Filtraggio {
 	 * @param value
 	 * @param x
 	 */
-	public Boolean Filtra(String field1, ArrayList<String> value, RecordInfo x) {
+	public Boolean Filtra(String field1, ArrayList<String> value, SingleRecordInfo x) {
 		
 		if(field1.equals("altezza"))
 			for(int i =0;i<x.getImmagini().size();i++)
