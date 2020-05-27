@@ -12,8 +12,8 @@ public class ElaborazioneFiltro {
 		ArrayList<RecordInfo> result = new ArrayList<RecordInfo>();
 		Filtraggio esecutore = RiconosciFiltro(filterToAnalize,0);
 		for(int i=0;i<database.size();i++) {
-		if(esecutore.Filtra(filterToAnalize.getTuttiIFiltri().get(0).getCampo(),filterToAnalize.getTuttiIFiltri().get(0).getValori(),database.get(i)));
-			result.add(database.get(i));
+			if(esecutore.Filtra(filterToAnalize.getTuttiIFiltri().get(0).getCampo(),filterToAnalize.getTuttiIFiltri().get(0).getValori(),database.get(i)))
+				result.add(database.get(i));
 		}
 		return result;
 	}
