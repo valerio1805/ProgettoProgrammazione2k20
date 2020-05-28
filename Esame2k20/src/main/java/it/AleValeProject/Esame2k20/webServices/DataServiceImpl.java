@@ -195,7 +195,7 @@ public class DataServiceImpl implements DataService {
 		if(filtroRiconosciuto.getMacroOperator()=="$or")
 			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	
 		else
-			filteredDatabase = executor.ApplyFilterGen(database,filtroRiconosciuto);
+ 			filteredDatabase = executor.ApplyFilterGen(database,filtroRiconosciuto);
 		return filteredDatabase;
 	}
 }
