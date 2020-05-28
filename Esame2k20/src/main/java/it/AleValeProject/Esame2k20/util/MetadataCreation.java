@@ -5,9 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
-
-import org.springframework.stereotype.Component;
 
 import it.AleValeProject.Esame2k20.model.SingleMetaData;
 
@@ -18,15 +15,10 @@ public class MetadataCreation {
 	 */
 	private ArrayList<SingleMetaData> metadata = new ArrayList<SingleMetaData>();
 
-	// Start of user code (user defined attributes for MetaData)
-
-	// End of user code
-
 	/**
 	 * The constructor.
 	 */
 	public MetadataCreation() {
-		// Start of user code constructor for MetaData)
 		SingleMetaData toAdd;
 		BufferedReader reader;
 		int j=0;
@@ -50,12 +42,7 @@ public class MetadataCreation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// End of user code
 	}
-
-	// Start of user code (user defined methods for MetaData)
-
-	// End of user code
 	/**
 	 * Returns metadata.
 	 * @return metadata 

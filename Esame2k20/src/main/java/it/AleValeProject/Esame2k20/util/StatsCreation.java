@@ -2,22 +2,14 @@ package it.AleValeProject.Esame2k20.util;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.SingleImage;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 public class StatsCreation {
-
-	// Start of user code (user defined attributes for CreazioneStats)
-
-	// End of user code
-
 	/**
 	 * The constructor.
 	 */
 	public StatsCreation() {
-		// Start of user code constructor for CreazioneStats)
 		super();
-		// End of user code
 	}
 
 	/**
@@ -39,14 +31,10 @@ public class StatsCreation {
 	 * @param field
 	 */
 	public double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
-		// Start of user code for method calcoloMedia
-		// End of user code
-
 		double sum = 0;
 		for (int i = 0; i < ValueListOfImmagini(data, field).size(); i++)
 			sum += ValueListOfImmagini(data, field).get(i);
 		return sum;
-
 	}
 
 	/**
@@ -56,9 +44,6 @@ public class StatsCreation {
 	 * @param field
 	 */
 	public double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
-		// Start of user code for method calcoloMax
-		// End of user code
-
 		double max = Double.MIN_VALUE;
 		ArrayList<Double> support = ValueListOfImmagini(data, field);
 		for (int i = 0; i < support.size(); i++) {
@@ -75,9 +60,6 @@ public class StatsCreation {
 	 * @param field
 	 */
 	public double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
-		// Start of user code for method calcoloMin
-		// End of user code
-
 		double min = Double.MAX_VALUE;
 		ArrayList<Double> support = ValueListOfImmagini(data, field);
 		for (int i = 0; i < support.size(); i++) {
@@ -94,8 +76,6 @@ public class StatsCreation {
 	 * @param field
 	 */
 	public double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
-		// Start of user code for method calcoloVar
-		// End of user code
 		double variance = 0;
 
 		ArrayList<Double> support = ValueListOfImmagini(data, field);
@@ -118,8 +98,4 @@ public class StatsCreation {
 		}
 		return result;
 	}
-
-	// Start of user code (user defined methods for CreazioneStats)
-
-	// End of user code
 }
