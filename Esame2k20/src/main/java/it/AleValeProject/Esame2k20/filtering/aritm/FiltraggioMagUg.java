@@ -20,6 +20,10 @@ public class FiltraggioMagUg implements Filtering {
 		// End of user code
 	}
 
+	private String operator="$gte";
+	public String getOperator() {
+		return operator;
+	}
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass

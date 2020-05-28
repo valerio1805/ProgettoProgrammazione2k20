@@ -19,6 +19,14 @@ public class ProcessingFilter {
 	}
 	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize,int i) {
 		Filtering result;
+		
+		int j;
+		Filtering[] filters=init();
+		for(j=0;j<filters.length;j++)
+			if(filters[j].getOperator().equals(filterToAnalize.getAllFilters().get(i).getOperator()))
+				break;
+		return filters[i];
+		/*
 		switch(filterToAnalize.getAllFilters().get(i).getOperator()) {
 		case "$not":result = new FiltraggioNot(); break;
 		case "$in": result = new FiltraggioIn(); break;
@@ -29,7 +37,7 @@ public class ProcessingFilter {
 		case "$gte":result = new FiltraggioMagUg(); break;
 		default:    result = new FiltraggioBet();
 		}
-		return result;
+		return result;*/
 	}
 	
 	public ArrayList<SingleRecordInfo> ApplyFilterGen (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
@@ -63,6 +71,19 @@ public class ProcessingFilter {
 			}
 		}
 		return result;
+	}
+	
+	private Filtering[] init() {
+		Filtering[] filters = new Filtering[8];
+		filters[0]=new FiltraggioBet();
+		filters[1]=new FiltraggioMag();
+		filters[2]=new FiltraggioMagUg();
+		filters[3]=new FiltraggioMin();
+		filters[4]=new FiltraggioMinUg();
+		filters[5]=new FiltraggioIn();
+		filters[6]=new FiltraggioNIn();
+		filters[7]=new FiltraggioNot();
+		return filters;
 	}
 	
 	

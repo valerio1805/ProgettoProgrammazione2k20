@@ -20,6 +20,10 @@ public class FiltraggioMin implements Filtering {
 		// End of user code
 	}
 
+	private String operator="$lt";
+	public String getOperator() {
+		return operator;
+	}
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass

@@ -20,6 +20,10 @@ public class FiltraggioNot implements Filtering {
 		// End of user code
 	}
 
+	private String operator="$not";
+	public String getOperator() {
+		return operator;
+	}
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass

@@ -20,7 +20,10 @@ public class FiltraggioBet implements Filtering {
 		// End of user code
 	}
 
-
+	private String operator="$bt";
+	public String getOperator() {
+		return operator;
+	}
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass

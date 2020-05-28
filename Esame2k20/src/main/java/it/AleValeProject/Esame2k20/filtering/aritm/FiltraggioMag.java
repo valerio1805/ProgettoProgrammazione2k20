@@ -19,7 +19,10 @@ public class FiltraggioMag implements Filtering {
 		super();
 		// End of user code
 	}
-
+	private String operator="$gt";
+	public String getOperator() {
+		return operator;
+	}
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass

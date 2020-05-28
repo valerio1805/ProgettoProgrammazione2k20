@@ -13,6 +13,7 @@ public interface Filtering {
 	 * Description of the method Filtra.
 	 */
 	public abstract Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
+	public abstract String getOperator();
 
 	// Start of user code (user defined methods for Filtraggio)
 
