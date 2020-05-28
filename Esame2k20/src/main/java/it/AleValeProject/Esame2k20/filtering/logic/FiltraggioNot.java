@@ -27,10 +27,20 @@ public class FiltraggioNot implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		for(int j=0; j<recordToPass.getHashtags().size();j++)
-			if(recordToPass.getHashtags().get(j).equals(valueToPass.get(0)))
-				return false;
+		boolean find=true;
+		for(int i =0;i<valueToPass.size();i++) {
+			if(find)
+				find=false;
+			else
+				break;
+			for(int j=0; j<recordToPass.getHashtags().size();j++)
+				if((recordToPass.getHashtags().get(j).equals(valueToPass.get(i))))
+					find=true;
+		}
+		if(find)
+			return false;
 		return true;
+		
 	}
 
 	// Start of user code (user defined methods for FiltraggioNot)

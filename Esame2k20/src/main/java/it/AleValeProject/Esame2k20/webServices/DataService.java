@@ -8,6 +8,7 @@ import it.AleValeProject.Esame2k20.exception.FieldException;
 import it.AleValeProject.Esame2k20.exception.FormatException;
 import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
 import it.AleValeProject.Esame2k20.exception.OperatorException;
+import it.AleValeProject.Esame2k20.exception.StatsParamException;
 import it.AleValeProject.Esame2k20.model.SingleMetaData;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
@@ -34,8 +35,9 @@ public interface DataService {
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public abstract Stats[] DisplayStatistics();
-	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
+	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException ;
 	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
+	public abstract Stats DisplayFieldStatistics(String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException,StatsParamException ;
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.

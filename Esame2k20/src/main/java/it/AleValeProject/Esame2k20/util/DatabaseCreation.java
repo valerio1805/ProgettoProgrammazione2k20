@@ -13,6 +13,7 @@ import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import it.AleValeProject.Esame2k20.exception.DeleteFileException;
 import it.AleValeProject.Esame2k20.model.SingleImage;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
@@ -33,8 +34,9 @@ public class DatabaseCreation {
 
 	/**
 	 * Description of the method RichiestaId.
+	 * @throws DeleteFileException 
 	 */
-	public String[] RequestId() {
+	public String[] RequestId() throws DeleteFileException {
 		// Start of user code for method RichiestaId
 		// End of user code
 		BufferedReader reader;
@@ -47,7 +49,7 @@ public class DatabaseCreation {
 			
 		}catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new DeleteFileException("File \"IdList.txt\" not found");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -57,8 +59,9 @@ public class DatabaseCreation {
 
 	/**
 	 * Description of the method RichiestaInformazioni.
+	 * @throws DeleteFileException 
 	 */
-	public String[] RequestInformation() {
+	public String[] RequestInformation() throws DeleteFileException {
 		// Start of user code for method RichiestaInformazioni
 		// End of user code
 		String[] id =RequestId();
@@ -102,8 +105,9 @@ public class DatabaseCreation {
 	
 	/**
 	 * Description of the method SalvataggioInformazioni.
+	 * @throws DeleteFileException 
 	 */
-	public ArrayList<SingleRecordInfo> SavingInformation() {
+	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {
 		// Start of user code for method SalvataggioInformazioni
 		// End of user code
 		String[] toParse=RequestInformation();
