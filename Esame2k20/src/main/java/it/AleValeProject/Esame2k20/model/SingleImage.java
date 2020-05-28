@@ -140,12 +140,4 @@ public class SingleImage {
 	public void setUrl(String newUrl) {
 		this.url = newUrl;
 	}
-
-	@Override
-	public String toString() {
-		return "[larghezza=" + width + ", altezza=" + height + ", tipo=" + type + ", idImmagine="
-				+ idImage + ", url=" + url + "]";
-	}
-	
-	
 }
