@@ -29,8 +29,8 @@ public class InstructionCreation {
 				toadd = new SingleInstruction();
 				toadd.setIntroduction(allTheIstructions[j]);
 				j++;
-				String[] appoggio=allTheIstructions[j].split(";");
-				toadd.setPossibility(appoggio);
+				String[] support=allTheIstructions[j].split(";");
+				toadd.setPossibility(support);
 				j++;
 				istructionsManual.add(toadd);
 			}

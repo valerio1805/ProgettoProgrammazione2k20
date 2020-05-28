@@ -6,7 +6,10 @@ import java.util.Arrays;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.exception.FilterException;
+import it.AleValeProject.Esame2k20.exception.FieldException;
+import it.AleValeProject.Esame2k20.exception.FormatException;
+import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
+import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.filtering.ProcessingFilter;
 import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.*;
@@ -14,18 +17,19 @@ import it.AleValeProject.Esame2k20.util.DatabaseCreation;
 import it.AleValeProject.Esame2k20.util.FilterCreation;
 import it.AleValeProject.Esame2k20.util.InstructionCreation;
 import it.AleValeProject.Esame2k20.util.MetadataCreation;
+
 @Service
 public class DataServiceImpl implements DataService {
 
 	/**
 	 * Description of the property database.
 	 */
-	public ArrayList<SingleRecordInfo> database = new ArrayList<>() ;
-	private MetadataCreation metadata = new MetadataCreation(); ;
+	public ArrayList<SingleRecordInfo> database = new ArrayList<>();
+	private MetadataCreation metadata = new MetadataCreation();;
 	private Stats[] statistics = new Stats[3];
-	private InstructionCreation instructions =new InstructionCreation();
+	private InstructionCreation instructions = new InstructionCreation();
 	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
-	private FilterCreation recognizer= new FilterCreation();
+	private FilterCreation recognizer = new FilterCreation();
 	private ProcessingFilter executor = new ProcessingFilter();
 	private Stats[] filteredStatistics = new Stats[3];
 	/**
@@ -52,11 +56,11 @@ public class DataServiceImpl implements DataService {
 	 */
 	public DataServiceImpl() {
 		// Start of user code constructor for DataServiceImpl)
-		//super();
+		// super();
 		database = databaseCreator.SavingInformation();
-		statistics[0]=new Stats(this.database, "larghezza");
-		statistics[1]=new Stats(this.database, "altezza");
-		statistics[2]=new Stats(this.database,"megapixel");
+		statistics[0] = new Stats(this.database, "larghezza");
+		statistics[1] = new Stats(this.database, "altezza");
+		statistics[2] = new Stats(this.database, "megapixel");
 		// End of user code
 	}
 
@@ -69,33 +73,34 @@ public class DataServiceImpl implements DataService {
 		return this.database;
 
 	}
-	
-	public ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize) throws FilterException {
+
+	public ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
 		// Start of user code for method VisulizzaStatistiche
 		// End of user code
 		return FindFilteredDatabase(filterToRecognize);
 	}
-	
+
 	/**
 	 * Description of the method DisplayStatistics.
 	 */
 	public Stats[] DisplayStatistics() {
 		return this.statistics;
 	}
-	public Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FilterException{
-		if(fieldToRecognize.equals("\"larghezza\"") )
-			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
-		if(fieldToRecognize.equals("\"altezza\""))
-			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
-		if(fieldToRecognize.equals("\"megapixel\""))
-			filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "megapixel");	
+
+	public Stats DisplayStatistics(String filterToRecognize, String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
+		if (fieldToRecognize.equals("\"larghezza\""))
+			filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
+		if (fieldToRecognize.equals("\"altezza\""))
+			filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
+		if (fieldToRecognize.equals("\"megapixel\""))
+			filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "megapixel");
 		return this.filteredStatistics[0];
 	}
-	
-	public Stats[] DisplayStatistics(String filterToRecognize) throws FilterException{
-		filteredStatistics[0]=new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
-		filteredStatistics[1]=new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
-		filteredStatistics[2]=new Stats(FindFilteredDatabase(filterToRecognize),"megapixel");
+
+	public Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
+		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
+		filteredStatistics[1] = new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
+		filteredStatistics[2] = new Stats(FindFilteredDatabase(filterToRecognize), "megapixel");
 		return filteredStatistics;
 	}
 
@@ -106,9 +111,9 @@ public class DataServiceImpl implements DataService {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
 		return metadata.getMetadata();
-		
+
 	}
-	
+
 	/**
 	 * Description of the method DisplayInstructions.
 	 */
@@ -116,7 +121,7 @@ public class DataServiceImpl implements DataService {
 		// Start of user code for method VisulizzaIstruzioni
 		// End of user code
 		return instructions.getInstructionsManual();
-		
+
 	}
 
 	// Start of user code (user defined methods for DataServiceImpl)
@@ -124,7 +129,8 @@ public class DataServiceImpl implements DataService {
 	// End of user code
 	/**
 	 * Returns database.
-	 * @return database 
+	 * 
+	 * @return database
 	 */
 	public String getDatabase() {
 		return database.toString();
@@ -132,15 +138,17 @@ public class DataServiceImpl implements DataService {
 
 	/**
 	 * Returns DatabaseCreator.
-	 * @return DatabaseCreator 
+	 * 
+	 * @return DatabaseCreator
 	 */
 	public DatabaseCreation getDatabaseCreator() {
 		return this.databaseCreator;
 	}
 
 	/**
-	 * Sets a value to attribute DatabaseCreator. 
-	 * @param newDatabaseCreator 
+	 * Sets a value to attribute DatabaseCreator.
+	 * 
+	 * @param newDatabaseCreator
 	 */
 	public void setDatabaseCreator(DatabaseCreation newDatabaseCreator) {
 		this.databaseCreator = newDatabaseCreator;
@@ -148,15 +156,17 @@ public class DataServiceImpl implements DataService {
 
 	/**
 	 * Returns filterCreator.
-	 * @return filterCreator 
+	 * 
+	 * @return filterCreator
 	 */
 	public FilterCreation getFilterCreator() {
 		return this.filterCreator;
 	}
 
 	/**
-	 * Sets a value to attribute filterCreator. 
-	 * @param newFilterCreator 
+	 * Sets a value to attribute filterCreator.
+	 * 
+	 * @param newFilterCreator
 	 */
 	public void setFilterCreator(FilterCreation newFilterCreator) {
 		this.filterCreator = newFilterCreator;
@@ -164,22 +174,23 @@ public class DataServiceImpl implements DataService {
 
 	/**
 	 * Returns filtering.
-	 * @return filtering 
+	 * 
+	 * @return filtering
 	 */
 	public Filtering getFiltering() {
 		return this.filtering;
 	}
 
 	/**
-	 * Sets a value to attribute filtering. 
-	 * @param newFiltering 
+	 * Sets a value to attribute filtering.
+	 * 
+	 * @param newFiltering
 	 */
 	public void setFiltering(Filtering newFiltering) {
 		this.filtering = newFiltering;
 	}
-	
-	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FilterException
-	{
+
+	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		TotalFilters filtroRiconosciuto= recognizer.TranslateFilter(filtro);
 		if(filtroRiconosciuto.getMacroOperator()=="$or")
 			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	
@@ -187,6 +198,4 @@ public class DataServiceImpl implements DataService {
 			filteredDatabase = executor.ApplyFilterGen(database,filtroRiconosciuto);
 		return filteredDatabase;
 	}
-	
-
 }

@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.exception.FilterException;
+import it.AleValeProject.Esame2k20.exception.FieldException;
+import it.AleValeProject.Esame2k20.exception.FormatException;
+import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
+import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.model.SingleMetaData;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
@@ -26,14 +29,14 @@ public interface DataService {
 	 * Description of the method VisalizzaData.
 	 */
 	public abstract ArrayList<SingleRecordInfo> DisplayData();
-	public abstract ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize)throws FilterException;
+	public abstract ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize)throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
 	 */
 	public abstract Stats[] DisplayStatistics();
-	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FilterException;;
-	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FilterException;
+	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
+	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
 	
 	/**
 	 * Description of the method VisulizzaIstruzioni.

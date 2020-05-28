@@ -13,9 +13,6 @@ import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
-
-import it.AleValeProject.Esame2k20.model.SingleMetaData;
 import it.AleValeProject.Esame2k20.model.SingleImage;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 

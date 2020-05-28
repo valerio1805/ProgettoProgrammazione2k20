@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class SingleInstruction {
 	/**
-	 * Description of the property alias.
+	 * Description of the property intro.
 	 */
-	private String intro = "";
+	private String introduzione = "";
 
 	/**
-	 * Description of the property sourceField.
+	 * Description of the property possibilità.
 	 */
 	private ArrayList<String> possibilità = new ArrayList<String>();
 
@@ -17,14 +17,14 @@ public class SingleInstruction {
 	 * @return the intro
 	 */
 	public String getIntroduction() {
-		return intro;
+		return introduzione;
 	}
 
 	/**
 	 * @param intro the intro to set
 	 */
 	public void setIntroduction(String intro) {
-		this.intro = intro;
+		this.introduzione = intro;
 	}
 
 	/**
