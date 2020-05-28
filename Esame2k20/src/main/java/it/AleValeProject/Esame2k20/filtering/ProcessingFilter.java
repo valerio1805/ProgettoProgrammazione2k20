@@ -18,26 +18,12 @@ public class ProcessingFilter {
 		return result;
 	}
 	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize,int i) {
-		Filtering result;
-		
 		int j;
-		Filtering[] filters=init();
+		Filtering[] filters=initialize();
 		for(j=0;j<filters.length;j++)
 			if(filters[j].getOperator().equals(filterToAnalize.getAllFilters().get(i).getOperator()))
 				break;
-		return filters[i];
-		/*
-		switch(filterToAnalize.getAllFilters().get(i).getOperator()) {
-		case "$not":result = new FiltraggioNot(); break;
-		case "$in": result = new FiltraggioIn(); break;
-		case "$nin":result = new FiltraggioNIn(); break;
-		case "$lte":result = new FiltraggioMinUg(); break;
-		case "$lt": result = new FiltraggioMin(); break;
-		case "$gt": result = new FiltraggioMag(); break;
-		case "$gte":result = new FiltraggioMagUg(); break;
-		default:    result = new FiltraggioBet();
-		}
-		return result;*/
+		return filters[j];
 	}
 	
 	public ArrayList<SingleRecordInfo> ApplyFilterGen (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
@@ -73,7 +59,7 @@ public class ProcessingFilter {
 		return result;
 	}
 	
-	private Filtering[] init() {
+	private Filtering[] initialize() {
 		Filtering[] filters = new Filtering[8];
 		filters[0]=new FiltraggioBet();
 		filters[1]=new FiltraggioMag();

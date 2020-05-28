@@ -22,24 +22,29 @@ public class FilterCreation {
 	public TotalFilters TranslateFilter(String body) throws FieldException, FormatException, OperatorException, MismatchTypeFilterException {
 		// Start of user code for method FunzioneUniversale
 		TotalFilters result = new TotalFilters();
+		int i =0;
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 1).equals("{"))
 				throw new FormatException("L'inizio del filtro deve essere \"{\"");
 			// controllo il "macroperatore"
 			String primocampo = RecognizeWord(0, body)[1];
-			if (primocampo.equals("$or"))
+			if (primocampo.equals("$or")) {
 				result.setMacroOperator("$or");
-			else if (primocampo.equals("$and"))
+				i=5;
+			}
+			else if (primocampo.equals("$and")) {
 				result.setMacroOperator("$and");
+				i=6;
+			}
 			else {
 				body = "{ [" + body + "] }";
 				result.setMacroOperator("");
+				i=2;
 			}
 
 			// compilo l'array di classi filter2 finche non leggo }}}, a meno che il
 			// macroperatore non sia ""
-			int i = 1;
 			SingleFilter filterToAdd;
 			do {
 				String[] supportString = new String[2];
@@ -146,6 +151,7 @@ public class FilterCreation {
 				test = true;
 			// controllo che siano inseriti un numero esatto di valori
 		}
+		j--;
 		if (!test)
 			throw new OperatorException(tocheck.getOperator());
 		if (j >= 3 && !((j > 3 && tocheck.getValues().size() == 1) || (j == 3 && tocheck.getValues().size() == 2)))
@@ -154,9 +160,10 @@ public class FilterCreation {
 		int i = 0;
 		for (; i < 11 && test; i++) {
 			if (possibleField.getMetadata().get(i).getAlias().equals(tocheck.getField()))
-				test = true;
+				test = false;
 		}
-		if (!test)
+		i--;
+		if (test)
 			throw new FieldException("inesistente");
 		if (i < 5 || i == 6 || i == 10)
 			throw new FieldException("non utilizzabile per il filtraggio");
