@@ -20,7 +20,7 @@ public class ProcessingFilter {
 	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize,int i) {
 		Filtering result;
 		switch(filterToAnalize.getAllFilters().get(i).getOperator()) {
-		case "$not":result = new FiltraggioNIn(); break;
+		case "$not":result = new FiltraggioNot(); break;
 		case "$in": result = new FiltraggioIn(); break;
 		case "$nin":result = new FiltraggioNIn(); break;
 		case "$lte":result = new FiltraggioMinUg(); break;
