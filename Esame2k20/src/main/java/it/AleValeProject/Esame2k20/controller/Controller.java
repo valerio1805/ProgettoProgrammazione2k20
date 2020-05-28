@@ -54,7 +54,7 @@ public class Controller {
 			
 	}
 	
-	@PostMapping("/GetStats2")
+	@PostMapping("/GetFieldStatsFiltr")
 	public ResponseEntity<Object> getFilteredFieldedStatistic(@RequestBody String filtro, @RequestParam(name="field")String campo ) throws FilterException{
 		return new ResponseEntity<>(dataservice.DisplayStatistics(filtro,campo),HttpStatus.OK);
 	}	
