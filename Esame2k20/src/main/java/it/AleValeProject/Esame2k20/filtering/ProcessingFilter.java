@@ -46,23 +46,22 @@ public class ProcessingFilter {
 	
 	public ArrayList<SingleRecordInfo> ApplyFilterOr (ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize){
 		TotalFilters support;
-		ArrayList<SingleRecordInfo>[] container = new ArrayList[5];
+		ArrayList<SingleRecordInfo> container = new ArrayList<>();
+		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
 		for(int i =0;i<filterToAnalize.getAllFilters().size();i++) {
 			support = new TotalFilters();
 			support.setMacroOperator("");
 			support.setAllFilters(filterToAnalize.getAllFilters().get(i));
-			container[i] = ApplyFilter(database, support);
-		}
-		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
-		for(int i =0;i<container.length;i++)
-			for(int k=0;k<container[i].size();k++) {
+			container = ApplyFilter(database, support);
+			for(int k=0;k<container.size();k++) {
 				if(result.size()==0)
-					result.addAll(container[i]);
+					result.addAll(container);
 				else
 					for(int j =0; j<result.size();j++)
-						if(!(result.get(j).getId().equals(container[i].get(k).getId())))
-							result.addAll(container[i]);
+						if(!(result.get(j).getId().equals(container.get(k).getId())))
+							result.addAll(container);
 			}
+		}
 		return result;
 	}
 	
