@@ -152,7 +152,7 @@ public class FilterCreation {
 			throw new FormatException(tocheck.getField(), tocheck.getValues().size());
 		// controllo che il campo inserito abbia una corrispondenza con quelli esistenti
 		int i = 0;
-		for (; i < 11 && !test; i++) {
+		for (; i < 11 && test; i++) {
 			if (possibleField.getMetadata().get(i).getAlias().equals(tocheck.getField()))
 				test = true;
 		}

@@ -144,7 +144,7 @@ public class DatabaseCreation {
 		        	imagineSupport.setWidth(arraySupport2.getJSONObject(k).getInt("width"));
 		        	imagineSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
 		        	imagineSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
-		        	imagineSupport.setTipo(arraySupport2.getJSONObject(k).getString("type"));
+		        	imagineSupport.setType(arraySupport2.getJSONObject(k).getString("type"));
 		        	recordSupport.setImmagini(imagineSupport);
 		        }
 		        

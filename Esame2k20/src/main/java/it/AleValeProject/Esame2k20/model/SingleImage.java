@@ -105,7 +105,7 @@ public class SingleImage {
 	 * Sets a value to attribute type. 
 	 * @param newType 
 	 */
-	public void setTipo(String newType) {
+	public void setType(String newType) {
 		this.type = newType;
 	}
 
