@@ -21,10 +21,10 @@ public class Stats extends StatsCreation{
 		examinedImages=support.size();
 		statistics.put("min", ComputeMin(recordToPass, this.statsField));
 		statistics.put("max", ComputeMax(recordToPass, this.statsField));
-		statistics.put("somma", ComputeSum(recordToPass, this.statsField));
-		statistics.put("media", ComputeAverage(recordToPass, this.statsField));
-		statistics.put("varianza", ComputeVariance(recordToPass, this.statsField));
-		statistics.put("deviazione standard",Math.pow(ComputeVariance(recordToPass,this.statsField),0.5));
+		statistics.put("sum", ComputeSum(recordToPass, this.statsField));
+		statistics.put("average", ComputeAverage(recordToPass, this.statsField));
+		statistics.put("variance", ComputeVariance(recordToPass, this.statsField));
+		statistics.put("standard deviation",Math.pow(ComputeVariance(recordToPass,this.statsField),0.5));
 	}
 	public String getStatsField() {
 		return statsField;

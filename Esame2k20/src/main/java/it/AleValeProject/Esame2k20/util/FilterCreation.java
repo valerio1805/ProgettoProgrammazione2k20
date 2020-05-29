@@ -17,7 +17,7 @@ public class FilterCreation {
 		try {
 			// la prima char deve essere una '{'
 			if (!body.substring(0, 1).equals("{"))
-				throw new FormatException("L'inizio del filtro deve essere \"{\"");
+				throw new FormatException("The start of the field must be \"{\"");
 			// controllo il "macroperatore"
 			String primocampo = RecognizeWord(0, body)[1];
 			if (primocampo.equals("$or")) {
@@ -53,10 +53,10 @@ public class FilterCreation {
 
 				// trovo il/i valori
 				if (body.charAt(i) != ':')
-					throw new FormatException("Non sono presenti correttamente i \":\" prima dei valori");
+					throw new FormatException("There arent't \":\" before the values");
 				i++;
 				if (body.charAt(i) != ' ')
-					throw new FormatException("Tra i due punti e i valori deve essere presente uno spazio");
+					throw new FormatException("Between the ':' and the values there must be a space");
 				i++;
 				// in caso ci sia un array
 				if (body.charAt(i) == '[') {
@@ -87,7 +87,7 @@ public class FilterCreation {
 				result.setAllFilters(filterToAdd);
 				i++;
 				if (body.charAt(i) != '}')
-					throw new FormatException("Il filtro non presenta una parantesi graffa \"}\"");
+					throw new FormatException("The filter doesn't have a \"}\"");
 				i++;
 
 				if (body.charAt(i) == '}' || body.charAt(i + 1) == '}')
@@ -95,7 +95,7 @@ public class FilterCreation {
 
 			} while (!result.getMacroOperator().equals(""));
 		} catch (StringIndexOutOfBoundsException e) {
-			throw new FormatException("Il filtro inserito non è completo");
+			throw new FormatException("The filter is incomplete");
 		}
 		return result;
 	}
@@ -118,7 +118,7 @@ public class FilterCreation {
 			result[0] = "" + i;
 			result[1] = (support.split("\""))[1];
 		} catch (Exception e) {
-			throw new FormatException("Il filtro non presenta correttamente i caratteri \"{\" o \":\" ");
+			throw new FormatException("The field doesn't have correctly \"{\" or \":\" ");
 		}
 		return result;
 	}
@@ -155,9 +155,9 @@ public class FilterCreation {
 		}
 		i--;
 		if (test)
-			throw new FieldException("inesistente");
+			throw new FieldException("doesn't exist");
 		if (i < 5 || i == 6 || i == 10)
-			throw new FieldException("non utilizzabile per il filtraggio");
+			throw new FieldException("it is no usefull for the field");
 		// per i campi che richiedono un numero verifico il format
 		if (i > 6 && i < 10) {
 			try {
@@ -165,7 +165,7 @@ public class FilterCreation {
 				for (int x = 0; x < tocheck.getValues().size(); x++)
 					tryToConvertInNumber = Double.parseDouble(tocheck.getValues().get(x));
 			} catch (NumberFormatException a) {
-				throw new MismatchTypeFilterException("Operatore e valori inseriti incompatibili");
+				throw new MismatchTypeFilterException("Mismatch between operator and value added");
 			}
 		}
 	}
