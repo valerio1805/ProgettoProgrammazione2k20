@@ -24,8 +24,7 @@ public class DataServiceImpl implements DataService {
 	 * Description of the property database.
 	 */
 	public ArrayList<SingleRecordInfo> database = new ArrayList<>();
-	private MetadataCreation metadata = new MetadataCreation();;
-	private Stats[] statistics = new Stats[3];
+	private MetadataCreation metadata = new MetadataCreation();	private Stats[] statistics = new Stats[3];
 	private InstructionCreation instructions = new InstructionCreation();
 	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
 	private FilterCreation recognizer = new FilterCreation();
