@@ -6,7 +6,7 @@ public class FormatException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 	public FormatException(String wrongField, int wrongValue) {
-		super("Per il campo "+wrongField+" non è valida l'espressione: il numero di parametri inseriti è errato ("+wrongValue+")");
+		super("For the field "+wrongField+" the expression is not valid: wrong parameter number ("+wrongValue+")");
 		//new ResponseStatusException(HttpStatus.BAD_REQUEST, "Filtro scritto male");
 	}
 	public FormatException(String toDisplay) {

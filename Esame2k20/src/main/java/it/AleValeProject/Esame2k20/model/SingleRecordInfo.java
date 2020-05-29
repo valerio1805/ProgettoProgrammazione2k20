@@ -19,22 +19,22 @@ public class SingleRecordInfo {
 	/**
 	 * Description of the property idAutore.
 	 */
-	private String idAutore = "";
+	private String idAuthor = "";
 
 	/**
 	 * Description of the property dataCreazione.
 	 */
-	private String dataCreazione = "";
+	private String dataCreation = "";
 
 	/**
 	 * Description of the property linguaggio.
 	 */
-	private String linguaggio = "";
+	private String language = "";
 
 	/**
 	 * Description of the property sorgente.
 	 */
-	private String sorgente = "";
+	private String source = "";
 	
 	/**
 	 * Description of the property text.
@@ -49,7 +49,7 @@ public class SingleRecordInfo {
 	/**
 	 * Description of the property immagini.
 	 */
-	private ArrayList<SingleImage> immagini = new ArrayList<SingleImage>();
+	private ArrayList<SingleImage> images = new ArrayList<SingleImage>();
 	/**
 	 * Returns id.
 	 * @return id 
@@ -71,23 +71,23 @@ public class SingleRecordInfo {
 	 * @return idAutore 
 	 */
 	public String getIdAutore() {
-		return this.idAutore;
+		return this.idAuthor;
 	}
 
 	/**
 	 * Sets a value to attribute idAutore. 
 	 * @param newIdAutore 
 	 */
-	public void setIdAutore(String newIdAutore) {
-		this.idAutore = newIdAutore;
+	public void setIdAuthor(String newIdAutore) {
+		this.idAuthor = newIdAutore;
 	}
 
 	/**
 	 * Returns dataCreazione.
 	 * @return dataCreazione 
 	 */
-	public String getDataCreazione() {
-		return this.dataCreazione;
+	public String getDataCreation() {
+		return this.dataCreation;
 	}
 	
 	/**
@@ -107,40 +107,40 @@ public class SingleRecordInfo {
 	 * Sets a value to attribute dataCreazione. 
 	 * @param newDataCreazione 
 	 */
-	public void setDataCreazione(String newDataCreazione) {
-		this.dataCreazione = newDataCreazione;
+	public void setDataCreation(String newDataCreazione) {
+		this.dataCreation = newDataCreazione;
 	}
 
 	/**
 	 * Returns linguaggio.
 	 * @return linguaggio 
 	 */
-	public String getLinguaggio() {
-		return this.linguaggio;
+	public String getLanguage() {
+		return this.language;
 	}
 
 	/**
 	 * Sets a value to attribute linguaggio. 
 	 * @param newLinguaggio 
 	 */
-	public void setLinguaggio(String newLinguaggio) {
-		this.linguaggio = newLinguaggio;
+	public void setLanguage(String newLinguaggio) {
+		this.language = newLinguaggio;
 	}
 
 	/**
 	 * Returns sorgente.
 	 * @return sorgente 
 	 */
-	public String getSorgente() {
-		return this.sorgente;
+	public String getSource() {
+		return this.source;
 	}
 
 	/**
 	 * Sets a value to attribute sorgente. 
 	 * @param newSorgente 
 	 */
-	public void setSorgente(String newSorgente) {
-		this.sorgente = newSorgente;
+	public void setSource(String newSource) {
+		this.source = newSource;
 	}
 
 	/**
@@ -155,8 +155,8 @@ public class SingleRecordInfo {
 	 * Returns immagini.
 	 * @return immagini 
 	 */
-	public ArrayList<SingleImage> getImmagini() {
-		return this.immagini;
+	public ArrayList<SingleImage> getImages() {
+		return this.images;
 	}
 	
 	public void setHashtag(String s)
@@ -164,8 +164,8 @@ public class SingleRecordInfo {
 		if(!(hashtags.contains(s)))
 			hashtags.add(s);
 	}
-	public void setImmagini(SingleImage imm)
+	public void setImages(SingleImage imm)
 	{
-		immagini.add(imm);
+		images.add(imm);
 	}
 }

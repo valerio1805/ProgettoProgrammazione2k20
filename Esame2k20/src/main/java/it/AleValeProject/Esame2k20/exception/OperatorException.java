@@ -7,7 +7,7 @@ public class OperatorException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	public OperatorException(String wrongOperator) {
-		super("L'operatore "+wrongOperator+" non è corretto");
+		super("The operator "+wrongOperator+" isn't correct");
 	}
 
 

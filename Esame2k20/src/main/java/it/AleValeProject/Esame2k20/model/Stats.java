@@ -10,7 +10,7 @@ public class Stats extends StatsCreation{
 	/**
 	 * Description of the property media.
 	 */
-	private int ImmaginiEsaminate;
+	private int examinedImages;
 	private String statsField;
 
 	private HashMap<String, Double> statistics = new HashMap<String, Double>();
@@ -18,7 +18,7 @@ public class Stats extends StatsCreation{
 	public Stats(ArrayList<SingleRecordInfo> recordToPass,String fieldToPass) {
 		this.statsField=fieldToPass;
 		ArrayList<Double> support = ValueListOfImmagini(recordToPass, this.statsField);
-		ImmaginiEsaminate=support.size();
+		examinedImages=support.size();
 		statistics.put("min", ComputeMin(recordToPass, this.statsField));
 		statistics.put("max", ComputeMax(recordToPass, this.statsField));
 		statistics.put("somma", ComputeSum(recordToPass, this.statsField));
@@ -33,6 +33,6 @@ public class Stats extends StatsCreation{
 		return statistics;
 	}
 	public int getNumberOfExaminedImages() {
-		return ImmaginiEsaminate;
+		return examinedImages;
 	}
 }

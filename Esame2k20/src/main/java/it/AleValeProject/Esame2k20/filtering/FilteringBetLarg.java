@@ -12,7 +12,7 @@ class FilteringBetLarg implements Filtering {
 		return operator;
 	}
 
-	private String field = "larghezza";
+	private String field = "width";
 
 	public String getField() {
 		return field;
@@ -31,9 +31,9 @@ class FilteringBetLarg implements Filtering {
 			min = num1;
 		}
 			
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getWidth()
-					&& max > recordToPass.getImmagini().get(i).getWidth()))
+		for (int i = 0; i < recordToPass.getImages().size(); i++)
+			if (!(min < recordToPass.getImages().get(i).getWidth()
+					&& max > recordToPass.getImages().get(i).getWidth()))
 				return false;
 		return true;
 	}

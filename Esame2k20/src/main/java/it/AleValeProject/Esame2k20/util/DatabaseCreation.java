@@ -99,11 +99,11 @@ public class DatabaseCreation extends SingleMetadata{
 				JSONArray arraySupport = objectSupport.getJSONArray("data");
 		        for (int j = 0; j < arraySupport.length(); j++) {
 		        
-		        	recordSupport.setIdAutore(arraySupport.getJSONObject(j).getString("author_id"));
+		        	recordSupport.setIdAuthor(arraySupport.getJSONObject(j).getString("author_id"));
 		        	recordSupport.setId(arraySupport.getJSONObject(j).getString("id"));
-			        recordSupport.setDataCreazione(arraySupport.getJSONObject(j).getString("created_at"));
-			        recordSupport.setLinguaggio(arraySupport.getJSONObject(j).getString("lang"));
-			        recordSupport.setSorgente(arraySupport.getJSONObject(j).getString("source"));
+			        recordSupport.setDataCreation(arraySupport.getJSONObject(j).getString("created_at"));
+			        recordSupport.setLanguage(arraySupport.getJSONObject(j).getString("lang"));
+			        recordSupport.setSource(arraySupport.getJSONObject(j).getString("source"));
 			        recordSupport.setText(arraySupport.getJSONObject(j).getString("text"));
 		        
 			        if(toParse[i].contains("hashtags")) {
@@ -124,7 +124,7 @@ public class DatabaseCreation extends SingleMetadata{
 		        	imagineSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
 		        	imagineSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
 		        	imagineSupport.setType(arraySupport2.getJSONObject(k).getString("type"));
-		        	recordSupport.setImmagini(imagineSupport);
+		        	recordSupport.setImages(imagineSupport);
 		        }
 		        
 		        informations.add(recordSupport);

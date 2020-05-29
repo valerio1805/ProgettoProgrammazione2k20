@@ -7,7 +7,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 class FilteringBetAlt implements Filtering {
 
 	private String operator = "$bt";
-	private String field = "altezza";
+	private String field = "height";
 
 	public String getField() {
 		return field;
@@ -30,8 +30,8 @@ class FilteringBetAlt implements Filtering {
 			max = num2;
 			min = num1;
 		}
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getHeight() && max > recordToPass.getImmagini().get(i).getHeight()))
+		for (int i = 0; i < recordToPass.getImages().size(); i++)
+			if (!(min < recordToPass.getImages().get(i).getHeight() && max > recordToPass.getImages().get(i).getHeight()))
 				return false;
 		return true;
 	}

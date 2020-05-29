@@ -8,8 +8,8 @@ class FilteringMinPix implements Filtering {
 
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(Double.parseDouble(valueToPass.get(0)) >= recordToPass.getImmagini().get(i).getMegapixel()))
+		for (int i = 0; i < recordToPass.getImages().size(); i++)
+			if (!(Double.parseDouble(valueToPass.get(0)) >= recordToPass.getImages().get(i).getMegapixel()))
 				return false;
 		return true;
 	}

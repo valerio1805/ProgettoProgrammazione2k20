@@ -32,8 +32,8 @@ public class DataServiceImpl implements DataService {
 	 */
 	public DataServiceImpl() throws DeleteFileException {
 		database = databaseCreator.SavingInformation();
-		statistics[0] = new Stats(this.database, "larghezza");
-		statistics[1] = new Stats(this.database, "altezza");
+		statistics[0] = new Stats(this.database, "width");
+		statistics[1] = new Stats(this.database, "height");
 		statistics[2] = new Stats(this.database, "megapixel");
 	}
 
@@ -62,8 +62,8 @@ public class DataServiceImpl implements DataService {
 	}
 
 	public Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
-		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "larghezza");
-		filteredStatistics[1] = new Stats(FindFilteredDatabase(filterToRecognize), "altezza");
+		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "width");
+		filteredStatistics[1] = new Stats(FindFilteredDatabase(filterToRecognize), "height");
 		filteredStatistics[2] = new Stats(FindFilteredDatabase(filterToRecognize), "megapixel");
 		return filteredStatistics;
 	}
@@ -102,13 +102,13 @@ public class DataServiceImpl implements DataService {
 	
 	private String RecognizeField(String field) throws StatsParamException
 	{
-		if (field.equals("\"larghezza\""))
-			return "larghezza";
-		if (field.equals("\"altezza\""))
-			return "altezza";
+		if (field.equals("\"width\""))
+			return "width";
+		if (field.equals("\"height\""))
+			return "height";
 		if (field.equals("\"megapixel\""))
 			return "megapixel";
 		else
-			throw new StatsParamException("Campo del quale richiedere le stats non valido");
+			throw new StatsParamException("Field not valid for the stats");
 	}
 }

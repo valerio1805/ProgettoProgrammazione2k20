@@ -6,32 +6,32 @@ public class SingleInstruction {
 	/**
 	 * Description of the property intro.
 	 */
-	private String introduzione = "";
+	private String introduction = "";
 
 	/**
 	 * Description of the property possibilità.
 	 */
-	private ArrayList<String> possibilità = new ArrayList<String>();
+	private ArrayList<String> possibilities = new ArrayList<String>();
 
 	/**
 	 * @return the intro
 	 */
 	public String getIntroduction() {
-		return introduzione;
+		return introduction;
 	}
 
 	/**
 	 * @param intro the intro to set
 	 */
 	 public void setIntroduction(String intro) {
-		this.introduzione = intro;
+		this.introduction = intro;
 	}
 
 	/**
 	 * @return the possibilità
 	 */
 	public ArrayList<String> getPossibility() {
-		return possibilità;
+		return possibilities;
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class SingleInstruction {
 	 */
 	 public void setPossibility(String[] possibility) {
 		for(int i=0;i<possibility.length;i++)
-			this.possibilità.add(possibility[i]);
+			this.possibilities.add(possibility[i]);
 	}
 	
 	

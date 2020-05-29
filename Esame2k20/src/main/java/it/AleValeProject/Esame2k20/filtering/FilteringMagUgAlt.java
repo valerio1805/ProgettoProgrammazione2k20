@@ -12,15 +12,15 @@ class FilteringMagUgAlt implements Filtering {
 		return operator;
 	}
 
-	private String field = "altezza";
+	private String field = "height";
 
 	public String getField() {
 		return field;
 	}
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(Double.parseDouble(valueToPass.get(0)) <= recordToPass.getImmagini().get(i).getHeight()))
+		for (int i = 0; i < recordToPass.getImages().size(); i++)
+			if (!(Double.parseDouble(valueToPass.get(0)) <= recordToPass.getImages().get(i).getHeight()))
 				return false;
 	return true;
 	}

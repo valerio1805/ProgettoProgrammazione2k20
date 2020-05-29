@@ -81,13 +81,13 @@ public class StatsCreation {
 	public ArrayList<Double> ValueListOfImmagini(ArrayList<SingleRecordInfo> data, String field){
 		ArrayList<Double> result = new ArrayList<Double>();
 		for(int i =0; i < data.size();i++) {
-			for(int j=0;j<data.get(i).getImmagini().size();j++)
-				if(field.equals("altezza"))
-					result.add((double)data.get(i).getImmagini().get(j).getHeight());
-				else if(field.equals("larghezza"))
-					result.add((double)data.get(i).getImmagini().get(j).getWidth());
+			for(int j=0;j<data.get(i).getImages().size();j++)
+				if(field.equals("height"))
+					result.add((double)data.get(i).getImages().get(j).getHeight());
+				else if(field.equals("width"))
+					result.add((double)data.get(i).getImages().get(j).getWidth());
 				else if(field.equals("megapixel"))
-					result.add(data.get(i).getImmagini().get(j).getMegapixel());
+					result.add(data.get(i).getImages().get(j).getMegapixel());
 		}
 		return result;
 	}

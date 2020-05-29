@@ -30,9 +30,9 @@ class FilteringBetPix implements Filtering {
 			max = num2;
 			min = num1;
 		}
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
-					&& max > recordToPass.getImmagini().get(i).getMegapixel()))
+		for (int i = 0; i < recordToPass.getImages().size(); i++)
+			if (!(min < recordToPass.getImages().get(i).getMegapixel()
+					&& max > recordToPass.getImages().get(i).getMegapixel()))
 				return false;
 		return true;
 	}
