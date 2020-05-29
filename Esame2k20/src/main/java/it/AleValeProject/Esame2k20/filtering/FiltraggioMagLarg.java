@@ -1,11 +1,10 @@
-package it.AleValeProject.Esame2k20.filtering.aritm;
+package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMagLarg implements Filtering {
+class FiltraggioMagLarg implements Filtering {
 
 	private String operator = "$gt";
 

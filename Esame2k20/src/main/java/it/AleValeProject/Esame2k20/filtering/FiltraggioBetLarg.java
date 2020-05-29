@@ -1,11 +1,10 @@
-package it.AleValeProject.Esame2k20.filtering.aritm;
+package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioBetPix implements Filtering {
+class FiltraggioBetLarg implements Filtering {
 
 	private String operator = "$bt";
 
@@ -13,7 +12,7 @@ public class FiltraggioBetPix implements Filtering {
 		return operator;
 	}
 
-	private String field = "megapixel";
+	private String field = "larghezza";
 
 	public String getField() {
 		return field;
@@ -31,9 +30,10 @@ public class FiltraggioBetPix implements Filtering {
 			max = num2;
 			min = num1;
 		}
+			
 		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
-					&& max > recordToPass.getImmagini().get(i).getMegapixel()))
+			if (!(min < recordToPass.getImmagini().get(i).getWidth()
+					&& max > recordToPass.getImmagini().get(i).getWidth()))
 				return false;
 		return true;
 	}

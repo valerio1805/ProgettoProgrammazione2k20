@@ -1,25 +1,10 @@
-package it.AleValeProject.Esame2k20.filtering.logic;
+package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 public class FiltraggioNot implements Filtering {
-
-	// Start of user code (user defined attributes for FiltraggioNot)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public FiltraggioNot() {
-		// Start of user code constructor for FiltraggioNot)
-		super();
-		// End of user code
-	}
-
 	private String operator="$not";
 	private String field="hashtags[]";
 	public String getField(){
@@ -48,11 +33,5 @@ public class FiltraggioNot implements Filtering {
 		if(find)
 			return false;
 		return true;
-		
 	}
-
-	// Start of user code (user defined methods for FiltraggioNot)
-
-	// End of user code
-
 }

@@ -1,23 +1,22 @@
-package it.AleValeProject.Esame2k20.filtering.aritm;
+package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioBetAlt implements Filtering {
+class FiltraggioBetPix implements Filtering {
 
 	private String operator = "$bt";
-	private String field = "altezza";
-
-	public String getField() {
-		return field;
-	}
 
 	public String getOperator() {
 		return operator;
 	}
 
+	private String field = "megapixel";
+
+	public String getField() {
+		return field;
+	}
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));
@@ -32,7 +31,8 @@ public class FiltraggioBetAlt implements Filtering {
 			min = num1;
 		}
 		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getHeight() && max > recordToPass.getImmagini().get(i).getHeight()))
+			if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
+					&& max > recordToPass.getImmagini().get(i).getMegapixel()))
 				return false;
 		return true;
 	}

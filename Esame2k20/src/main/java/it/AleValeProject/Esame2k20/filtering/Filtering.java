@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public interface Filtering {
+interface Filtering {
 	// Start of user code (user defined attributes for Filtraggio)
 
 	// End of user code

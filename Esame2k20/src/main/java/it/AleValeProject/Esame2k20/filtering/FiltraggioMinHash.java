@@ -1,32 +1,17 @@
-package it.AleValeProject.Esame2k20.filtering.aritm;
+package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMagHash implements Filtering {
-
-	// Start of user code (user defined attributes for FiltraggioMag)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public FiltraggioMagHash() {
-		// Start of user code constructor for FiltraggioMag)
-		super();
-		// End of user code
-	}
-
-	private String operator = "$gt";
-
+class FiltraggioMinHash implements Filtering {
 	private String field = "hashtags[]";
 
 	public String getField() {
 		return field;
 	}
+	private String operator = "$lt";
+
 	public String getOperator() {
 		return operator;
 	}
@@ -39,7 +24,7 @@ public class FiltraggioMagHash implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
+		if (recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
 			return true;
 		else
 			return false;
