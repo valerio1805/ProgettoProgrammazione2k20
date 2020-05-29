@@ -14,22 +14,6 @@ public class TotalFilters {
 	 */
 	private ArrayList<SingleFilter> allFilters = new ArrayList<SingleFilter>();
 
-	// Start of user code (user defined attributes for FilterField)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public TotalFilters() {
-		// Start of user code constructor for FilterField)
-		super();
-		// End of user code
-	}
-
-	// Start of user code (user defined methods for FilterField)
-
-	// End of user code
 	/**
 	 * Returns macroOperator.
 	 * @return macroOperator 

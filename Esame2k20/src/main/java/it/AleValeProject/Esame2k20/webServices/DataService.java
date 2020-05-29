@@ -8,6 +8,10 @@ import it.AleValeProject.Esame2k20.model.*;
 @Service
 public interface DataService {
 	/**
+	 * Description of the method VisulizzaIstruzioni.
+	 */
+	public abstract ArrayList<SingleIstruction> DisplayIstructions();
+	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
 	public abstract ArrayList<SingleMetadata> DisplayMetadata();
@@ -20,14 +24,10 @@ public interface DataService {
 
 	/**
 	 * Description of the method VisulizzaStatistiche.
+	 * 
 	 */
 	public abstract Stats[] DisplayStatistics();
-	public abstract Stats DisplayStatistics(String filterToRecognize,String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException ;
 	public abstract Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException;
 	public abstract Stats DisplayFieldStatistics(String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException,StatsParamException ;
-	
-	/**
-	 * Description of the method VisulizzaIstruzioni.
-	 */
-	public abstract ArrayList<SingleIstruction> DisplayInstructions();
+	public abstract Stats DisplayFieldStatistics(String filterToRecognize,String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException ;
 }

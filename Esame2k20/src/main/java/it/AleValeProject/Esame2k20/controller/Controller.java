@@ -24,7 +24,7 @@ public class Controller {
 	
 	@GetMapping("/GetInstructions")
 	public ResponseEntity<Object> getInstruction(){
-		return new ResponseEntity<>(dataservice.DisplayInstructions(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayIstructions(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/GetMetadata")
