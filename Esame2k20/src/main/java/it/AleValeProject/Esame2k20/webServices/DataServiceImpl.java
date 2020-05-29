@@ -56,7 +56,7 @@ public class DataServiceImpl implements DataService {
 		return this.statistics;
 	}
 
-	public Stats DisplayStatistics(String filterToRecognize, String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException {
+	public Stats DisplayFieldStatistics(String filterToRecognize, String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException {
 		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize),RecognizeField(fieldToRecognize));
 		return this.filteredStatistics[0];
 	}
