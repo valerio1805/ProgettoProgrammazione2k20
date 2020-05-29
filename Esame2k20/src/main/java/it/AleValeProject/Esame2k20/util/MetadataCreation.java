@@ -6,27 +6,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import it.AleValeProject.Esame2k20.model.SingleMetaData;
+import it.AleValeProject.Esame2k20.model.SingleMetadata;
 
 public class MetadataCreation {
 
 	/**
 	 * Description of the property metaDati.
 	 */
-	private ArrayList<SingleMetaData> metadata = new ArrayList<SingleMetaData>();
+	private ArrayList<SingleMetadata> metadata = new ArrayList<SingleMetadata>();
 
 	/**
 	 * The constructor.
 	 */
 	public MetadataCreation() {
-		SingleMetaData toAdd;
+		SingleMetadata toAdd;
 		BufferedReader reader;
 		int j=0;
 		try {
 			reader = new BufferedReader(new FileReader("Metadata.txt"));
 			String[] metadataImported= reader.readLine().split(",");
 			while(j<metadataImported.length) {
-				toAdd = new SingleMetaData();
+				toAdd = new SingleMetadata();
 				toAdd.setAlias(metadataImported[j]);
 				j++;
 				toAdd.setSourceField(metadataImported[j]);
@@ -47,7 +47,7 @@ public class MetadataCreation {
 	 * Returns metadata.
 	 * @return metadata 
 	 */
-	public ArrayList<SingleMetaData> getMetadata() {
+	public ArrayList<SingleMetadata> getMetadata() {
 		return this.metadata;
 	}
 }

@@ -108,7 +108,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method DisplayMetadata.
 	 */
-	public ArrayList<SingleMetaData> DisplayMetadata() {
+	public ArrayList<SingleMetadata> DisplayMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
 		return metadata.getMetadata();
@@ -118,7 +118,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method DisplayInstructions.
 	 */
-	public ArrayList<SingleInstruction> DisplayInstructions() {
+	public ArrayList<SingleIstruction> DisplayInstructions() {
 		// Start of user code for method VisulizzaIstruzioni
 		// End of user code
 		return instructions.getInstructionsManual();
