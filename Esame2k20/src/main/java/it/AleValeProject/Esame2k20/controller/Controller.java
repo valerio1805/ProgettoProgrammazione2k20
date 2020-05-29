@@ -53,13 +53,13 @@ public class Controller {
 		return new ResponseEntity<>(dataservice.DisplayFieldStatistics(campo),HttpStatus.OK);
 	}
 	
-	@PostMapping("/GetStatsFiltered")
+	@PostMapping("/GetStats")
 	public ResponseEntity<Object> getFilteredStatistics(@RequestBody String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		return new ResponseEntity<>(dataservice.DisplayStatistics(filter),HttpStatus.OK);
 			
 	}
 	
-	@PostMapping("/GetFieldStatsFiltered")
+	@PostMapping("/GetFieldStats")
 	public ResponseEntity<Object> getFilteredFieldedStatistic(@RequestParam(name="field")String campo,@RequestBody String filtro ) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException{
 		return new ResponseEntity<>(dataservice.DisplayStatistics(filtro,campo),HttpStatus.OK);
 	}	
