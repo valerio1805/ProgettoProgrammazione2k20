@@ -24,8 +24,7 @@ public class DataServiceImpl implements DataService {
 	 * Description of the property database.
 	 */
 	public ArrayList<SingleRecordInfo> database = new ArrayList<>();
-	private MetadataCreation metadata = new MetadataCreation();;
-	private Stats[] statistics = new Stats[3];
+	private MetadataCreation metadata = new MetadataCreation();	private Stats[] statistics = new Stats[3];
 	private InstructionCreation instructions = new InstructionCreation();
 	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
 	private FilterCreation recognizer = new FilterCreation();
@@ -108,7 +107,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method DisplayMetadata.
 	 */
-	public ArrayList<SingleMetaData> DisplayMetadata() {
+	public ArrayList<SingleMetadata> DisplayMetadata() {
 		// Start of user code for method VisulizzaMetadata
 		// End of user code
 		return metadata.getMetadata();
@@ -118,7 +117,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method DisplayInstructions.
 	 */
-	public ArrayList<SingleInstruction> DisplayInstructions() {
+	public ArrayList<SingleIstruction> DisplayInstructions() {
 		// Start of user code for method VisulizzaIstruzioni
 		// End of user code
 		return instructions.getInstructionsManual();

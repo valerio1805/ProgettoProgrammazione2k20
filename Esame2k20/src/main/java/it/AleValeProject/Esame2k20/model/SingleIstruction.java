@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
-public class SingleInstruction {
+public class SingleIstruction {
 	/**
 	 * Description of the property intro.
 	 */

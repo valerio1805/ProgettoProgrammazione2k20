@@ -9,9 +9,9 @@ import it.AleValeProject.Esame2k20.exception.FormatException;
 import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
 import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.exception.StatsParamException;
-import it.AleValeProject.Esame2k20.model.SingleMetaData;
+import it.AleValeProject.Esame2k20.model.SingleMetadata;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
-import it.AleValeProject.Esame2k20.model.SingleInstruction;
+import it.AleValeProject.Esame2k20.model.SingleIstruction;
 import it.AleValeProject.Esame2k20.model.Stats;
 @Service
 public interface DataService {
@@ -23,7 +23,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */
-	public abstract ArrayList<SingleMetaData> DisplayMetadata();
+	public abstract ArrayList<SingleMetadata> DisplayMetadata();
 
 	/**
 	 * Description of the method VisalizzaData.
@@ -42,7 +42,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaIstruzioni.
 	 */
-	public abstract ArrayList<SingleInstruction> DisplayInstructions();
+	public abstract ArrayList<SingleIstruction> DisplayInstructions();
 	
 	
 

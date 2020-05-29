@@ -1,7 +1,7 @@
 package it.AleValeProject.Esame2k20.model;
 
 
-public class SingleMetaData {
+public class SingleMetadata {
 
 	/**
 	 * Description of the property alias.
@@ -18,22 +18,6 @@ public class SingleMetaData {
 	 */
 	private String type = "";
 
-	// Start of user code (user defined attributes for campoMetaD)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public SingleMetaData() {
-		// Start of user code constructor for campoMetaD)
-		super();
-		// End of user code
-	}
-
-	// Start of user code (user defined methods for campoMetaD)
-
-	// End of user code
 	/**
 	 * Returns alias.
 	 * @return alias 

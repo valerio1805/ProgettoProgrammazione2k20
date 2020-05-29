@@ -10,7 +10,11 @@ public class FiltraggioMinUgPix implements Filtering {
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 			for (int i = 0; i < recordToPass.getImmagini().size(); i++)
+<<<<<<< HEAD
 				if (!(recordToPass.getImmagini().get(i).getMegapixel()<=Double.parseDouble(valueToPass.get(0))))
+=======
+				if (!(Double.parseDouble(valueToPass.get(0)) >= recordToPass.getImmagini().get(i).getMegapixel()))
+>>>>>>> branch 'master' of https://github.com/valerio1805/ProgettoProgrammazione2k20.git
 					return false;
 		return true;
 	}
