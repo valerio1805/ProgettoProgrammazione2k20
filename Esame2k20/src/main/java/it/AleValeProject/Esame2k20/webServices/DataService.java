@@ -10,7 +10,7 @@ public interface DataService {
 	/**
 	 * Description of the method VisulizzaIstruzioni.
 	 */
-	public abstract ArrayList<SingleIstruction> DisplayIstructions();
+	public abstract ArrayList<SingleInstruction> DisplayInstructions();
 	/**
 	 * Description of the method VisulizzaMetadata.
 	 */

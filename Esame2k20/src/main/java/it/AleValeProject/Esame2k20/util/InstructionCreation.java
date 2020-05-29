@@ -5,26 +5,26 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import it.AleValeProject.Esame2k20.model.SingleIstruction;
+import it.AleValeProject.Esame2k20.model.SingleInstruction;
 
-public class InstructionCreation extends SingleIstruction {
+public class InstructionCreation extends SingleInstruction {
 
 	/**
 	 * Description of the property istructionsManual.
 	 */
-	private ArrayList<SingleIstruction> istructionsManual = new ArrayList<SingleIstruction>();
+	private ArrayList<SingleInstruction> istructionsManual = new ArrayList<SingleInstruction>();
 
 	/**
 	 * The constructor.
 	 */
 	public InstructionCreation() {
-		SingleIstruction toadd;
+		SingleInstruction toadd;
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("Istruction.txt"));
 			String[] allTheIstructions=reader.readLine().split("£");
 			int j=0;
 			while(j<allTheIstructions.length) {
-				toadd = new SingleIstruction();
+				toadd = new SingleInstruction();
 				toadd.setIntroduction(allTheIstructions[j]);
 				j++;
 				String[] support=allTheIstructions[j].split(";");
@@ -42,7 +42,7 @@ public class InstructionCreation extends SingleIstruction {
 	/**
 	 * @return the istructionsManual
 	 */
-	public ArrayList<SingleIstruction> getInstructionsManual() {
+	public ArrayList<SingleInstruction> getInstructionsManual() {
 		return istructionsManual;
 	}
 }

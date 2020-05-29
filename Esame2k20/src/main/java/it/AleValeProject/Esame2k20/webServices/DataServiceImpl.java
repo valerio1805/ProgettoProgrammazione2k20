@@ -84,7 +84,7 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * Description of the method DisplayInstructions.
 	 */
-	public ArrayList<SingleIstruction> DisplayIstructions() {
+	public ArrayList<SingleInstruction> DisplayInstructions() {
 		return instructions.getInstructionsManual();
 
 	}
