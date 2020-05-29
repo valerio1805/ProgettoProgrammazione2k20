@@ -51,12 +51,6 @@ public class SingleRecordInfo {
 	 */
 	private ArrayList<SingleImage> immagini = new ArrayList<SingleImage>();
 	/**
-	 * The constructor.
-	 */
-	public SingleRecordInfo() {
-		super();
-	}
-	/**
 	 * Returns id.
 	 * @return id 
 	 */
