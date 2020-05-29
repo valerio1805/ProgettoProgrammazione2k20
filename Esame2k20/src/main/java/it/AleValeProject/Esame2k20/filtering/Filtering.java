@@ -14,6 +14,7 @@ public interface Filtering {
 	 */
 	public abstract Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
 	public abstract String getOperator();
+	public abstract String getField();
 
 	// Start of user code (user defined methods for Filtraggio)
 

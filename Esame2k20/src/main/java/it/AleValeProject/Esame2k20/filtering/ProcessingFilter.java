@@ -20,8 +20,8 @@ public class ProcessingFilter {
 	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize,int i) {
 		int j;
 		Filtering[] filters=initialize();
-		for(j=0;j<filters.length;j++)
-			if(filters[j].getOperator().equals(filterToAnalize.getAllFilters().get(i).getOperator()))
+		for(j=0;j<24;j++)
+			if(filters[j].getOperator().equals(filterToAnalize.getAllFilters().get(i).getOperator())&&filters[j].getField().equals(filterToAnalize.getAllFilters().get(i).getField()))
 				break;
 		return filters[j];
 	}
@@ -60,15 +60,30 @@ public class ProcessingFilter {
 	}
 	
 	private Filtering[] initialize() {
-		Filtering[] filters = new Filtering[8];
-		filters[0]=new FiltraggioBetHash();
-		filters[1]=new FiltraggioMagHash();
-		filters[2]=new FiltraggioMagUgHash();
-		filters[3]=new FiltraggioMinHash();
-		filters[4]=new FiltraggioMinUgHash();
-		filters[5]=new FiltraggioIn();
-		filters[6]=new FiltraggioNIn();
-		filters[7]=new FiltraggioNot();
+		Filtering[] filters = new Filtering[24];
+		filters[0]=new FiltraggioBetAlt();
+		filters[1]=new FiltraggioBetHash();
+		filters[2]=new FiltraggioBetLarg();
+		filters[3]=new FiltraggioBetPix();
+		filters[4]=new FiltraggioMinUgAlt();
+		filters[5]=new FiltraggioMinUgHash();
+		filters[6]=new FiltraggioMinUgLarg();
+		filters[7]=new FiltraggioMinUgPix();
+		filters[8]=new FiltraggioMinAlt();
+		filters[9]=new FiltraggioMinHash();
+		filters[10]=new FiltraggioMinLarg();
+		filters[11]=new FiltraggioMinPix();
+		filters[12]=new FiltraggioMagUgAlt();
+		filters[13]=new FiltraggioMagUgHash();
+		filters[14]=new FiltraggioMagUgLarg();
+		filters[15]=new FiltraggioMagUgPix();
+		filters[16]=new FiltraggioMagAlt();
+		filters[17]=new FiltraggioMagHash();
+		filters[18]=new FiltraggioMagLarg();
+		filters[19]=new FiltraggioMagPix();
+		filters[20]=new FiltraggioNIn();
+		filters[21]=new FiltraggioNot();
+		filters[22]=new FiltraggioNIn();	
 		return filters;
 	}
 	

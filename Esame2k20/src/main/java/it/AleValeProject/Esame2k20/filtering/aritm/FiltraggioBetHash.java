@@ -19,6 +19,11 @@ public class FiltraggioBetHash implements Filtering {
 		super();
 		// End of user code
 	}
+	private String field = "hashtags[]";
+
+	public String getField() {
+		return field;
+	}
 
 	private String operator = "$bt";
 
@@ -45,17 +50,10 @@ public class FiltraggioBetHash implements Filtering {
 			max = num2;
 			min = num1;
 		}
-		if (fieldToPass.equals("megapixel"))
-			for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-				if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
-						&& max > recordToPass.getImmagini().get(i).getMegapixel()))
-					return false;
-		if (fieldToPass.equals("hashtags[]"))
-			if (recordToPass.getHashtags().size() < max && recordToPass.getHashtags().size() > min)
-				return true;
-			else
-				return false;
-		return true;
+		if (recordToPass.getHashtags().size() < max && recordToPass.getHashtags().size() > min)
+			return true;
+		else
+			return false;
 	}
 
 	// Start of user code (user defined methods for FiltraggioBetw)

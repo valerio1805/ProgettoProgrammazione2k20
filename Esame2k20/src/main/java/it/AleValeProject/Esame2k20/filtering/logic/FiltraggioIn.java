@@ -19,6 +19,10 @@ public class FiltraggioIn implements Filtering {
 		super();
 		// End of user code
 	}
+	private String field="hashtags[]";
+	public String getField(){
+		return this.field;
+	}
 	private String operator="$in";
 	public String getOperator() {
 		return operator;

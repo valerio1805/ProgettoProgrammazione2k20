@@ -21,6 +21,10 @@ public class FiltraggioNot implements Filtering {
 	}
 
 	private String operator="$not";
+	private String field="hashtags[]";
+	public String getField(){
+		return this.field;
+	}
 	public String getOperator() {
 		return operator;
 	}

@@ -13,6 +13,11 @@ public class FiltraggioBetLarg implements Filtering {
 		return operator;
 	}
 
+	private String field = "larghezza";
+
+	public String getField() {
+		return field;
+	}
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));
@@ -26,11 +31,11 @@ public class FiltraggioBetLarg implements Filtering {
 			max = num2;
 			min = num1;
 		}
-		if (fieldToPass.equals("larghezza"))
-			for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-				if (!(min < recordToPass.getImmagini().get(i).getWidth()
-						&& max > recordToPass.getImmagini().get(i).getWidth()))
-					return false;
+			
+		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
+			if (!(min < recordToPass.getImmagini().get(i).getWidth()
+					&& max > recordToPass.getImmagini().get(i).getWidth()))
+				return false;
 		return true;
 	}
 }

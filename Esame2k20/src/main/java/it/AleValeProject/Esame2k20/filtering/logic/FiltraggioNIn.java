@@ -19,6 +19,10 @@ public class FiltraggioNIn implements Filtering {
 		// End of user code
 	}
 	private String operator="$nin";
+	private String field="hashtags[]";
+	public String getField(){
+		return this.field;
+	}
 	public String getOperator() {
 		return operator;
 	}

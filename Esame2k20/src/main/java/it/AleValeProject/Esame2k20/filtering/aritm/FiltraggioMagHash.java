@@ -22,6 +22,11 @@ public class FiltraggioMagHash implements Filtering {
 
 	private String operator = "$gt";
 
+	private String field = "hashtags[]";
+
+	public String getField() {
+		return field;
+	}
 	public String getOperator() {
 		return operator;
 	}
@@ -34,11 +39,9 @@ public class FiltraggioMagHash implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (fieldToPass.equals("hashtags[]"))
-			if (recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
-				return true;
-			else
-				return false;
-		return true;
+		if (recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
+			return true;
+		else
+			return false;
 	}
 }

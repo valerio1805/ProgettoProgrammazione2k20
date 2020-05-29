@@ -20,6 +20,11 @@ public class FiltraggioMinHash implements Filtering {
 		// End of user code
 	}
 
+	private String field = "hashtags[]";
+
+	public String getField() {
+		return field;
+	}
 	private String operator = "$lt";
 
 	public String getOperator() {
@@ -34,12 +39,10 @@ public class FiltraggioMinHash implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (fieldToPass.equals("hashtags[]"))
-			if (recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
-				return true;
-			else
-				return false;
-		return true;
+		if (recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
+			return true;
+		else
+			return false;
 	}
 
 	// Start of user code (user defined methods for FiltraggioMin)
