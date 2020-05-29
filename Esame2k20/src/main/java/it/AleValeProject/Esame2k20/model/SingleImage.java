@@ -31,23 +31,6 @@ public class SingleImage {
 	 * Description of the property url.
 	 */
 	private String url = "";
-
-	// Start of user code (user defined attributes for Immagine)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public SingleImage() {
-		// Start of user code constructor for Immagine)
-		super();
-		// End of user code
-	}
-
-	// Start of user code (user defined methods for Immagine)
-
-	// End of user code
 	/**
 	 * Returns width.
 	 * @return width 

@@ -4,16 +4,15 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FiltraggioIn implements Filtering {
+public class FilteringNot implements Filtering {
+	private String operator="$not";
 	private String field="hashtags[]";
 	public String getField(){
 		return this.field;
 	}
-	private String operator="$in";
 	public String getOperator() {
 		return operator;
 	}
-
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * @param fieldToPass
@@ -21,16 +20,18 @@ class FiltraggioIn implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		
-		for(int i =0;i<valueToPass.size();i++)
+		boolean find=true;
+		for(int i =0;i<valueToPass.size();i++) {
+			if(find)
+				find=false;
+			else
+				break;
 			for(int j=0; j<recordToPass.getHashtags().size();j++)
-				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(i)))
-					return true;
-		return false;
+				if((recordToPass.getHashtags().get(j).equals(valueToPass.get(i))))
+					find=true;
 		}
-
-	// Start of user code (user defined methods for FiltraggioIn)
-
-	// End of user code
-
+		if(find)
+			return false;
+		return true;
+	}
 }

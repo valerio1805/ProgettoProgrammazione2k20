@@ -4,14 +4,11 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FiltraggioMagHash implements Filtering {
-
-	private String operator = "$gt";
-
-	private String field = "hashtags[]";
-
-	public String getField() {
-		return field;
+public class FilteringNIn implements Filtering {
+	private String operator="$nin";
+	private String field="hashtags[]";
+	public String getField(){
+		return this.field;
 	}
 	public String getOperator() {
 		return operator;
@@ -19,15 +16,15 @@ class FiltraggioMagHash implements Filtering {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * 
 	 * @param fieldToPass
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
-			return true;
-		else
-			return false;
+		for(int i =0;i<valueToPass.size();i++)
+			for(int j=0; j<recordToPass.getHashtags().size();j++)
+				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(i)))
+					return false;
+		return true;
 	}
 }

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioNIn implements Filtering {
-	private String operator="$nin";
+class FilteringIn implements Filtering {
 	private String field="hashtags[]";
 	public String getField(){
 		return this.field;
 	}
+	private String operator="$in";
 	public String getOperator() {
 		return operator;
 	}
@@ -21,10 +21,16 @@ public class FiltraggioNIn implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+		
 		for(int i =0;i<valueToPass.size();i++)
 			for(int j=0; j<recordToPass.getHashtags().size();j++)
 				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(i)))
-					return false;
-		return true;
-	}
+					return true;
+		return false;
+		}
+
+	// Start of user code (user defined methods for FiltraggioIn)
+
+	// End of user code
+
 }

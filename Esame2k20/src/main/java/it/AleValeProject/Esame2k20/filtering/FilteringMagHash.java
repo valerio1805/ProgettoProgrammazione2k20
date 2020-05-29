@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FiltraggioMagUgHash implements Filtering {
-	private String operator = "$gte";
+class FilteringMagHash implements Filtering {
+
+	private String operator = "$gt";
 
 	private String field = "hashtags[]";
 
@@ -24,7 +25,7 @@ class FiltraggioMagUgHash implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (recordToPass.getHashtags().size() >= Double.parseDouble(valueToPass.get(0)))
+		if (recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
 			return true;
 		else
 			return false;

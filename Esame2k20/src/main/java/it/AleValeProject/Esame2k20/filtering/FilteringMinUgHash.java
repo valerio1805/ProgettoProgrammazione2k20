@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FiltraggioMinHash implements Filtering {
+class FilteringMinUgHash implements Filtering {
 	private String field = "hashtags[]";
 
 	public String getField() {
 		return field;
 	}
-	private String operator = "$lt";
+	private String operator = "$lte";
 
 	public String getOperator() {
 		return operator;
@@ -24,9 +24,9 @@ class FiltraggioMinHash implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if (recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
-			return true;
-		else
-			return false;
+			if (recordToPass.getHashtags().size() <= Double.parseDouble(valueToPass.get(0)))
+				return true;
+			else
+				return false;
 	}
 }

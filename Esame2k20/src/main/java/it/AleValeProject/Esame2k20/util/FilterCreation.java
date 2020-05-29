@@ -5,14 +5,6 @@ import it.AleValeProject.Esame2k20.exception.*;
 import it.AleValeProject.Esame2k20.model.SingleFilter;
 
 public class FilterCreation {
-
-	/**
-	 * The constructor.
-	 */
-	public FilterCreation() {
-		super();
-	}
-
 	/**
 	 * Description of the method TranslateFilter.
 	 * 
@@ -20,7 +12,6 @@ public class FilterCreation {
 	 * @throws FilterException
 	 */
 	public TotalFilters TranslateFilter(String body) throws FieldException, FormatException, OperatorException, MismatchTypeFilterException {
-		// Start of user code for method FunzioneUniversale
 		TotalFilters result = new TotalFilters();
 		int i =0;
 		try {
@@ -177,11 +168,5 @@ public class FilterCreation {
 				throw new MismatchTypeFilterException("Operatore e valori inseriti incompatibili");
 			}
 		}
-		// solo se rispetto entrambi i controlli ritorno true
-		// End of user code
 	}
-
-	// Start of user code (user defined methods for CreazioneFiltro)
-
-	// End of user code
 }

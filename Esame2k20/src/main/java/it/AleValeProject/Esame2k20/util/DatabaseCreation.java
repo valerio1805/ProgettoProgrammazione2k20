@@ -15,30 +15,15 @@ import org.json.JSONObject;
 
 import it.AleValeProject.Esame2k20.exception.DeleteFileException;
 import it.AleValeProject.Esame2k20.model.SingleImage;
+import it.AleValeProject.Esame2k20.model.SingleMetadata;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class DatabaseCreation {
-
-	// Start of user code (user defined attributes for DownloadInformazioni)
-
-	// End of user code
-	
-	/**
-	 * The constructor.
-	 */
-	public DatabaseCreation() {
-		// Start of user code constructor for DownloadInformazioni)
-		super();
-		// End of user code
-	}
-
+public class DatabaseCreation extends SingleMetadata{
 	/**
 	 * Description of the method RichiestaId.
 	 * @throws DeleteFileException 
 	 */
 	public String[] RequestId() throws DeleteFileException {
-		// Start of user code for method RichiestaId
-		// End of user code
 		BufferedReader reader;
 		String support;
 		String[] importedId = new String[150];
@@ -48,10 +33,8 @@ public class DatabaseCreation {
 			importedId= support.split(",");
 			
 		}catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			throw new DeleteFileException("File \"IdList.txt\" not found");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return importedId;
@@ -62,8 +45,6 @@ public class DatabaseCreation {
 	 * @throws DeleteFileException 
 	 */
 	public String[] RequestInformation() throws DeleteFileException {
-		// Start of user code for method RichiestaInformazioni
-		// End of user code
 		String[] id =RequestId();
 		String[] info = new String[150];
 		int number=0;
@@ -108,8 +89,6 @@ public class DatabaseCreation {
 	 * @throws DeleteFileException 
 	 */
 	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {
-		// Start of user code for method SalvataggioInformazioni
-		// End of user code
 		String[] toParse=RequestInformation();
 		SingleImage imagineSupport;
 		ArrayList<SingleRecordInfo> informations = new ArrayList<SingleRecordInfo>();
@@ -131,7 +110,7 @@ public class DatabaseCreation {
 			        	JSONObject related = arraySupport.getJSONObject(j).getJSONObject("entities");
 			        	JSONArray hashtagSupport = related.getJSONArray("hashtags");
 			        	for(int k=0;k<hashtagSupport.length();k++)
-			        		recordSupport.setHashatg(hashtagSupport.getJSONObject(k).getString("tag"));
+			        		recordSupport.setHashtag(hashtagSupport.getJSONObject(k).getString("tag"));
 			        }
 		        }
 		        JSONObject objectSupport2 = objectSupport.getJSONObject("includes");
@@ -155,8 +134,5 @@ public class DatabaseCreation {
 			}
 		}
 		return informations;
-	// Start of user code (user defined methods for DownloadInformazioni)
-
-	// End of user code
 	}
 }

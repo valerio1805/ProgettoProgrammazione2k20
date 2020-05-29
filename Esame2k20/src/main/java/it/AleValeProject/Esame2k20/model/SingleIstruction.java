@@ -23,7 +23,7 @@ public class SingleIstruction {
 	/**
 	 * @param intro the intro to set
 	 */
-	public void setIntroduction(String intro) {
+	 public void setIntroduction(String intro) {
 		this.introduzione = intro;
 	}
 
@@ -37,7 +37,7 @@ public class SingleIstruction {
 	/**
 	 * @param possibility the possibilità to set
 	 */
-	public void setPossibility(String[] possibility) {
+	 public void setPossibility(String[] possibility) {
 		for(int i=0;i<possibility.length;i++)
 			this.possibilità.add(possibility[i]);
 	}

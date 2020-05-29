@@ -6,13 +6,6 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 public class StatsCreation {
 	/**
-	 * The constructor.
-	 */
-	public StatsCreation() {
-		super();
-	}
-
-	/**
 	 * Description of the method ComputeAverage.
 	 * 
 	 * @param data

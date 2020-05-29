@@ -18,23 +18,6 @@ public class SingleFilter {
 	 * Description of the property value.
 	 */
 	private ArrayList<String> values = new ArrayList<String>();
-
-	// Start of user code (user defined attributes for Filter2)
-
-	// End of user code
-
-	/**
-	 * The constructor.
-	 */
-	public SingleFilter() {
-		// Start of user code constructor for Filter2)
-		super();
-		// End of user code
-	}
-
-	// Start of user code (user defined methods for Filter2)
-
-	// End of user code
 	/**
 	 * Returns field.
 	 * 

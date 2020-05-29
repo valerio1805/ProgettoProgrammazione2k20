@@ -3,18 +3,10 @@ package it.AleValeProject.Esame2k20.webServices;
 import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 
-import it.AleValeProject.Esame2k20.exception.DeleteFileException;
-import it.AleValeProject.Esame2k20.exception.FieldException;
-import it.AleValeProject.Esame2k20.exception.FormatException;
-import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
-import it.AleValeProject.Esame2k20.exception.OperatorException;
-import it.AleValeProject.Esame2k20.exception.StatsParamException;
+import it.AleValeProject.Esame2k20.exception.*;
 import it.AleValeProject.Esame2k20.filtering.ProcessingFilter;
 import it.AleValeProject.Esame2k20.model.*;
-import it.AleValeProject.Esame2k20.util.DatabaseCreation;
-import it.AleValeProject.Esame2k20.util.FilterCreation;
-import it.AleValeProject.Esame2k20.util.InstructionCreation;
-import it.AleValeProject.Esame2k20.util.MetadataCreation;
+import it.AleValeProject.Esame2k20.util.*;
 
 @Service
 public class DataServiceImpl implements DataService {
@@ -23,11 +15,10 @@ public class DataServiceImpl implements DataService {
 	 * Description of the property database.
 	 */
 	private ArrayList<SingleRecordInfo> database = new ArrayList<>();
-	private MetadataCreation metadata = new MetadataCreation();	private Stats[] statistics = new Stats[3];
+	private MetadataCreation metadata = new MetadataCreation();
+	private Stats[] statistics = new Stats[3];
 	private InstructionCreation instructions = new InstructionCreation();
 	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
-	private FilterCreation recognizer = new FilterCreation();
-	private ProcessingFilter executor = new ProcessingFilter();
 	private Stats[] filteredStatistics = new Stats[3];
 	private Stats statsField;
 	/**
@@ -99,6 +90,8 @@ public class DataServiceImpl implements DataService {
 	}
 
 	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
+		FilterCreation recognizer = new FilterCreation();
+		ProcessingFilter executor = new ProcessingFilter();
 		TotalFilters filtroRiconosciuto= recognizer.TranslateFilter(filtro);
 		if(filtroRiconosciuto.getMacroOperator()=="$or")
 			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	

@@ -69,29 +69,29 @@ public class ProcessingFilter {
 
 	private Filtering[] initialize() {
 		Filtering[] filters = new Filtering[24];
-		filters[0] = new FiltraggioBetAlt();
-		filters[1] = new FiltraggioBetHash();
-		filters[2] = new FiltraggioBetLarg();
-		filters[3] = new FiltraggioBetPix();
-		filters[4] = new FiltraggioMinUgAlt();
-		filters[5] = new FiltraggioMinUgHash();
-		filters[6] = new FiltraggioMinUgLarg();
-		filters[7] = new FiltraggioMinUgPix();
-		filters[8] = new FiltraggioMinAlt();
-		filters[9] = new FiltraggioMinHash();
-		filters[10] = new FiltraggioMinLarg();
-		filters[11] = new FiltraggioMinPix();
-		filters[12] = new FiltraggioMagUgAlt();
-		filters[13] = new FiltraggioMagUgHash();
-		filters[14] = new FiltraggioMagUgLarg();
-		filters[15] = new FiltraggioMagUgPix();
-		filters[16] = new FiltraggioMagAlt();
-		filters[17] = new FiltraggioMagHash();
-		filters[18] = new FiltraggioMagLarg();
-		filters[19] = new FiltraggioMagPix();
-		filters[20] = new FiltraggioNIn();
-		filters[21] = new FiltraggioNot();
-		filters[22] = new FiltraggioIn();
+		filters[0] = new FilteringBetAlt();
+		filters[1] = new FilteringBetHash();
+		filters[2] = new FilteringBetLarg();
+		filters[3] = new FilteringBetPix();
+		filters[4] = new FilteringMinUgAlt();
+		filters[5] = new FilteringMinUgHash();
+		filters[6] = new FilteringMinUgLarg();
+		filters[7] = new FilteringMinUgPix();
+		filters[8] = new FilteringMinAlt();
+		filters[9] = new FilteringMinHash();
+		filters[10] = new FilteringMinLarg();
+		filters[11] = new FilteringMinPix();
+		filters[12] = new FilteringMagUgAlt();
+		filters[13] = new FilteringMagUgHash();
+		filters[14] = new FilteringMagUgLarg();
+		filters[15] = new FilteringMagUgPix();
+		filters[16] = new FilteringMagAlt();
+		filters[17] = new FilteringMagHash();
+		filters[18] = new FilteringMagLarg();
+		filters[19] = new FilteringMagPix();
+		filters[20] = new FilteringNIn();
+		filters[21] = new FilteringNot();
+		filters[22] = new FilteringIn();
 		return filters;
 	}
 

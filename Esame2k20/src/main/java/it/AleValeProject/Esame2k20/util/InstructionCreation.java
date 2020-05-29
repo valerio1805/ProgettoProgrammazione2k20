@@ -5,11 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import it.AleValeProject.Esame2k20.model.SingleMetadata;
 import it.AleValeProject.Esame2k20.model.SingleIstruction;
 
-public class InstructionCreation {
+public class InstructionCreation extends SingleIstruction {
 
 	/**
 	 * Description of the property istructionsManual.
@@ -35,10 +33,8 @@ public class InstructionCreation {
 				istructionsManual.add(toadd);
 			}
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

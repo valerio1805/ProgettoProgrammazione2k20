@@ -50,23 +50,12 @@ public class SingleRecordInfo {
 	 * Description of the property immagini.
 	 */
 	private ArrayList<SingleImage> immagini = new ArrayList<SingleImage>();
-
-	// Start of user code (user defined attributes for Record)
-
-	// End of user code
-
 	/**
 	 * The constructor.
 	 */
 	public SingleRecordInfo() {
-		// Start of user code constructor for Record)
 		super();
-		// End of user code
 	}
-
-	// Start of user code (user defined methods for Record)
-
-	// End of user code
 	/**
 	 * Returns id.
 	 * @return id 
@@ -176,28 +165,13 @@ public class SingleRecordInfo {
 		return this.immagini;
 	}
 	
-	public void setHashatg(String s)
+	public void setHashtag(String s)
 	{
 		if(!(hashtags.contains(s)))
 			hashtags.add(s);
-		//else
-			//lancioEccezione
 	}
 	public void setImmagini(SingleImage imm)
 	{
 		immagini.add(imm);
 	}
-
-	@Override
-	public String toString() {
-		String rit="\nRecordInfo\n [id=" + id + ", idAutore=" + idAutore + ", dataCreazione=" + dataCreazione + ", linguaggio="
-				+ linguaggio + ", sorgente=" + sorgente + ", text=" + text + ", hashtags=" + hashtags + ", immagini="
-				+ immagini + "]";
-		
-		for(int i =0;i<immagini.size();i++)
-			rit+="\n\t"+immagini.get(i).toString();
-		return rit;
-	}
-	
-	
 }

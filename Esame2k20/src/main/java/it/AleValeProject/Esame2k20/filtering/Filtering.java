@@ -5,18 +5,12 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 interface Filtering {
-	// Start of user code (user defined attributes for Filtraggio)
-
-	// End of user code
-
 	/**
-	 * Description of the method Filtra.
+	 * Description of the method FilterFunction.
 	 */
 	public abstract Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
+
 	public abstract String getOperator();
+
 	public abstract String getField();
-
-	// Start of user code (user defined methods for Filtraggio)
-
-	// End of user code
 }

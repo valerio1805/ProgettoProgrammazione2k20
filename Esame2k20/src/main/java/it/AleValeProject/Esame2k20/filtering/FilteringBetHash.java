@@ -4,7 +4,12 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FiltraggioBetPix implements Filtering {
+class FilteringBetHash implements Filtering {
+	private String field = "hashtags[]";
+
+	public String getField() {
+		return field;
+	}
 
 	private String operator = "$bt";
 
@@ -12,12 +17,13 @@ class FiltraggioBetPix implements Filtering {
 		return operator;
 	}
 
-	private String field = "megapixel";
-
-	public String getField() {
-		return field;
-	}
-	@Override
+	/**
+	 * Description of the method Filtra: Boolean.
+	 * 
+	 * @param fieldToPass
+	 * @param valueToPass
+	 * @param recordToPass
+	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));
 		double num2 = Double.parseDouble(valueToPass.get(1));
@@ -30,10 +36,9 @@ class FiltraggioBetPix implements Filtering {
 			max = num2;
 			min = num1;
 		}
-		for (int i = 0; i < recordToPass.getImmagini().size(); i++)
-			if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
-					&& max > recordToPass.getImmagini().get(i).getMegapixel()))
-				return false;
-		return true;
+		if (recordToPass.getHashtags().size() < max && recordToPass.getHashtags().size() > min)
+			return true;
+		else
+			return false;
 	}
 }
