@@ -61,11 +61,11 @@ public class ProcessingFilter {
 	
 	private Filtering[] initialize() {
 		Filtering[] filters = new Filtering[8];
-		filters[0]=new FiltraggioBet();
-		filters[1]=new FiltraggioMag();
-		filters[2]=new FiltraggioMagUg();
-		filters[3]=new FiltraggioMin();
-		filters[4]=new FiltraggioMinUg();
+		filters[0]=new FiltraggioBetHash();
+		filters[1]=new FiltraggioMagHash();
+		filters[2]=new FiltraggioMagUgHash();
+		filters[3]=new FiltraggioMinHash();
+		filters[4]=new FiltraggioMinUgHash();
 		filters[5]=new FiltraggioIn();
 		filters[6]=new FiltraggioNIn();
 		filters[7]=new FiltraggioNot();

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMinUg implements Filtering {
+public class FiltraggioMinUgHash implements Filtering {
 
 	// Start of user code (user defined attributes for FiltraggioMinUg)
 
@@ -14,7 +14,7 @@ public class FiltraggioMinUg implements Filtering {
 	/**
 	 * The constructor.
 	 */
-	public FiltraggioMinUg() {
+	public FiltraggioMinUgHash() {
 		// Start of user code constructor for FiltraggioMinUg)
 		super();
 		// End of user code

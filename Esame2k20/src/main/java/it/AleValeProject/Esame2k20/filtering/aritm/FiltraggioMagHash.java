@@ -5,22 +5,21 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMagUg implements Filtering {
+public class FiltraggioMagHash implements Filtering {
 
-	// Start of user code (user defined attributes for FiltraggioMagUg)
+	// Start of user code (user defined attributes for FiltraggioMag)
 
 	// End of user code
 
 	/**
 	 * The constructor.
 	 */
-	public FiltraggioMagUg() {
-		// Start of user code constructor for FiltraggioMagUg)
+	public FiltraggioMagHash() {
+		// Start of user code constructor for FiltraggioMag)
 		super();
 		// End of user code
 	}
-
-	private String operator="$gte";
+	private String operator="$gt";
 	public String getOperator() {
 		return operator;
 	}
@@ -34,24 +33,26 @@ public class FiltraggioMagUg implements Filtering {
 		
 		if(fieldToPass.equals("altezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getHeight()))
+				if(!(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getHeight()))
 					return false;
 		if(fieldToPass.equals("larghezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getWidth()))
+				if(!(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getWidth()))
 					return false;
 		if(fieldToPass.equals("megapixel"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getMegapixel()))
+				if(!(Double.parseDouble(valueToPass.get(0))<recordToPass.getImmagini().get(i).getMegapixel()))
 					return false;
 		if(fieldToPass.equals("hashtags[]"))
-			if(recordToPass.getHashtags().size() >= Double.parseDouble(valueToPass.get(0)))
+			if(recordToPass.getHashtags().size() > Double.parseDouble(valueToPass.get(0)))
 					return true;
 			else
 				return false;
 		return true;}
 
-	// Start of user code (user defined methods for FiltraggioMagUg)
+	// Start of user code (user defined methods for FiltraggioMag)
 
 	// End of user code
+
+	
 }

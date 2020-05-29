@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.filtering.Filtering;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-public class FiltraggioMin implements Filtering {
+public class FiltraggioMagUgHash implements Filtering {
 
-	// Start of user code (user defined attributes for FiltraggioMin)
+	// Start of user code (user defined attributes for FiltraggioMagUg)
 
 	// End of user code
 
 	/**
 	 * The constructor.
 	 */
-	public FiltraggioMin() {
-		// Start of user code constructor for FiltraggioMin)
+	public FiltraggioMagUgHash() {
+		// Start of user code constructor for FiltraggioMagUg)
 		super();
 		// End of user code
 	}
 
-	private String operator="$lt";
+	private String operator="$gte";
 	public String getOperator() {
 		return operator;
 	}
@@ -31,26 +31,27 @@ public class FiltraggioMin implements Filtering {
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+		
 		if(fieldToPass.equals("altezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getHeight()))
+				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getHeight()))
 					return false;
 		if(fieldToPass.equals("larghezza"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getWidth()))
+				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getWidth()))
 					return false;
 		if(fieldToPass.equals("megapixel"))
 			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getMegapixel()))
+				if(!(Double.parseDouble(valueToPass.get(0))<=recordToPass.getImmagini().get(i).getMegapixel()))
 					return false;
 		if(fieldToPass.equals("hashtags[]"))
-			if(recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
+			if(recordToPass.getHashtags().size() >= Double.parseDouble(valueToPass.get(0)))
 					return true;
 			else
 				return false;
 		return true;}
 
-	// Start of user code (user defined methods for FiltraggioMin)
+	// Start of user code (user defined methods for FiltraggioMagUg)
 
 	// End of user code
 }
