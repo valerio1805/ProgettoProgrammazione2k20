@@ -20,35 +20,27 @@ public class FiltraggioMinHash implements Filtering {
 		// End of user code
 	}
 
-	private String operator="$lt";
+	private String operator = "$lt";
+
 	public String getOperator() {
 		return operator;
 	}
+
 	/**
 	 * Description of the method Filtra: Boolean.
+	 * 
 	 * @param fieldToPass
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		if(fieldToPass.equals("altezza"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getHeight()))
-					return false;
-		if(fieldToPass.equals("larghezza"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getWidth()))
-					return false;
-		if(fieldToPass.equals("megapixel"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(Double.parseDouble(valueToPass.get(0))>=recordToPass.getImmagini().get(i).getMegapixel()))
-					return false;
-		if(fieldToPass.equals("hashtags[]"))
-			if(recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
-					return true;
+		if (fieldToPass.equals("hashtags[]"))
+			if (recordToPass.getHashtags().size() < Double.parseDouble(valueToPass.get(0)))
+				return true;
 			else
 				return false;
-		return true;}
+		return true;
+	}
 
 	// Start of user code (user defined methods for FiltraggioMin)
 

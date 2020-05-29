@@ -20,51 +20,46 @@ public class FiltraggioBetHash implements Filtering {
 		// End of user code
 	}
 
-	private String operator="$bt";
+	private String operator = "$bt";
+
 	public String getOperator() {
 		return operator;
 	}
+
 	/**
 	 * Description of the method Filtra: Boolean.
+	 * 
 	 * @param fieldToPass
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
-		double num1=Double.parseDouble(valueToPass.get(0));
-		double num2=Double.parseDouble(valueToPass.get(1));
+		double num1 = Double.parseDouble(valueToPass.get(0));
+		double num2 = Double.parseDouble(valueToPass.get(1));
 		double min;
 		double max;
-		if(num1>num2) {
-			max=num1;
-			min=num2;
+		if (num1 > num2) {
+			max = num1;
+			min = num2;
+		} else {
+			max = num2;
+			min = num1;
 		}
-		else {
-			max=num2;
-			min=num1;
-		}
-		if(fieldToPass.equals("altezza"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(min<recordToPass.getImmagini().get(i).getHeight() && max>recordToPass.getImmagini().get(i).getHeight()))
+		if (fieldToPass.equals("megapixel"))
+			for (int i = 0; i < recordToPass.getImmagini().size(); i++)
+				if (!(min < recordToPass.getImmagini().get(i).getMegapixel()
+						&& max > recordToPass.getImmagini().get(i).getMegapixel()))
 					return false;
-		if(fieldToPass.equals("larghezza"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(min<recordToPass.getImmagini().get(i).getWidth() && max>recordToPass.getImmagini().get(i).getWidth()))
-					return false;
-		if(fieldToPass.equals("megapixel"))
-			for(int i =0;i<recordToPass.getImmagini().size();i++)
-				if(!(min<recordToPass.getImmagini().get(i).getMegapixel() && max>recordToPass.getImmagini().get(i).getMegapixel()))
-					return false;
-		if(fieldToPass.equals("hashtags[]"))
-			if(recordToPass.getHashtags().size() <max && recordToPass.getHashtags().size() > min)
-					return true;
+		if (fieldToPass.equals("hashtags[]"))
+			if (recordToPass.getHashtags().size() < max && recordToPass.getHashtags().size() > min)
+				return true;
 			else
 				return false;
 		return true;
-		}
+	}
 
 	// Start of user code (user defined methods for FiltraggioBetw)
 
 	// End of user code
-	
+
 }
