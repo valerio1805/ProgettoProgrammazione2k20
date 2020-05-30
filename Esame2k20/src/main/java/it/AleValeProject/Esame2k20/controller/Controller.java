@@ -66,7 +66,7 @@ public class Controller {
 	 * @return the class that contains the data filtered
 	 */
 	@PostMapping("/GetData")
-	public ResponseEntity<Object> getFilteredData(@RequestBody String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
+	public ResponseEntity<Object> getData(@RequestBody String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		return new ResponseEntity<>(dataservice.DisplayData(filter),HttpStatus.OK);
 			
 	}
@@ -87,7 +87,7 @@ public class Controller {
 	 * @return the class that contains the stats of the data filtered
 	 */
 	@PostMapping("/GetStats")
-	public ResponseEntity<Object> getFilteredStatistics(@RequestBody String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
+	public ResponseEntity<Object> getStatistics(@RequestBody String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		return new ResponseEntity<>(dataservice.DisplayStatistics(filter),HttpStatus.OK);
 			
 	}
@@ -107,7 +107,7 @@ public class Controller {
 	 * @return the class that contains the stats of the field selected of the data that satisfy the filtered
 	 */
 	@PostMapping("/GetFieldStats")
-	public ResponseEntity<Object> getFilteredFieldedStatistic(@RequestParam(name="field")String campo,@RequestBody String filtro ) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException{
+	public ResponseEntity<Object> getFieldedStatistic(@RequestParam(name="field")String campo,@RequestBody String filtro ) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException{
 		return new ResponseEntity<>(dataservice.DisplayFieldStatistics(filtro,campo),HttpStatus.OK);
 	}	
 	

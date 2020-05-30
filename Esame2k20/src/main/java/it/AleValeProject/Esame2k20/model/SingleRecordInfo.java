@@ -70,16 +70,16 @@ public class SingleRecordInfo {
 	 * Returns idAutore.
 	 * @return idAutore 
 	 */
-	public String getIdAutore() {
+	public String getIdAuthor() {
 		return this.idAuthor;
 	}
 
 	/**
 	 * Sets a value to attribute idAutore. 
-	 * @param newIdAutore 
+	 * @param newIdAuthor 
 	 */
-	public void setIdAuthor(String newIdAutore) {
-		this.idAuthor = newIdAutore;
+	public void setIdAuthor(String newIdAuthor) {
+		this.idAuthor = newIdAuthor;
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class SingleRecordInfo {
 	}
 
 
-	public void setText(String text) {
-		this.text = text;
+	public void setText(String newText) {
+		this.text = newText;
 	}
 	
 	/**
@@ -121,10 +121,10 @@ public class SingleRecordInfo {
 
 	/**
 	 * Sets a value to attribute linguaggio. 
-	 * @param newLinguaggio 
+	 * @param newLanguage 
 	 */
-	public void setLanguage(String newLinguaggio) {
-		this.language = newLinguaggio;
+	public void setLanguage(String newLanguage) {
+		this.language = newLanguage;
 	}
 
 	/**
@@ -164,8 +164,8 @@ public class SingleRecordInfo {
 		if(!(hashtags.contains(s)))
 			hashtags.add(s);
 	}
-	public void setImages(SingleImage imm)
+	public void setImages(SingleImage newImage)
 	{
-		images.add(imm);
+		images.add(newImage);
 	}
 }

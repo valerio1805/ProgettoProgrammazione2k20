@@ -20,7 +20,7 @@ public class InstructionCreation extends SingleInstruction {
 	public InstructionCreation() {
 		SingleInstruction toadd;
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("Istruction.txt"));
+			BufferedReader reader = new BufferedReader(new FileReader("Instruction.txt"));
 			String[] allTheIstructions=reader.readLine().split("£");
 			int j=0;
 			while(j<allTheIstructions.length) {
