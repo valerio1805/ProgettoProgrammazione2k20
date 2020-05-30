@@ -4,19 +4,33 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * 
+ * @author vale&ale
+ * The class that implements filtring for the field "height" and the operator "$bt"
+ */
 class FilteringBetAlt implements Filtering {
 
 	private String operator = "$bt";
 	private String field = "height";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField() {
 		return field;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));

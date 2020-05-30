@@ -4,25 +4,31 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * 
+ * @author vale&ale
+ * The class that implements filtring for the field "hashtags[]" and the operator "$bt"
+ */
 class FilteringBetHash implements Filtering {
 	private String field = "hashtags[]";
+	private String operator = "$bt";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField() {
 		return field;
 	}
 
-	private String operator = "$bt";
-
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
 	/**
-	 * Description of the method Filtra: Boolean.
-	 * 
-	 * @param fieldToPass
-	 * @param valueToPass
-	 * @param recordToPass
+	 * {@inheritDoc}
 	 */
 	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));

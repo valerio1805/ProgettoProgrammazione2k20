@@ -2,6 +2,12 @@ package it.AleValeProject.Esame2k20;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+/**
+ * 
+ * @author vale&ale
+ * The first class that runs when the app is launched
+ *
+ */
 
 @SpringBootApplication
 public class Esame2k20Application {
