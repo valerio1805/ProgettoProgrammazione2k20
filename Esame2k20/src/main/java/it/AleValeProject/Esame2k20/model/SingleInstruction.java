@@ -2,19 +2,24 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
+/**
+ * The class that describes an instruction
+ * @author vale&ale
+ *
+ */
 public class SingleInstruction {
 	/**
-	 * Description of the property intro.
+	 * The introduction of the instruction.
 	 */
 	private String introduction = "";
 
 	/**
-	 * Description of the property possibilità.
+	 * An array with the different possibilities.
 	 */
 	private ArrayList<String> possibilities = new ArrayList<String>();
 
 	/**
-	 * @return the intro
+	 * @return the introduction
 	 */
 	public String getIntroduction() {
 		return introduction;
@@ -28,14 +33,14 @@ public class SingleInstruction {
 	}
 
 	/**
-	 * @return the possibilità
+	 * @return the possibilities
 	 */
 	public ArrayList<String> getPossibility() {
 		return possibilities;
 	}
 
 	/**
-	 * @param possibility the possibilità to set
+	 * @param possibility to add a possibility to the array
 	 */
 	 public void setPossibility(String[] possibility) {
 		for(int i=0;i<possibility.length;i++)

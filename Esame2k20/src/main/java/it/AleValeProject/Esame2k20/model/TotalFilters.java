@@ -2,15 +2,20 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
+/**
+ * The class that describe totally a filter, with is SingleFilter and is macroOperator
+ * @author vale&ale
+ *
+ */
 public class TotalFilters {
 
 	/**
-	 * Description of the property macroOperatore.
+	 * The macro operator of the TotalFilters.
 	 */
 	private String macroOperator = "";
 
 	/**
-	 * Description of the property tuttiIFiltri.
+	 * An ArrayList with all the SingleFilters of the TotalFilters.
 	 */
 	private ArrayList<SingleFilter> allFilters = new ArrayList<SingleFilter>();
 

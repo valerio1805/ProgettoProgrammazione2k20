@@ -2,52 +2,52 @@
  * 
  */
 package it.AleValeProject.Esame2k20.model;
-
 import java.util.ArrayList;
 
 /**
- * @author vale
+ * The class that descirbes a Record (tweet) of the database
+ * @author vale&ale
  *
  */
 public class SingleRecordInfo {
 
 	/**
-	 * Description of the property id.
+	 * The id of the tweet.
 	 */
 	private String id = "";
 
 	/**
-	 * Description of the property idAutore.
+	 * The author's id.
 	 */
 	private String idAuthor = "";
 
 	/**
-	 * Description of the property dataCreazione.
+	 * When the tweet was made.
 	 */
 	private String dataCreation = "";
 
 	/**
-	 * Description of the property linguaggio.
+	 * A descritpion of the language used in the tweet. 
 	 */
 	private String language = "";
 
 	/**
-	 * Description of the property sorgente.
+	 * Where the tweet was written.
 	 */
 	private String source = "";
 	
 	/**
-	 * Description of the property text.
+	 * the text of the tweet.
 	 */
 	private String text = "";
 
 	/**
-	 * Description of the property hashtags.
+	 * An array that contains the hashtags of the tweet (if they are).
 	 */
 	private ArrayList<String> hashtags = new ArrayList<String>();
 
 	/**
-	 * Description of the property immagini.
+	 * An array that contains tha images of the tweet.
 	 */
 	private ArrayList<SingleImage> images = new ArrayList<SingleImage>();
 	/**

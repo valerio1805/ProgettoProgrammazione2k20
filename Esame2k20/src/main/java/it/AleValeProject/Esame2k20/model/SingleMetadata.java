@@ -1,20 +1,25 @@
 package it.AleValeProject.Esame2k20.model;
 
+/**
+ * The class that describes a metadata
+ * @author vale&ale
+ *
+ */
 
 public class SingleMetadata {
 
 	/**
-	 * Description of the property alias.
+	 * The name of the variable used in the program.
 	 */
 	private String alias = "";
 
 	/**
-	 * Description of the property sourceField.
+	 * The extended name of the field.
 	 */
 	private String sourceField = "";
 
 	/**
-	 * Description of the property type.
+	 * The type of the field.
 	 */
 	private String type = "";
 

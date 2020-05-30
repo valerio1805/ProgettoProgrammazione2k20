@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * 
+ * @author vale&ale
+ * The class that implements filtering for the field "width" and the operator "$gte"
+ */
 class FilteringGteWidth implements Filtering {
 	private String operator = "$gte";
 

@@ -18,10 +18,17 @@ import it.AleValeProject.Esame2k20.model.SingleImage;
 import it.AleValeProject.Esame2k20.model.SingleMetadata;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * The class that manages the creation of the database with the tweet
+ * @author vale&ale
+ *
+ */
 public class DatabaseCreation extends SingleMetadata{
+
 	/**
-	 * Description of the method RichiestaId.
-	 * @throws DeleteFileException 
+	 * The function that reads all the id to use to import tweets.
+	 * @return an Array of string with the all ids.
+	 * @throws DeleteFileException
 	 */
 	private String[] RequestId() throws DeleteFileException {
 		BufferedReader reader;
@@ -41,8 +48,9 @@ public class DatabaseCreation extends SingleMetadata{
 	}
 
 	/**
-	 * Description of the method RichiestaInformazioni.
-	 * @throws DeleteFileException 
+	 * The function that open the connection with the twitter API and reads all thw information about the tweets
+	 * @return an Array of string which contains all the tweets downloaded from Twitter
+	 * @throws DeleteFileException
 	 */
 	private String[] RequestInformation() throws DeleteFileException {
 		String[] id =RequestId();
@@ -85,8 +93,9 @@ public class DatabaseCreation extends SingleMetadata{
 	
 	
 	/**
-	 * Description of the method SalvataggioInformazioni.
-	 * @throws DeleteFileException 
+	 * The function that saving the information of which tweet in a record
+	 * @return An ArrayList with the all record read -> the database
+	 * @throws DeleteFileException
 	 */
 	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {
 		String[] toParse=RequestInformation();

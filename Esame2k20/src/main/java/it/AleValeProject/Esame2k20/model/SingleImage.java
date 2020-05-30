@@ -1,34 +1,39 @@
 package it.AleValeProject.Esame2k20.model;
 
+/**
+ * The class thatr describes an image
+ * @author vale&ale
+ *
+ */
 public class SingleImage {
 
 	/**
-	 * Description of the property width.
+	 * The witdh of the image.
 	 */
 	private Integer width = Integer.valueOf(0);
 
 	/**
-	 * Description of the property height.
+	 * The height of the image.
 	 */
 	private Integer height = Integer.valueOf(0);
 	
 	/**
-	 * Description of the property megapixel.
+	 * The dimensione of the image.
 	 */
 	private Double megapixel = Double.valueOf(0);
 
 	/**
-	 * Description of the property type.
+	 * The type of the media.
 	 */
 	private String type = "";
 
 	/**
-	 * Description of the property idImage.
+	 * The id of the image.
 	 */
 	private String idImage = "";
 
 	/**
-	 * Description of the property url.
+	 * The url where is located the image.
 	 */
 	private String url = "";
 	/**

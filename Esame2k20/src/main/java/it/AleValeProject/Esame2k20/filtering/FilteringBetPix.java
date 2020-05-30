@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * 
+ * @author vale&ale
+ * The class that implements filtering for the field "megapixel" and the operator "$bt"
+ */
+
 class FilteringBetPix implements Filtering {
 
 	private String operator = "$bt";

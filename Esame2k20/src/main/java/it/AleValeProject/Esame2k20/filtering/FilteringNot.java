@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * 
+ * @author vale&ale
+ * The class that implements filtering for the field "hashtags[]" and the operator "$not"
+ */
 public class FilteringNot implements Filtering {
 	private String operator="$not";
 	private String field="hashtags[]";

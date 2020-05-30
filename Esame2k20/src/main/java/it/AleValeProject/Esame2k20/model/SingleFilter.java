@@ -2,22 +2,28 @@ package it.AleValeProject.Esame2k20.model;
 
 import java.util.ArrayList;
 
+/**
+ * The class that describes a filter 
+ * @author vale&ale
+ *
+ */
 public class SingleFilter {
 
 	/**
-	 * Description of the property field.
+	 * The field added by the user.
 	 */
 	private String field = "";
 
 	/**
-	 * Description of the property operator.
+	 * The operator added by the user.
 	 */
 	private String operator = "";
 
 	/**
-	 * Description of the property value.
+	 * The values added by the user.
 	 */
 	private ArrayList<String> values = new ArrayList<String>();
+	
 	/**
 	 * Returns field.
 	 * 
