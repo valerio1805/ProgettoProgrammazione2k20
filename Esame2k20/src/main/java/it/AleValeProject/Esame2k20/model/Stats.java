@@ -17,7 +17,7 @@ public class Stats extends StatsCreation{
 	
 	public Stats(ArrayList<SingleRecordInfo> recordToPass,String fieldToPass) {
 		this.statsField=fieldToPass;
-		ArrayList<Double> support = ValueListOfImmagini(recordToPass, this.statsField);
+		ArrayList<Double> support = ValueListOfImages(recordToPass, this.statsField);
 		examinedImages=support.size();
 		statistics.put("min", ComputeMin(recordToPass, this.statsField));
 		statistics.put("max", ComputeMax(recordToPass, this.statsField));

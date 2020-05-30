@@ -105,17 +105,17 @@ public class FilterCreation {
 	 * 
 	 * @throws FilterException
 	 */
-	private String[] RecognizeWord(int i, String body) throws FormatException {
+	private String[] RecognizeWord(int position, String body) throws FormatException {
 		String[] result = new String[2];
 		try {
-			while (body.charAt(i) != '{')
-				i++;
+			while (body.charAt(position) != '{')
+				position++;
 			String support = new String();
-			while (body.charAt(i) != ':') {
-				support += (body.charAt(i));
-				i++;
+			while (body.charAt(position) != ':') {
+				support += (body.charAt(position));
+				position++;
 			}
-			result[0] = "" + i;
+			result[0] = "" + position;
 			result[1] = (support.split("\""))[1];
 		} catch (Exception e) {
 			throw new FormatException("The field doesn't have correctly \"{\" or \":\" ");

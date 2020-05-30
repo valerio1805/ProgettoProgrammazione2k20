@@ -14,12 +14,11 @@ interface Filtering {
 
 	/**
 	 * The function that return true or false if the the value of recordToPass satisfy the fieldToPass and the valueTopass
-	 * @param fieldToPass The field to control
 	 * @param valueToPass The value of the filter
 	 * @param recordToPass The record where control the field and the value
 	 * @return true/false according to if the record satisfy the filter or not
 	 */
-	public abstract Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
+	public abstract Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass);
 
 	/**
 	 * Getter for the variabile operator

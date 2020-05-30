@@ -23,7 +23,7 @@ class FilteringMinUgHash implements Filtering {
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
-	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 			if (recordToPass.getHashtags().size() <= Double.parseDouble(valueToPass.get(0)))
 				return true;
 			else

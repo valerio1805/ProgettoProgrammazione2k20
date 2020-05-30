@@ -12,7 +12,7 @@ public class InstructionCreation extends SingleInstruction {
 	/**
 	 * Description of the property istructionsManual.
 	 */
-	private ArrayList<SingleInstruction> istructionsManual = new ArrayList<SingleInstruction>();
+	private ArrayList<SingleInstruction> instructionsManual = new ArrayList<SingleInstruction>();
 
 	/**
 	 * The constructor.
@@ -30,7 +30,7 @@ public class InstructionCreation extends SingleInstruction {
 				String[] support=allTheIstructions[j].split(";");
 				toadd.setPossibility(support);
 				j++;
-				istructionsManual.add(toadd);
+				instructionsManual.add(toadd);
 			}
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
@@ -43,6 +43,6 @@ public class InstructionCreation extends SingleInstruction {
 	 * @return the istructionsManual
 	 */
 	public ArrayList<SingleInstruction> getInstructionsManual() {
-		return istructionsManual;
+		return instructionsManual;
 	}
 }

@@ -16,11 +16,10 @@ public class FilteringNIn implements Filtering {
 
 	/**
 	 * Description of the method Filtra: Boolean.
-	 * @param fieldToPass
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
-	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for(int i =0;i<valueToPass.size();i++)
 			for(int j=0; j<recordToPass.getHashtags().size();j++)
 				if(recordToPass.getHashtags().get(j).equals(valueToPass.get(i)))

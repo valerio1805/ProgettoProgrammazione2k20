@@ -11,9 +11,9 @@ public class StatsCreation {
 	 * @param data
 	 * @param field
 	 */
-	public double ComputeAverage(ArrayList<SingleRecordInfo> data, String field) {
+	protected double ComputeAverage(ArrayList<SingleRecordInfo> data, String field) {
 
-		return ComputeSum(data, field) / ValueListOfImmagini(data, field).size();
+		return ComputeSum(data, field) / ValueListOfImages(data, field).size();
 
 	}
 
@@ -23,10 +23,10 @@ public class StatsCreation {
 	 * @param data
 	 * @param field
 	 */
-	public double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
+	protected double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
 		double sum = 0;
-		for (int i = 0; i < ValueListOfImmagini(data, field).size(); i++)
-			sum += ValueListOfImmagini(data, field).get(i);
+		for (int i = 0; i < ValueListOfImages(data, field).size(); i++)
+			sum += ValueListOfImages(data, field).get(i);
 		return sum;
 	}
 
@@ -36,9 +36,9 @@ public class StatsCreation {
 	 * @param data
 	 * @param field
 	 */
-	public double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
+	protected double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
 		double max = Double.MIN_VALUE;
-		ArrayList<Double> support = ValueListOfImmagini(data, field);
+		ArrayList<Double> support = ValueListOfImages(data, field);
 		for (int i = 0; i < support.size(); i++) {
 			if (support.get(i) > max)
 				max = support.get(i);
@@ -52,9 +52,9 @@ public class StatsCreation {
 	 * @param data
 	 * @param field
 	 */
-	public double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
+	protected double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
 		double min = Double.MAX_VALUE;
-		ArrayList<Double> support = ValueListOfImmagini(data, field);
+		ArrayList<Double> support = ValueListOfImages(data, field);
 		for (int i = 0; i < support.size(); i++) {
 			if (support.get(i) < min)
 				min = support.get(i);
@@ -68,17 +68,17 @@ public class StatsCreation {
 	 * @param data
 	 * @param field
 	 */
-	public double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
+	protected double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
 		double variance = 0;
 
-		ArrayList<Double> support = ValueListOfImmagini(data, field);
+		ArrayList<Double> support = ValueListOfImages(data, field);
 		for (int i=0; i<support.size();i++) {
 			variance += Math.pow((support.get(i) - ComputeAverage(data, field)), 2);
 		}
 		return variance / support.size();
 	}
 
-	public ArrayList<Double> ValueListOfImmagini(ArrayList<SingleRecordInfo> data, String field){
+	protected ArrayList<Double> ValueListOfImages(ArrayList<SingleRecordInfo> data, String field){
 		ArrayList<Double> result = new ArrayList<Double>();
 		for(int i =0; i < data.size();i++) {
 			for(int j=0;j<data.get(i).getImages().size();j++)

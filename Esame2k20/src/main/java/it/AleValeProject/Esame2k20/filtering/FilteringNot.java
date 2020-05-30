@@ -19,7 +19,7 @@ public class FilteringNot implements Filtering {
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
-	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		boolean find=true;
 		for(int i =0;i<valueToPass.size();i++) {
 			if(find)

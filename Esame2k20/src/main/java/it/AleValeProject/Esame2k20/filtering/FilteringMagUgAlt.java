@@ -18,7 +18,7 @@ class FilteringMagUgAlt implements Filtering {
 		return field;
 	}
 	@Override
-	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for (int i = 0; i < recordToPass.getImages().size(); i++)
 			if (!(Double.parseDouble(valueToPass.get(0)) <= recordToPass.getImages().get(i).getHeight()))
 				return false;

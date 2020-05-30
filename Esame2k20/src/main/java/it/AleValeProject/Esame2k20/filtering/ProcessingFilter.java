@@ -4,53 +4,44 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import it.AleValeProject.Esame2k20.model.TotalFilters;
+import it.AleValeProject.Esame2k20.model.SingleFilter;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 public class ProcessingFilter {
-	private ArrayList<SingleRecordInfo> ApplyFilter(ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize) {
+	private ArrayList<SingleRecordInfo> ApplyFilter(ArrayList<SingleRecordInfo> database, SingleFilter filterToAnalize) {
 		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
-		Filtering executor = RecognizeOperatorOfFilter(filterToAnalize, 0);
+		Filtering executor = RecognizeOperatorOfFilter(filterToAnalize);
 		for (int i = 0; i < database.size(); i++) {
-			if (executor.FilterFunction(filterToAnalize.getAllFilters().get(0).getField(),
-					filterToAnalize.getAllFilters().get(0).getValues(), database.get(i)))
+			if (executor.FilterFunction(filterToAnalize.getValues(), database.get(i)))
 				result.add(database.get(i));
 		}
 		return result;
 	}
 
-	private Filtering RecognizeOperatorOfFilter(TotalFilters filterToAnalize, int i) {
+	private Filtering RecognizeOperatorOfFilter(SingleFilter filterToAnalize) {
 		int j;
 		Filtering[] filters = initialize();
 		for (j = 0; j < 24; j++)
-			if (filters[j].getOperator().equals(filterToAnalize.getAllFilters().get(i).getOperator())
-					&& filters[j].getField().equals(filterToAnalize.getAllFilters().get(i).getField()))
+			if (filters[j].getOperator().equals(filterToAnalize.getOperator())
+					&& filters[j].getField().equals(filterToAnalize.getField()))
 				break;
 		return filters[j];
 	}
 
 	public ArrayList<SingleRecordInfo> ApplyFilterGen(ArrayList<SingleRecordInfo> database,
 			TotalFilters filterToAnalize) {
-		TotalFilters support;
 		ArrayList<SingleRecordInfo> result = database;
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
-			support = new TotalFilters();
-			support.setMacroOperator("");
-			support.setAllFilters(filterToAnalize.getAllFilters().get(i));
-			result = ApplyFilter(result, support);
+			result = ApplyFilter(result, filterToAnalize.getAllFilters().get(i));
 		}
 		return result;
 	}
 
-	public ArrayList<SingleRecordInfo> ApplyFilterOr(ArrayList<SingleRecordInfo> database,
-			TotalFilters filterToAnalize) {
-		TotalFilters support;
+	public ArrayList<SingleRecordInfo> ApplyFilterOr(ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize) {
 		ArrayList<SingleRecordInfo> container = new ArrayList<SingleRecordInfo>();
 		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
-			support = new TotalFilters();
-			support.setMacroOperator("");
-			support.setAllFilters(filterToAnalize.getAllFilters().get(i));
-			container = ApplyFilter(database, support);
+			container = ApplyFilter(database, filterToAnalize.getAllFilters().get(i));
 			int costant = result.size();
 			if (costant == 0)
 				result.addAll(container);
@@ -94,5 +85,4 @@ public class ProcessingFilter {
 		filters[22] = new FilteringIn();
 		return filters;
 	}
-
 }

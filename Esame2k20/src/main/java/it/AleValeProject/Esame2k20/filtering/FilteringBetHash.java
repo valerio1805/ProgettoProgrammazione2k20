@@ -30,7 +30,7 @@ class FilteringBetHash implements Filtering {
 	/**
 	 * {@inheritDoc}
 	 */
-	public Boolean FilterFunction(String fieldToPass, ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));
 		double num2 = Double.parseDouble(valueToPass.get(1));
 		double min;

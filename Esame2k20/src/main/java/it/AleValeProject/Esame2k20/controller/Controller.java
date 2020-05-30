@@ -39,7 +39,7 @@ public class Controller {
 	 */
 	@GetMapping("/GetInstructions")
 	public ResponseEntity<Object> getInstruction(){
-		return new ResponseEntity<>(dataservice.DisplayInstructions(),dataservice.DisplayNumberOfRun()/*HttpStatus.OK*/);
+		return new ResponseEntity<>(dataservice.DisplayInstructions(),HttpStatus.OK);
 	}
 	
 	/**
