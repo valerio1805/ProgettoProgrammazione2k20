@@ -41,15 +41,15 @@ public class DataServiceImpl implements DataService {
 	/**
 	 * The stats calculated for a particular field insered by the user
 	 */
-	
 	private Stats statsField;
+
 	/**
-	 * Description of the property databaseCreator.
+	 * The variabile that is used to create the databse
 	 */
 	private DatabaseCreation databaseCreator = new DatabaseCreation();
 
 	/**
-	 * The constructor.
+	 * The constructor. Used to create the database and the general stats.
 	 * @throws DeleteFileException 
 	 */
 	public DataServiceImpl() throws DeleteFileException {
@@ -60,29 +60,39 @@ public class DataServiceImpl implements DataService {
 	}
 
 	/**
-	 * Description of the method DisplayData.
+	 *{@inheritDoc}
 	 */
 	public ArrayList<SingleRecordInfo> DisplayData() {
 		return this.database;
 
 	}
 
+	/**
+	 *{@inheritDoc}
+	 */
 	public ArrayList<SingleRecordInfo> DisplayData(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
 		return FindFilteredDatabase(filterToRecognize);
 	}
 
 	/**
-	 * Description of the method DisplayStatistics.
+	 *{@inheritDoc}
 	 */
 	public Stats[] DisplayStatistics() {
 		return this.statistics;
 	}
 
+	
+	/**
+	 *{@inheritDoc}
+	 */
 	public Stats DisplayFieldStatistics(String filterToRecognize, String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException {
 		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize),RecognizeField(fieldToRecognize));
 		return this.filteredStatistics[0];
 	}
 
+	/**
+	 *{@inheritDoc}
+	 */
 	public Stats[] DisplayStatistics(String filterToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException {
 		filteredStatistics[0] = new Stats(FindFilteredDatabase(filterToRecognize), "width");
 		filteredStatistics[1] = new Stats(FindFilteredDatabase(filterToRecognize), "height");
@@ -90,13 +100,17 @@ public class DataServiceImpl implements DataService {
 		return filteredStatistics;
 	}
 	
+	/**
+	 *{@inheritDoc}
+	 */
 	public Stats DisplayFieldStatistics(String fieldToRecognize) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException {
 		statsField = new Stats(database, RecognizeField(fieldToRecognize));
 		return this.statsField;
 	}
 
+
 	/**
-	 * Description of the method DisplayMetadata.
+	 *{@inheritDoc}
 	 */
 	public ArrayList<SingleMetadata> DisplayMetadata() {
 		return metadata.getMetadata();
@@ -104,13 +118,22 @@ public class DataServiceImpl implements DataService {
 	}
 
 	/**
-	 * Description of the method DisplayInstructions.
+	 *{@inheritDoc}
 	 */
 	public ArrayList<SingleInstruction> DisplayInstructions() {
 		return instructions.getInstructionsManual();
 
 	}
 
+	/**
+	 * The function that creates the filter using what the user insered, recognizes the typer of filter and find the records that satisfy the filter
+	 * @param filter
+	 * @return an ArrayList of records that satisfy the filter
+	 * @throws FormatException
+	 * @throws MismatchTypeFilterException
+	 * @throws FieldException
+	 * @throws OperatorException
+	 */
 	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		FilterCreation recognizer = new FilterCreation();
 		ProcessingFilter executor = new ProcessingFilter();
@@ -122,6 +145,13 @@ public class DataServiceImpl implements DataService {
 		return filteredDatabase;
 	}
 	
+	
+	/**
+	 * The function that recognizes the field insered by the user
+	 * @param field
+	 * @return the field of what the program has to calculate the stats
+	 * @throws StatsParamException
+	 */
 	private String RecognizeField(String field) throws StatsParamException
 	{
 		if (field.equals("\"width\""))
