@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringBetLarg implements Filtering {
+class FilteringBetWidth implements Filtering {
 
 	private String operator = "$bt";
 

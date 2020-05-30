@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringMagLarg implements Filtering {
-
-	private String operator = "$gt";
+class FilteringGteWidth implements Filtering {
+	private String operator = "$gte";
 
 	public String getOperator() {
 		return operator;
@@ -18,9 +17,9 @@ class FilteringMagLarg implements Filtering {
 		return field;
 	}
 	@Override
-	public Boolean FilterFunction( ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
+	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for (int i = 0; i < recordToPass.getImages().size(); i++)
-			if (!(Double.parseDouble(valueToPass.get(0)) < recordToPass.getImages().get(i).getWidth()))
+			if (!(Double.parseDouble(valueToPass.get(0)) <= recordToPass.getImages().get(i).getWidth()))
 				return false;
 		return true;
 	}

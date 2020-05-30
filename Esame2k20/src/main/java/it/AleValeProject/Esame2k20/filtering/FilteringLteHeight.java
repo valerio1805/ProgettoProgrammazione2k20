@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringMinAlt implements Filtering {
+class FilteringLteHeight implements Filtering {
 
 	@Override
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for (int i = 0; i < recordToPass.getImages().size(); i++)
-			if (!(Double.parseDouble(valueToPass.get(0)) >= recordToPass.getImages().get(i).getHeight()))
+			if (!(Double.parseDouble(valueToPass.get(0)) > recordToPass.getImages().get(i).getHeight()))
 				return false;
 		return true;
 	}
@@ -19,8 +19,7 @@ class FilteringMinAlt implements Filtering {
 	public String getField() {
 		return field;
 	}
-	public String operator = "$lt";
-	
+	private String operator = "$lte";
 	@Override
 	public String getOperator() {
 		// TODO Auto-generated method stub

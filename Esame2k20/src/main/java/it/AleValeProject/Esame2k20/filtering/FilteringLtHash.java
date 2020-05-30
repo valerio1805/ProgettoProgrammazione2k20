@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringMinHash implements Filtering {
+class FilteringLtHash implements Filtering {
 	private String field = "hashtags[]";
 
 	public String getField() {

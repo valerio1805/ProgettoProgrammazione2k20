@@ -4,23 +4,24 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringMagUgLarg implements Filtering {
-	private String operator = "$gte";
+class FilteringGtHeight implements Filtering {
+
+	private String operator = "$gt";
 
 	public String getOperator() {
 		return operator;
 	}
-
-	private String field = "width";
+	private String field = "height";
 
 	public String getField() {
 		return field;
 	}
+
 	@Override
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for (int i = 0; i < recordToPass.getImages().size(); i++)
-			if (!(Double.parseDouble(valueToPass.get(0)) <= recordToPass.getImages().get(i).getWidth()))
+			if (!(Double.parseDouble(valueToPass.get(0)) < recordToPass.getImages().get(i).getHeight()))
 				return false;
-		return true;
+	return true;
 	}
 }

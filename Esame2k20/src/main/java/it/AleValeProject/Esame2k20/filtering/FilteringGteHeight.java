@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
-class FilteringMagUgAlt implements Filtering {
+class FilteringGteHeight implements Filtering {
 
 	private String operator = "$gte";
 
