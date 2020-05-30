@@ -10,7 +10,6 @@ import it.AleValeProject.Esame2k20.util.*;
 
 @Service
 public class DataServiceImpl implements DataService {
-
 	/**
 	 * Description of the property database.
 	 */
@@ -89,14 +88,14 @@ public class DataServiceImpl implements DataService {
 
 	}
 
-	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filtro) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
+	private ArrayList<SingleRecordInfo> FindFilteredDatabase(String filter) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException{
 		FilterCreation recognizer = new FilterCreation();
 		ProcessingFilter executor = new ProcessingFilter();
-		TotalFilters filtroRiconosciuto= recognizer.TranslateFilter(filtro);
-		if(filtroRiconosciuto.getMacroOperator()=="$or")
-			filteredDatabase = executor.ApplyFilterOr(database,filtroRiconosciuto);	
+		TotalFilters recognizedFilter= recognizer.TranslateFilter(filter);
+		if(recognizedFilter.getMacroOperator()=="$or")
+			filteredDatabase = executor.ApplyFilterOr(database,recognizedFilter);	
 		else
- 			filteredDatabase = executor.ApplyFilterGen(database,filtroRiconosciuto);
+ 			filteredDatabase = executor.ApplyFilterGen(database,recognizedFilter);
 		return filteredDatabase;
 	}
 	

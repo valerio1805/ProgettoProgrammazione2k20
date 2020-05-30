@@ -1,5 +1,6 @@
 package it.AleValeProject.Esame2k20.controller;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
 import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.exception.StatsParamException;
 import it.AleValeProject.Esame2k20.webServices.DataService;
+import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
 
 /**
  * 
@@ -30,14 +32,14 @@ public class Controller {
 	 */
 	@Autowired
 	private DataService dataservice;
-	
 	/**
 	 * The root where you can see the manual of the app
+	 * @param display 
 	 * @return the class that contains the instructions
 	 */
 	@GetMapping("/GetInstructions")
 	public ResponseEntity<Object> getInstruction(){
-		return new ResponseEntity<>(dataservice.DisplayInstructions(),HttpStatus.OK);
+		return new ResponseEntity<>(dataservice.DisplayInstructions(),dataservice.DisplayNumberOfRun()/*HttpStatus.OK*/);
 	}
 	
 	/**
@@ -98,8 +100,8 @@ public class Controller {
 	 * @return the class that contains the stats of the field selected
 	 */
 	@GetMapping("/GetFieldStats")
-	public ResponseEntity<Object> getFieldedStatistic(@RequestParam(name="field")String campo ) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException{
-		return new ResponseEntity<>(dataservice.DisplayFieldStatistics(campo),HttpStatus.OK);
+	public ResponseEntity<Object> getFieldedStatistic(@RequestParam(name="field")String campo ) throws FormatException, MismatchTypeFilterException, FieldException, OperatorException, StatsParamException{ 
+		return new ResponseEntity<>(dataservice.DisplayFieldStatistics(campo),/*dataservice.DisplayNumberOfRun(),*/HttpStatus.OK);
 	}
 	
 	/**

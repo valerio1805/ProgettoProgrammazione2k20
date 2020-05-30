@@ -23,7 +23,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 * Description of the method RichiestaId.
 	 * @throws DeleteFileException 
 	 */
-	public String[] RequestId() throws DeleteFileException {
+	private String[] RequestId() throws DeleteFileException {
 		BufferedReader reader;
 		String support;
 		String[] importedId = new String[150];
@@ -44,7 +44,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 * Description of the method RichiestaInformazioni.
 	 * @throws DeleteFileException 
 	 */
-	public String[] RequestInformation() throws DeleteFileException {
+	private String[] RequestInformation() throws DeleteFileException {
 		String[] id =RequestId();
 		String[] info = new String[150];
 		int number=0;
