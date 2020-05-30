@@ -4,12 +4,23 @@ import it.AleValeProject.Esame2k20.model.TotalFilters;
 import it.AleValeProject.Esame2k20.exception.*;
 import it.AleValeProject.Esame2k20.model.SingleFilter;
 
+/**
+ * The class that controls what the user has insered like filter
+ * @author vale&ale
+ *
+ */
 public class FilterCreation {
+	
 	/**
-	 * Description of the method TranslateFilter.
-	 * 
-	 * @param body
-	 * @throws FilterException
+	 * This function control the format of the filter, if all the  '{', '}', ecc are at their right place
+	 * If there are some problem, the function launch different exception due to the type of error
+	 * If is all ok, a Totalfilters will be created
+	 * @param body the filter that added the user
+	 * @return a TotalFilters
+	 * @throws FieldException
+	 * @throws FormatException
+	 * @throws OperatorException
+	 * @throws MismatchTypeFilterException
 	 */
 	public TotalFilters TranslateFilter(String body) throws FieldException, FormatException, OperatorException, MismatchTypeFilterException {
 		TotalFilters result = new TotalFilters();
@@ -101,9 +112,11 @@ public class FilterCreation {
 	}
 
 	/**
-	 * Description of the method RecognizeWord.
-	 * 
-	 * @throws FilterException
+	 * This function recognize the words insered by the user control also the format of thr filter
+	 * @param position where the function has to start its control of the word
+	 * @param body the text to control
+	 * @return an Array of all the words found
+	 * @throws FormatException
 	 */
 	private String[] RecognizeWord(int position, String body) throws FormatException {
 		String[] result = new String[2];
@@ -124,9 +137,12 @@ public class FilterCreation {
 	}
 
 	/**
-	 * Description of the method Check.
-	 * 
-	 * @throws FilterException
+	 * This function control the operator that the user has insered, the matching between the operator and the number/the type of values  
+	 * @param tocheck
+	 * @throws FieldException
+	 * @throws FormatException
+	 * @throws OperatorException
+	 * @throws MismatchTypeFilterException
 	 */
 	private void Check(SingleFilter tocheck)
 			throws FieldException, FormatException, OperatorException, MismatchTypeFilterException {

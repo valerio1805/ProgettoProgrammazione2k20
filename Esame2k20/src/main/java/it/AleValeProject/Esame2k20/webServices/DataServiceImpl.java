@@ -11,14 +11,37 @@ import it.AleValeProject.Esame2k20.util.*;
 @Service
 public class DataServiceImpl implements DataService {
 	/**
-	 * Description of the property database.
+	 * The database of the program
 	 */
 	private ArrayList<SingleRecordInfo> database = new ArrayList<>();
+	/**
+	 * All the metadata
+	 */
 	private MetadataCreation metadata = new MetadataCreation();
+	/**
+	 * The general stats of all the dataset
+	 */
 	private Stats[] statistics = new Stats[3];
+	
+	/**
+	 * The instructions to show to the user 
+	 */
 	private InstructionCreation instructions = new InstructionCreation();
+	
+	/**
+	 * An arrayList that is composed of only the record that satisfy the filter
+	 */
 	private ArrayList<SingleRecordInfo> filteredDatabase = new ArrayList<SingleRecordInfo>();
+	
+	/**
+	 * An array of stats calculated using only the records that satisfy the filter
+	 */
 	private Stats[] filteredStatistics = new Stats[3];
+	
+	/**
+	 * The stats calculated for a particular field insered by the user
+	 */
+	
 	private Stats statsField;
 	/**
 	 * Description of the property databaseCreator.

@@ -7,15 +7,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
 
+/**
+ * The class that creats the instruction manual for the app
+ * @author vale&ale
+ *
+ */
 public class InstructionCreation extends SingleInstruction {
 
 	/**
-	 * Description of the property istructionsManual.
+	 * The array of the instructions
 	 */
 	private ArrayList<SingleInstruction> instructionsManual = new ArrayList<SingleInstruction>();
 
 	/**
-	 * The constructor.
+	 * The constructor. Where the array of the instructions is created, reading the single record of instruction from a file
 	 */
 	public InstructionCreation() {
 		SingleInstruction toadd;

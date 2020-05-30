@@ -4,12 +4,17 @@ import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
+/**
+ * The class where the stats where made
+ * @author vale&ale
+ *
+ */
 public class StatsCreation {
 	/**
-	 * Description of the method ComputeAverage.
-	 * 
-	 * @param data
-	 * @param field
+	 * The function that calculate the average.
+	 * @param data the Records where to get the information for calcuting the average
+	 * @param field the field of which the average has to be calculated
+	 * @return the average
 	 */
 	protected double ComputeAverage(ArrayList<SingleRecordInfo> data, String field) {
 
@@ -18,10 +23,10 @@ public class StatsCreation {
 	}
 
 	/**
-	 * Description of the method ComputeSum.
-	 * 
-	 * @param data
-	 * @param field
+	 * The function that calculate the sum.
+	 * @param data the Records where to get the information for calcuting the sum
+	 * @param field the field of which the sum has to be calculated
+	 * @return the sum
 	 */
 	protected double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
 		double sum = 0;
@@ -31,10 +36,10 @@ public class StatsCreation {
 	}
 
 	/**
-	 * Description of the method ComputeMax.
-	 * 
-	 * @param data
-	 * @param field
+	 * The function that find the max value of the field passed
+	 * @param data the Records where to get the information for finding the max value
+	 * @param field the field of which the max has to be founded
+	 * @return the max
 	 */
 	protected double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
 		double max = Double.MIN_VALUE;
@@ -47,10 +52,10 @@ public class StatsCreation {
 	}
 
 	/**
-	 * Description of the method ComputeMin.
-	 * 
-	 * @param data
-	 * @param field
+	 * The function that find the min value of the field passed
+	 * @param data the Records where to get the information for finding the min value
+	 * @param field the field of which the min has to be founded
+	 * @return the min
 	 */
 	protected double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
 		double min = Double.MAX_VALUE;
@@ -63,10 +68,10 @@ public class StatsCreation {
 	}
 
 	/**
-	 * Description of the method ComputeVariance.
-	 * 
-	 * @param data
-	 * @param field
+	 * The function that calculate the variance.
+	 * @param data the Records where to get the information for calcuting the variance
+	 * @param field the field of which the variance has to be calculated
+	 * @return the variance
 	 */
 	protected double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
 		double variance = 0;
@@ -78,6 +83,12 @@ public class StatsCreation {
 		return variance / support.size();
 	}
 
+	/**
+	 * This function is used to find all the values of a field of the images of a record
+	 * @param data the Records where to take the information to calculate stats
+	 * @param field the field of which the stats has to be calculated
+	 * @return an ArraList of the value of the images of the records that satisfy the field passed
+	 */
 	protected ArrayList<Double> ValueListOfImages(ArrayList<SingleRecordInfo> data, String field){
 		ArrayList<Double> result = new ArrayList<Double>();
 		for(int i =0; i < data.size();i++) {

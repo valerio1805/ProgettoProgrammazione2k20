@@ -7,16 +7,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import it.AleValeProject.Esame2k20.model.SingleMetadata;
+/**
+ * The class that creatas all the metadata to display
+ * @author vale&ale
+ *
+ */
 
 public class MetadataCreation {
 
 	/**
-	 * Description of the property metaDati.
+	 * The array of the single Metadata
 	 */
 	private ArrayList<SingleMetadata> metadata = new ArrayList<SingleMetadata>();
 
 	/**
-	 * The constructor.
+	 * The constructor. Where the array is built, fetching the metadata from a file.
+	 * @throws FileNotFoundException
 	 */
 	public MetadataCreation() {
 		SingleMetadata toAdd;
