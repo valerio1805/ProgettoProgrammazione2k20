@@ -1,6 +1,5 @@
 package it.AleValeProject.Esame2k20.controller;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,6 @@ import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
 import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.exception.StatsParamException;
 import it.AleValeProject.Esame2k20.webServices.DataService;
-import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
 
 /**
  * 

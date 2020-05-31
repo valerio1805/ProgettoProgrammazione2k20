@@ -1,7 +1,6 @@
 package it.AleValeProject.Esame2k20.filtering;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import it.AleValeProject.Esame2k20.model.TotalFilters;
 import it.AleValeProject.Esame2k20.model.SingleFilter;

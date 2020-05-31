@@ -84,13 +84,15 @@ public class StatsCreation {
 	}
 
 	/**
-	 * This function is used to find all the values of a field of the images of a record
+	 * This function is used to find all the values of a field of the images of the database
 	 * @param data the Records where to take the information to calculate stats
 	 * @param field the field of which the stats has to be calculated
 	 * @return an ArraList of the value of the images of the records that satisfy the field passed
 	 */
 	protected ArrayList<Double> ValueListOfImages(ArrayList<SingleRecordInfo> data, String field){
+		
 		ArrayList<Double> result = new ArrayList<Double>();
+		//this for is used to take all the image information that are usefull to calculate the different stats, switching between the different field passed
 		for(int i =0; i < data.size();i++) {
 			for(int j=0;j<data.get(i).getImages().size();j++)
 				if(field.equals("height"))

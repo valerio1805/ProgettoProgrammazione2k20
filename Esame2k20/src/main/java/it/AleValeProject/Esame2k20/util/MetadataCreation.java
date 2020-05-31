@@ -25,10 +25,14 @@ public class MetadataCreation {
 	 * @throws FileNotFoundException
 	 */
 	public MetadataCreation() {
+		
+		//how this function work is very similar to the function that is contained in InstructionCreation
+		
 		SingleMetadata toAdd;
 		BufferedReader reader;
 		int j=0;
 		try {
+			
 			reader = new BufferedReader(new FileReader("Metadata.txt"));
 			String[] metadataImported= reader.readLine().split(",");
 			while(j<metadataImported.length) {

@@ -26,17 +26,24 @@ public class InstructionCreation extends SingleInstruction {
 		SingleInstruction toadd;
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("Instruction.txt"));
+			
+			//splitting all the instruction in different groups
 			String[] allTheIstructions=reader.readLine().split("£");
 			int j=0;
 			while(j<allTheIstructions.length) {
+				
 				toadd = new SingleInstruction();
+				//adding the introduction
 				toadd.setIntroduction(allTheIstructions[j]);
 				j++;
+				
+				//adding the instruction that are allowed
 				String[] support=allTheIstructions[j].split(";");
 				toadd.setPossibility(support);
 				j++;
 				instructionsManual.add(toadd);
 			}
+			reader.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (IOException e) {

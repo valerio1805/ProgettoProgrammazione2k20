@@ -8,6 +8,8 @@ package it.AleValeProject.Esame2k20.exception;
 
 public class StatsParamException extends Exception{
 	
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The constructor of the class
 	 * @param toDiplay The String to show to the user in case of problem

@@ -121,6 +121,7 @@ public class FilterCreation {
 	private String[] RecognizeWord(int position, String body) throws FormatException {
 		String[] result = new String[2];
 		try {
+			//here the function finds the words that are contained in the filter
 			while (body.charAt(position) != '{')
 				position++;
 			String support = new String();
@@ -152,18 +153,18 @@ public class FilterCreation {
 		MetadataCreation possibleField = new MetadataCreation();
 		int j = 0;
 		for (j = 0; j < 8 && !test; j++) {
-			// controllo ci sia una corrispondenza tra l'operatore inserito e uno
-			// accettabile
+			// controll that the operator insered is valid
 			if (tocheck.getOperator().equals(possibleOperator[j]))
 				test = true;
-			// controllo che siano inseriti un numero esatto di valori
 		}
 		j--;
 		if (!test)
 			throw new OperatorException(tocheck.getOperator());
+		//control that the number of values insered are correct for the operator 
 		if (j >= 3 && !((j > 3 && tocheck.getValues().size() == 1) || (j == 3 && tocheck.getValues().size() == 2)))
 			throw new FormatException(tocheck.getField(), tocheck.getValues().size());
-		// controllo che il campo inserito abbia una corrispondenza con quelli esistenti
+		
+		// control that the field insered exists
 		int i = 0;
 		for (; i < 11 && test; i++) {
 			if (possibleField.getMetadata().get(i).getAlias().equals(tocheck.getField()))
@@ -174,7 +175,8 @@ public class FilterCreation {
 			throw new FieldException("doesn't exist");
 		if (i < 5 || i == 6 || i == 10)
 			throw new FieldException("it is no usefull for the field");
-		// per i campi che richiedono un numero verifico il format
+		
+		// for the field that required a numeric type control that the value/s insered is/are correct
 		if (i > 6 && i < 10) {
 			try {
 				double tryToConvertInNumber;

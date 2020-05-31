@@ -35,6 +35,8 @@ public class Stats extends StatsCreation{
 		this.statsField=fieldToPass;
 		ArrayList<Double> support = ValueListOfImages(recordToPass, this.statsField);
 		examinedImages=support.size();
+		
+		//filling the HashMap "statistic" with the different stats of a particular field, calculated on the images contained in the records passed
 		statistics.put("min", ComputeMin(recordToPass, this.statsField));
 		statistics.put("max", ComputeMax(recordToPass, this.statsField));
 		statistics.put("sum", ComputeSum(recordToPass, this.statsField));
