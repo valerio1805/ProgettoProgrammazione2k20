@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class that describes an instruction
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class SingleInstruction {

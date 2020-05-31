@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * The class that descirbes a Record (tweet) of the database
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class SingleRecordInfo {
@@ -136,8 +136,8 @@ public class SingleRecordInfo {
 	}
 
 	/**
-	 * Sets a value to attribute sorgente. 
-	 * @param newSorgente 
+	 * Sets a value to attribute source. 
+	 * @param newSource
 	 */
 	public void setSource(String newSource) {
 		this.source = newSource;

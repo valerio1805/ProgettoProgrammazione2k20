@@ -7,7 +7,7 @@ import it.AleValeProject.Esame2k20.model.SingleFilter;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The class that is used to obtain the set of record that satisfy the filter added by the user
  */
 

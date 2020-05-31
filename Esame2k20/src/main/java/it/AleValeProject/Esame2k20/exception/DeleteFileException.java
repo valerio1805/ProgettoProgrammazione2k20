@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.exception;
 
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The exception for a not found file
  */
 public class DeleteFileException extends Exception{

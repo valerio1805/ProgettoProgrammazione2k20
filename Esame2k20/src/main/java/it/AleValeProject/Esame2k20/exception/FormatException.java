@@ -1,7 +1,7 @@
 package it.AleValeProject.Esame2k20.exception;
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The exception of a not valid filter added
  */
 
@@ -21,7 +21,7 @@ public class FormatException extends Exception {
 	
 	/**
 	 * One constructor of the class
-	 * @param toDiplay The String to show to the user in case of problem
+	 * @param toDisplay The String to show to the user in case of problem
 	 */
 	public FormatException(String toDisplay) {
 		super (toDisplay);

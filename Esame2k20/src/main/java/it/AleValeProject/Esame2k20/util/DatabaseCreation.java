@@ -20,7 +20,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * The class that manages the creation of the database with the tweet
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class DatabaseCreation extends SingleMetadata{
@@ -95,7 +95,7 @@ public class DatabaseCreation extends SingleMetadata{
 	
 	/**
 	 * The function that saving the information of which tweet in a record
-	 * @return An ArrayList with the all record read -> the database
+	 * @return An ArrayList with the all records read (the database)
 	 * @throws DeleteFileException
 	 */
 	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {

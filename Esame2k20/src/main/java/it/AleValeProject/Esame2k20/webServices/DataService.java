@@ -8,7 +8,7 @@ import it.AleValeProject.Esame2k20.exception.*;
 import it.AleValeProject.Esame2k20.model.*;
 /**
  * The interface that provides the principal function of the app
- * @author vale&ale
+ * @author valeAle;
  *
  */
 @Service

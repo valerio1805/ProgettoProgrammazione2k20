@@ -18,7 +18,7 @@ import it.AleValeProject.Esame2k20.webServices.DataService;
 
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The controller of the project; here you can see the different roots of the project
  *
  */
@@ -30,9 +30,9 @@ public class Controller {
 	 */
 	@Autowired
 	private DataService dataservice;
+	
 	/**
 	 * The root where you can see the manual of the app
-	 * @param display 
 	 * @return the class that contains the instructions
 	 */
 	@GetMapping("/GetInstructions")

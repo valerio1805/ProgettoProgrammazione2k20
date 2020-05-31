@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * Interface for the control of the filtering operation
  *
  */

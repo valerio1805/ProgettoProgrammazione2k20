@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleMetadata;
 /**
  * The class that creatas all the metadata to display
- * @author vale&ale
+ * @author valeAle;
  *
  */
 
@@ -22,7 +22,6 @@ public class MetadataCreation {
 
 	/**
 	 * The constructor. Where the array is built, fetching the metadata from a file.
-	 * @throws FileNotFoundException
 	 */
 	public MetadataCreation() {
 		

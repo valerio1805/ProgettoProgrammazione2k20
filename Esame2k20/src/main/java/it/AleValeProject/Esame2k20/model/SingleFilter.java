@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class that describes a filter 
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class SingleFilter {
@@ -71,7 +71,7 @@ public class SingleFilter {
 	/**
 	 * Sets a value to attribute values.
 	 * 
-	 * @param newValori
+	 * @param newValues
 	 */
 	public void setValues (String[] newValues){
 		for(String toadd : newValues)

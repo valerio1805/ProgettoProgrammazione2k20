@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * The class where the stats where made
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class StatsCreation {
