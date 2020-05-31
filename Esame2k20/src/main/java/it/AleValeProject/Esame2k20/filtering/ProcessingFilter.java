@@ -80,19 +80,22 @@ public class ProcessingFilter {
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
 			//container has the records that satisfy the filter in the i posistion of AllFilter contained in FilterToAnalize
 			container = ApplyFilter(database, filterToAnalize.getAllFilters().get(i));
-			int costant = result.size();
-			
+			//int costant = result.size();
+			boolean in = false;
 			//if result is empty, it is filled with container
 			//else there is a for that control if the records of container are already stored in result
-			if (costant == 0)
+			if (result.size() == 0)
 				result.addAll(container);
 			else {
+						
 				for (int k = 0; k < container.size(); k++) {
-					for (int j = 0; j < costant; j++)
-						if (!(result.get(j).getId().equals(container.get(k).getId()))) {
-							result.add(container.get(k));
-							break;
+					in=false;
+					for (int j = 0; j < result.size(); j++)
+						if ((result.get(j).getId().equals(container.get(k).getId()))) {
+							in = true;
 						}
+					if(!in)
+						result.add(container.get(k));
 				}
 			}
 		}
