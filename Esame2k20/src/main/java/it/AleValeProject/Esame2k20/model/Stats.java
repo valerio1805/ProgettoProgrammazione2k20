@@ -7,7 +7,7 @@ import it.AleValeProject.Esame2k20.util.StatsCreation;
 
 /**
  * The class that manages the stats
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class Stats extends StatsCreation{

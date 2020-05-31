@@ -1,8 +1,8 @@
 package it.AleValeProject.Esame2k20.model;
 
 /**
- * The class thatr describes an image
- * @author vale&ale
+ * The class that describes an image
+ * @author valeAle;
  *
  */
 public class SingleImage {

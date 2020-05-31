@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class that describe totally a filter, with is SingleFilter and is macroOperator
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class TotalFilters {

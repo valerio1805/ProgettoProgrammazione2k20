@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.model;
 
 /**
  * The class that describes a metadata
- * @author vale&ale
+ * @author valeAle;
  *
  */
 

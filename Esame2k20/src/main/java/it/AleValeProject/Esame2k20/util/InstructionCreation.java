@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleInstruction;
 
 /**
  * The class that creats the instruction manual for the app
- * @author vale&ale
+ * @author valeAle;
  *
  */
 public class InstructionCreation extends SingleInstruction {

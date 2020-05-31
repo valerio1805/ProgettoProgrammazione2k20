@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The first class that runs when the app is launched
  *
  */

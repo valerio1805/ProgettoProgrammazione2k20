@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.exception;
 
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The exception of a not valid field
  */
 public class FieldException extends Exception {

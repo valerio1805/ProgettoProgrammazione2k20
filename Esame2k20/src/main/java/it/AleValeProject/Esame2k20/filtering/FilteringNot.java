@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * 
- * @author vale&ale
+ * @author valeAle;
  * The class that implements filtering for the field "hashtags[]" and the operator "$not"
  */
 public class FilteringNot implements Filtering {
@@ -18,11 +18,9 @@ public class FilteringNot implements Filtering {
 	public String getOperator() {
 		return operator;
 	}
+	
 	/**
-	 * Description of the method Filtra: Boolean.
-	 * @param fieldToPass
-	 * @param valueToPass
-	 * @param recordToPass
+	 * {@inheritDoc}
 	 */
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		boolean find=true;
