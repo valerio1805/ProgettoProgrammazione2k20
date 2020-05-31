@@ -100,7 +100,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 */
 	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {
 		String[] toParse=RequestInformation();
-		SingleImage imageSupport;
+		SingleImage imageSupport = null;
 		ArrayList<SingleRecordInfo> informations = new ArrayList<SingleRecordInfo>();
 		for(int i =0;i<toParse.length;i++) {
 			SingleRecordInfo  recordSupport = new SingleRecordInfo();
@@ -138,13 +138,13 @@ public class DatabaseCreation extends SingleMetadata{
 		        JSONArray arraySupport2 = objectSupport2.getJSONArray("media");
 		        for(int k=0;k<arraySupport2.length();k++) {
 		        	imageSupport = new SingleImage();
-		        	if(toParse[i].contains("\"url\":"))
-		        		imageSupport.setUrl(arraySupport2.getJSONObject(k).getString("url"));
 		        	imageSupport.SetHeight(arraySupport2.getJSONObject(k).getInt("height"));
 		        	imageSupport.setWidth(arraySupport2.getJSONObject(k).getInt("width"));
 		        	imageSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
 		        	imageSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
 		        	imageSupport.setType(arraySupport2.getJSONObject(k).getString("type"));
+		        	if(toParse[i].contains("\"url\":"))
+		        		imageSupport.setUrl(arraySupport2.getJSONObject(k).getString("url"));
 		        	recordSupport.setImages(imageSupport);
 		        }
 		        
