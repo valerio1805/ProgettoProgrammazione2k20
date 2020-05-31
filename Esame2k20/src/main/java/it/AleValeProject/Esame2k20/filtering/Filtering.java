@@ -10,7 +10,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * Interface for the control of the filtering operation
  *
  */
-interface Filtering {
+public interface Filtering {
 
 	/**
 	 * The function that return true or false if the the value of recordToPass satisfy the fieldToPass and the valueTopass

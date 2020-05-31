@@ -34,7 +34,7 @@ public class ProcessingFilter {
 	 * @param filterToAnalize filter added by the user
 	 * @return the correct type of filtering that the app has to do
 	 */
-	private Filtering RecognizeOperatorOfFilter(SingleFilter filterToAnalize) {
+	public Filtering RecognizeOperatorOfFilter(SingleFilter filterToAnalize) {
 		int j;
 		Filtering[] filters = initialize();
 		for (j = 0; j < 24; j++)
