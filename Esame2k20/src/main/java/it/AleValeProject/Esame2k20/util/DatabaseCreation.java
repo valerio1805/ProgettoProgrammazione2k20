@@ -99,7 +99,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 */
 	public ArrayList<SingleRecordInfo> SavingInformation() throws DeleteFileException {
 		String[] toParse=RequestInformation();
-		SingleImage imagineSupport;
+		SingleImage imageSupport;
 		ArrayList<SingleRecordInfo> informations = new ArrayList<SingleRecordInfo>();
 		for(int i =0;i<toParse.length;i++) {
 			SingleRecordInfo  recordSupport = new SingleRecordInfo();
@@ -125,15 +125,15 @@ public class DatabaseCreation extends SingleMetadata{
 		        JSONObject objectSupport2 = objectSupport.getJSONObject("includes");
 		        JSONArray arraySupport2 = objectSupport2.getJSONArray("media");
 		        for(int k=0;k<arraySupport2.length();k++) {
-		        	imagineSupport = new SingleImage();
+		        	imageSupport = new SingleImage();
 		        	if(toParse[i].contains("\"url\":"))
-		        		imagineSupport.setUrl(arraySupport2.getJSONObject(k).getString("url"));
-		        	imagineSupport.SetHeight(arraySupport2.getJSONObject(k).getInt("height"));
-		        	imagineSupport.setWidth(arraySupport2.getJSONObject(k).getInt("width"));
-		        	imagineSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
-		        	imagineSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
-		        	imagineSupport.setType(arraySupport2.getJSONObject(k).getString("type"));
-		        	recordSupport.setImages(imagineSupport);
+		        		imageSupport.setUrl(arraySupport2.getJSONObject(k).getString("url"));
+		        	imageSupport.SetHeight(arraySupport2.getJSONObject(k).getInt("height"));
+		        	imageSupport.setWidth(arraySupport2.getJSONObject(k).getInt("width"));
+		        	imageSupport.setMegapixel((double)(arraySupport2.getJSONObject(k).getInt("height")*arraySupport2.getJSONObject(k).getInt("width"))/1000000);
+		        	imageSupport.setIdImage(arraySupport2.getJSONObject(k).getString("media_key"));
+		        	imageSupport.setType(arraySupport2.getJSONObject(k).getString("type"));
+		        	recordSupport.setImages(imageSupport);
 		        }
 		        
 		        informations.add(recordSupport);
