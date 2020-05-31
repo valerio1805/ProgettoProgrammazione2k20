@@ -21,8 +21,10 @@ public class ProcessingFilter {
 	 */
 	private ArrayList<SingleRecordInfo> ApplyFilter(ArrayList<SingleRecordInfo> database, SingleFilter filterToAnalize) {
 		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
+		//The executor becomes the effective class of filtering
 		Filtering executor = RecognizeOperatorOfFilter(filterToAnalize);
 		for (int i = 0; i < database.size(); i++) {
+			//if the record matches with the filter it is added to the ArrayList result
 			if (executor.FilterFunction(filterToAnalize.getValues(), database.get(i)))
 				result.add(database.get(i));
 		}
@@ -37,10 +39,13 @@ public class ProcessingFilter {
 	public Filtering RecognizeOperatorOfFilter(SingleFilter filterToAnalize) {
 		int j;
 		Filtering[] filters = initialize();
+		//the filter to analize is compared with the all type of class filtering
 		for (j = 0; j < 24; j++)
 			if (filters[j].getOperator().equals(filterToAnalize.getOperator())
 					&& filters[j].getField().equals(filterToAnalize.getField()))
 				break;
+		
+		//the result is the effective type of filtering that the program has to do
 		return filters[j];
 	}
 
@@ -53,6 +58,10 @@ public class ProcessingFilter {
 	public ArrayList<SingleRecordInfo> ApplyFilterGen(ArrayList<SingleRecordInfo> database,
 			TotalFilters filterToAnalize) {
 		ArrayList<SingleRecordInfo> result = database;
+		
+		//this is the main for where the other function where called for every filter are is contained in filterToAnalize
+		//if the macroOperator is "$and" the result of the first operation of filtering is used for the second operation for the second filter contained in FilterToanalize 
+		//and again with the third ecc.
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
 			result = ApplyFilter(result, filterToAnalize.getAllFilters().get(i));
 		}
@@ -68,9 +77,14 @@ public class ProcessingFilter {
 	public ArrayList<SingleRecordInfo> ApplyFilterOr(ArrayList<SingleRecordInfo> database, TotalFilters filterToAnalize) {
 		ArrayList<SingleRecordInfo> container = new ArrayList<SingleRecordInfo>();
 		ArrayList<SingleRecordInfo> result = new ArrayList<SingleRecordInfo>();
+		
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
+			//container has the records that satisfy the filter in the i posistion of AllFilter contained in FilterToAnalize
 			container = ApplyFilter(database, filterToAnalize.getAllFilters().get(i));
 			int costant = result.size();
+			
+			//if result is empty, it is filled with container
+			//else there is a for that control if the records of container are already stored in result
 			if (costant == 0)
 				result.addAll(container);
 			else {

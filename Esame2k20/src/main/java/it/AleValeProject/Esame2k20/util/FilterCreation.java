@@ -26,11 +26,12 @@ public class FilterCreation {
 		TotalFilters result = new TotalFilters();
 		int i =0;
 		try {
-			// la prima char deve essere una '{'
+			// control of the first char of the filter
 			if (!body.substring(0, 1).equals("{"))
 				throw new FormatException("The start of the field must be \"{\"");
-			// controllo il "macroperatore"
+			// control of the macroOperator and set the correct position of i
 			String primocampo = RecognizeWord(0, body)[1];
+			
 			if (primocampo.equals("$or")) {
 				result.setMacroOperator("$or");
 				i=5;
@@ -45,31 +46,30 @@ public class FilterCreation {
 				i=2;
 			}
 
-			// compilo l'array di classi filter2 finche non leggo }}}, a meno che il
-			// macroperatore non sia ""
+			// this part is used to fill the array of SingleFilters unless the macroOperator is not ""
 			SingleFilter filterToAdd;
 			do {
 				String[] supportString = new String[2];
 				filterToAdd = new SingleFilter();
 
-				// trovo il campo
+				// find the field
 				supportString = RecognizeWord(i, body);
 				filterToAdd.setField(supportString[1]);
 				i = Integer.parseInt(supportString[0]);
 
-				// trovo l'operatore
+				// find the operator
 				supportString = RecognizeWord(i, body);
 				filterToAdd.setOperator(supportString[1]);
 				i = Integer.parseInt(supportString[0]);
 
-				// trovo il/i valori
+				// find the values
 				if (body.charAt(i) != ':')
 					throw new FormatException("There arent't \":\" before the values");
 				i++;
 				if (body.charAt(i) != ' ')
 					throw new FormatException("Between the ':' and the values there must be a space");
 				i++;
-				// in caso ci sia un array
+				// control if there is an array of values
 				if (body.charAt(i) == '[') {
 					String x = "";
 					i++;
@@ -81,7 +81,6 @@ public class FilterCreation {
 					while (body.charAt(i) != '}')
 						i++;
 				}
-				// altrimenti c'� un solo valore
 				else {
 					String supportValue[] = new String[1];
 					supportValue[0] = "";
@@ -91,12 +90,13 @@ public class FilterCreation {
 					}
 					filterToAdd.setValues(supportValue);
 				}
-				// prima di aggiungere
+				//control to verify the operator the match between the number and the type of values with the operator 
 				Check(filterToAdd);
-				// throw new FilterException("ricontrollare i campi e operatori inseriti e
-				// verificare di usare gli operatori con i campi e i valori corretti");
+			
 				result.setAllFilters(filterToAdd);
 				i++;
+				
+				//control if the filter is ended
 				if (body.charAt(i) != '}')
 					throw new FormatException("The filter doesn't have a \"}\"");
 				i++;
@@ -112,7 +112,7 @@ public class FilterCreation {
 	}
 
 	/**
-	 * This function recognize the words insered by the user control also the format of thr filter
+	 * This function recognize the words insered by the user control also the format of the filter
 	 * @param position where the function has to start its control of the word
 	 * @param body the text to control
 	 * @return an Array of all the words found

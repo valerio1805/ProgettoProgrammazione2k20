@@ -62,6 +62,7 @@ public class DatabaseCreation extends SingleMetadata{
 			// many of these calls can throw exceptions, so i've just
 			// wrapped them all in one try/catch statement.
 			try {
+				
 				// create a url object
 				URL url = new URL("https://wd4hfxnxxa.execute-api.us-east-2.amazonaws.com/dev/api/labs/2/tweets?ids="+id[i]+ "&expansions=attachments.media_keys&tweet.fields=attachments,author_id,created_at,geo,id,lang,source,public_metrics,text,entities&media.fields=duration_ms,height,media_key,non_public_metrics,preview_image_url,public_metrics,type,url,width&user.fields=location");
 
@@ -104,8 +105,14 @@ public class DatabaseCreation extends SingleMetadata{
 		for(int i =0;i<toParse.length;i++) {
 			SingleRecordInfo  recordSupport = new SingleRecordInfo();
 			try {
+				
+				//in the objectSupport there is a tweet
 				JSONObject objectSupport = new JSONObject(toParse[i]);
+				
+				//in arraySupport is stored the part of the tweet called "data"
 				JSONArray arraySupport = objectSupport.getJSONArray("data");
+				
+				//this for is used to read the important informations of the tweet 
 		        for (int j = 0; j < arraySupport.length(); j++) {
 		        
 		        	recordSupport.setIdAuthor(arraySupport.getJSONObject(j).getString("author_id"));
@@ -115,13 +122,18 @@ public class DatabaseCreation extends SingleMetadata{
 			        recordSupport.setSource(arraySupport.getJSONObject(j).getString("source"));
 			        recordSupport.setText(arraySupport.getJSONObject(j).getString("text"));
 		        
+			        //if the tweeet contains hashtags the are read in this part of the for
 			        if(toParse[i].contains("hashtags")) {
 			        	JSONObject related = arraySupport.getJSONObject(j).getJSONObject("entities");
 			        	JSONArray hashtagSupport = related.getJSONArray("hashtags");
+			        	
+			        	//the hashtags read are insered in the records
 			        	for(int k=0;k<hashtagSupport.length();k++)
 			        		recordSupport.setHashtag(hashtagSupport.getJSONObject(k).getString("tag"));
 			        }
 		        }
+		        
+		        //this part is used to obtain the information about the media of the tweet
 		        JSONObject objectSupport2 = objectSupport.getJSONObject("includes");
 		        JSONArray arraySupport2 = objectSupport2.getJSONArray("media");
 		        for(int k=0;k<arraySupport2.length();k++) {
