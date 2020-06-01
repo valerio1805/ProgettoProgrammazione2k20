@@ -24,7 +24,6 @@ public class FilteringLteHash implements Filtering {
 	/**
 	 * Description of the method Filtra: Boolean.
 	 * 
-	 * @param fieldToPass
 	 * @param valueToPass
 	 * @param recordToPass
 	 */
