@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class that describe totally a filter, with is SingleFilter and is macroOperator
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class TotalFilters {

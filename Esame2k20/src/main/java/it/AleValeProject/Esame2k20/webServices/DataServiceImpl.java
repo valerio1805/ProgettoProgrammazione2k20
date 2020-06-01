@@ -9,8 +9,8 @@ import it.AleValeProject.Esame2k20.model.*;
 import it.AleValeProject.Esame2k20.util.*;
 
 /**
- * 
- * @author valeAle;
+ * The class that implements the interface
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 @Service

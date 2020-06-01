@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
- * 
- * @author valeAle;
  * Interface for the control of the filtering operation
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  *
  */
 public interface Filtering {

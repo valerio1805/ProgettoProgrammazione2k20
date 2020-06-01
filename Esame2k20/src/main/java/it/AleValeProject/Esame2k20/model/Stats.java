@@ -7,7 +7,7 @@ import it.AleValeProject.Esame2k20.util.StatsCreation;
 
 /**
  * The class that manages the stats
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class Stats extends StatsCreation{

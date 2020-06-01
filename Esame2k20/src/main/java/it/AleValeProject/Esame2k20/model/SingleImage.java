@@ -2,7 +2,7 @@ package it.AleValeProject.Esame2k20.model;
 
 /**
  * The class that describes an image
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class SingleImage {

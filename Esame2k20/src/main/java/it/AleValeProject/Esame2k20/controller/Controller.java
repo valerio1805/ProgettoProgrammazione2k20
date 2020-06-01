@@ -17,9 +17,9 @@ import it.AleValeProject.Esame2k20.exception.StatsParamException;
 import it.AleValeProject.Esame2k20.webServices.DataService;
 
 /**
- * 
- * @author valeAle;
  * The controller of the project; here you can see the different roots of the project
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  *
  */
 @RestController

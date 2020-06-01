@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * The class where the stats where made
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class StatsCreation {

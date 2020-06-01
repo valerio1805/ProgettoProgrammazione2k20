@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The class that describes an instruction
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class SingleInstruction {

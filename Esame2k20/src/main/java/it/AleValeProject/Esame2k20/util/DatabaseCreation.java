@@ -20,7 +20,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * The class that manages the creation of the database with the tweet
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class DatabaseCreation extends SingleMetadata{

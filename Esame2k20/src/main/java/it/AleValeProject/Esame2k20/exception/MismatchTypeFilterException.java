@@ -1,9 +1,9 @@
 package it.AleValeProject.Esame2k20.exception;
 
 /**
- * 
- * @author valeAle;
  * The exception of a mismatch between value and field
+ * @author Di Biase Alessandro, Donnini Valerio
+ *
  *
  */
 public class MismatchTypeFilterException extends Exception {

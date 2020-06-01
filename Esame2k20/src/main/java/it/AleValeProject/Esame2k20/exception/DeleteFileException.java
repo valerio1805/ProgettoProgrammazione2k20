@@ -1,9 +1,9 @@
 package it.AleValeProject.Esame2k20.exception;
 
 /**
- * 
- * @author valeAle;
  * The exception for a not found file
+ * @author Di Biase Alessandro, Donnini Valerio
+ *
  */
 public class DeleteFileException extends Exception{
 

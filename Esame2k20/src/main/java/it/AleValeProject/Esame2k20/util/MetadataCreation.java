@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleMetadata;
 /**
  * The class that creatas all the metadata to display
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 

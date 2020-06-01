@@ -1,9 +1,9 @@
 package it.AleValeProject.Esame2k20.exception;
 
 /**
- * 
- * @author valeAle;
  * The exception of a not valid operator added in the filter
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  */
 public class OperatorException extends Exception {
 

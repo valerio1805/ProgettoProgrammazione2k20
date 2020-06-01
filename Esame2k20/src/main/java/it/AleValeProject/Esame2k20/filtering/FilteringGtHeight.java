@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
- * 
- * @author valeAle;
  * The class that implements filtering for the field "height" and the operator "$gt"
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  */
 public class FilteringGtHeight implements Filtering {
 

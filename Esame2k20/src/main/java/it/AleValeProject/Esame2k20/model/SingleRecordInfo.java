@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * The class that descirbes a Record (tweet) of the database
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class SingleRecordInfo {

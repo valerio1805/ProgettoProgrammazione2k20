@@ -1,8 +1,8 @@
 package it.AleValeProject.Esame2k20.exception;
 /**
- * 
- * @author valeAle;
  * The exception of a not valid filter added
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  */
 
 public class FormatException extends Exception {

@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleFilter;
 
 /**
  * The class that controls what the user has insered like filter
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio
  *
  */
 public class FilterCreation {

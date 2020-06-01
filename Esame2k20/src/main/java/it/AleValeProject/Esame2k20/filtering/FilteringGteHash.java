@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
- * 
- * @author valeAle;
  * The class that implements filtering for the field "hashtags[]" and the operator "$gte"
+ * @author Di Biase Alessandro, Donnini Valerio
+ * 
  */
 public class FilteringGteHash implements Filtering {
 	private String operator = "$gte";
