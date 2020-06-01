@@ -151,6 +151,11 @@ public class DatabaseCreation extends SingleMetadata{
 		        informations.add(recordSupport);
 			}catch(Exception io)
 			{
+				/*
+				if(imageSupport.getUrl().equals("")){
+					imageSupport.setUrl("Not detected");
+					recordSupport.setImages(imageSupport);
+				}*/
 				i++;
 			}
 		}
