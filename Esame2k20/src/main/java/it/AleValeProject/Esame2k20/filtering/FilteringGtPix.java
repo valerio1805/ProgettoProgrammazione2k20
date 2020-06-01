@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "megapixel" and the operator "$gt"
  */
-class FilteringGtPix implements Filtering {
+public class FilteringGtPix implements Filtering {
 
 	private String operator = "$gt";
 

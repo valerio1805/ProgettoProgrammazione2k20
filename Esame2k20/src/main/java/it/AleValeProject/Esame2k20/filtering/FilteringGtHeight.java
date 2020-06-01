@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "height" and the operator "$gt"
  */
-class FilteringGtHeight implements Filtering {
+public class FilteringGtHeight implements Filtering {
 
 	private String operator = "$gt";
 

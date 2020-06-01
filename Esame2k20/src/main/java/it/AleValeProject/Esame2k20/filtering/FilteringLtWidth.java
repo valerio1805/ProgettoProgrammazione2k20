@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "width" and the operator "$lt"
  */
-class FilteringLtWidth implements Filtering {
+public class FilteringLtWidth implements Filtering {
 
 	@Override
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {

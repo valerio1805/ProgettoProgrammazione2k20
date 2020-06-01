@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "hashtags[]" and the operator "$lte"
  */
-class FilteringLteHash implements Filtering {
+public class FilteringLteHash implements Filtering {
 	private String field = "hashtags[]";
 
 	public String getField() {

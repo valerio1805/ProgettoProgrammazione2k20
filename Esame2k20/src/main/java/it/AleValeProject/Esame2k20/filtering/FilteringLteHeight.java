@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "height" and the operator "$lte"
  */
-class FilteringLteHeight implements Filtering {
+public class FilteringLteHeight implements Filtering {
 
 	@Override
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {

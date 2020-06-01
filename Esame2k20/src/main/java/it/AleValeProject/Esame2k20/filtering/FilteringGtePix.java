@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "megapixel" and the operator "$gte"
  */
-class FilteringGtePix implements Filtering {
+public class FilteringGtePix implements Filtering {
 
 	@Override
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {

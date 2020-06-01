@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "hashtags[]" and the operator "$gt"
  */
-class FilteringGtHash implements Filtering {
+public class FilteringGtHash implements Filtering {
 
 	private String operator = "$gt";
 

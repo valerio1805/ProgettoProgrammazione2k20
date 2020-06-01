@@ -9,7 +9,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * @author valeAle;
  * The class that implements filtering for the field "hashtags[]" and the operator "$in"
  */
-class FilteringIn implements Filtering {
+public class FilteringIn implements Filtering {
 	private String field="hashtags[]";
 	public String getField(){
 		return this.field;
