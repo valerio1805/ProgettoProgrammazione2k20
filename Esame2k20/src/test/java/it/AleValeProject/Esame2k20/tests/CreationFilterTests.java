@@ -12,6 +12,11 @@ import it.AleValeProject.Esame2k20.exception.MismatchTypeFilterException;
 import it.AleValeProject.Esame2k20.exception.OperatorException;
 import it.AleValeProject.Esame2k20.util.FilterCreation;
 
+/**
+ * This is the class to test the excpetions that are launched when the user insered a wrong filter
+ * @author Di Biase Alessandro, Donnini Valerio
+ *
+ */
 class CreationFilterTests {
 
 	FilterCreation x = new FilterCreation();
@@ -24,6 +29,10 @@ class CreationFilterTests {
 	void tearDown() throws Exception {
 	}
 
+	/**
+	 * The test controls if the exceptions returned by the function TranslateFilter is matching with the class that identify the type of error contained in the
+	 * filter
+	 */
 	@Test
 	public void testFilterCreation() {
 		assertThrows(FormatException.class, ()-> x.TranslateFilter("\"height\":{\"$gte\" : 400}}"));

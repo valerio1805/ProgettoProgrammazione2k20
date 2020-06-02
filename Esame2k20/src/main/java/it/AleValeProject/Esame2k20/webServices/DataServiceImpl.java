@@ -63,6 +63,13 @@ public class DataServiceImpl implements DataService {
 		statistics[1] = new Stats(this.database, "height");
 		statistics[2] = new Stats(this.database, "megapixel");
 	}
+	
+	/**
+	 * The secondary constructor. It is used in the test to avoid the download of the all tweets from Twitter
+	 * @throws DeleteFileException 
+	 */
+	public DataServiceImpl(int x) throws DeleteFileException {
+	}
 
 	/**
 	 *{@inheritDoc}
@@ -157,7 +164,7 @@ public class DataServiceImpl implements DataService {
 	 * @return the field of what the program has to calculate the stats
 	 * @throws StatsParamException
 	 */
-	private String RecognizeField(String field) throws StatsParamException
+	public String RecognizeField(String field) throws StatsParamException
 	{
 		if (field.equals("\"width\""))
 			return "width";
