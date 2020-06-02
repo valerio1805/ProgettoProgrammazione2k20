@@ -17,7 +17,7 @@ import it.AleValeProject.Esame2k20.filtering.*;
  * @author Di biase Alessandro, Donnini Valerio
  *
  */
-class CorrectTypeFilteringTests {
+public class CorrectTypeFilteringTests {
 
 	TotalFilters x = new TotalFilters();
 	SingleFilter filt = new SingleFilter();
@@ -36,7 +36,7 @@ class CorrectTypeFilteringTests {
 	 * This is the test to control the type of the filtering that is recognized from the function RecognizeOperatorOfFilter
 	 */
 	@Test
-	void test() {
+	public void test() {
 		x.setMacroOperator("");
 		filt.setField("width");
 		filt.setValues(values);

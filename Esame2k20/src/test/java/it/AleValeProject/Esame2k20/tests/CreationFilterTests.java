@@ -17,7 +17,7 @@ import it.AleValeProject.Esame2k20.util.FilterCreation;
  * @author Di Biase Alessandro, Donnini Valerio
  *
  */
-class CreationFilterTests {
+public class CreationFilterTests {
 
 	FilterCreation x = new FilterCreation();
 	

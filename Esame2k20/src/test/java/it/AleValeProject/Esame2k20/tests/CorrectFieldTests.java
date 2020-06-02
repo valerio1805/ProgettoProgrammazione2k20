@@ -16,7 +16,7 @@ import it.AleValeProject.Esame2k20.webServices.DataServiceImpl;
  * @author Di Biase Alesandro, Donnini Valerio 
  *
  */
-class CorrectFieldTests {
+public class CorrectFieldTests {
 
 	DataServiceImpl ds;
 	@BeforeEach
@@ -33,7 +33,7 @@ class CorrectFieldTests {
 	 * @throws StatsParamException
 	 */
 	@Test
-	void test1() throws DeleteFileException, StatsParamException {
+	public void test1() throws DeleteFileException, StatsParamException {
 		ds=new DataServiceImpl(1);
 		
 		//if the field is incorrect a StatsParamException is launched
