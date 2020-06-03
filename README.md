@@ -3,9 +3,11 @@ Exam project for the object programming course
 
 ## Table of contents
 * [Introduction](#Introduction)
+* [The models used](HThe models used)
 * [Technologies](#Technologies)
 * [Launch](#Launch)
 * [How it works](#How it works)
+
 
 ## Introduction
 The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same command on a sample of all the data using filters.
@@ -34,6 +36,9 @@ After the inizialization, the user can insert some different roots (each root pr
 | /GetData | POST | The user sees the Tweets that satisfy the filter added by the user | A correct filter |
 | /GetFieldStats | GET | The user sees the stats of a particular field calculated using the all databse | |
 | /GetFieldStats | POST | The user sees the stats of a particular field calcutaed using the records that satisfy the filter | A correct filter |
+
+A very important part is to analize the filter that the user adds. The operation is automatically done by the application analizing each carachter that is been insered
+
 
 ## Launch
 ![tekst alternatywny](immagine)
