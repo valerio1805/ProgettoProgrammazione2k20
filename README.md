@@ -14,8 +14,8 @@ The designed application is aimed to show data and statistics on twitter posts c
 
 ## How it works
 How the app works can be divided in two main parts:
-1 the download of the information from Twitter
-2 the show to the user what he has requested
+1. the download of the information from Twitter
+2. the show to the user what he has requested
 
 ### The download of the informations
 When the app is launched, it automatically downloads from Twitter all the tweets that are rapresented in a file with their ids.
@@ -37,7 +37,10 @@ After the inizialization, the user can insert some different roots (each root pr
 | /GetFieldStats | GET | The user sees the stats of a particular field calculated using the all databse | |
 | /GetFieldStats | POST | The user sees the stats of a particular field calcutaed using the records that satisfy the filter | A correct filter |
 
-A very important part is to analize the filter that the user adds. The operation is automatically done by the application analizing each carachter that is been insered
+A very important part is to analize the filter that the user adds, that is always made when a Request requires a body.
+The operation is automatically done by the application analizing each carachter that is been insered. If there are some problem, the application understands which type of error is in the filter and gives back a message to the user.
+Otherwise, the filter is convert in a variabile of type TotalFilters that is composed by a macroperator and an ArrayList of filters.
+After that, the varibile TotalFilters is used to understand which type of filtering the system has to do. With it the records of database will be choiced. So the request wil be done only with the tweets that satisfy the filter/s.
 
 
 ## Launch
