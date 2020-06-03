@@ -13,12 +13,18 @@ public class FilteringGteHeight implements Filtering {
 
 	private String operator = "$gte";
 
+	private String field = "height";
+
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
-	private String field = "height";
-
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField() {
 		return field;
 	}

@@ -10,19 +10,26 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * 
  */
 public class FilteringIn implements Filtering {
+	
 	private String field="hashtags[]";
+	private String operator="$in";
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField(){
 		return this.field;
 	}
-	private String operator="$in";
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
 	/**
-	 * Description of the method Filtra: Boolean.
-	 * @param valueToPass
-	 * @param recordToPass
+	 * {@inheritDoc}
 	 */
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		

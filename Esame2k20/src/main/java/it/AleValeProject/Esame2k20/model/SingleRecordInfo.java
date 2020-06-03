@@ -165,7 +165,7 @@ public class SingleRecordInfo {
 	
 	/**
 	 * Adds a value to ArrayList hashtags. 
-	 * @param newSource
+	 * @param s
 	 */
 	public void setHashtag(String s)
 	{

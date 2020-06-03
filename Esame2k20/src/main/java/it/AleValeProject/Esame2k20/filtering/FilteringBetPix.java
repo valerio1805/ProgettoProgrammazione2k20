@@ -13,17 +13,25 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 public class FilteringBetPix implements Filtering {
 
 	private String operator = "$bt";
-
+	private String field = "megapixel";
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
-	private String field = "megapixel";
-
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField() {
 		return field;
 	}
-	@Override
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		double num1 = Double.parseDouble(valueToPass.get(0));
 		double num2 = Double.parseDouble(valueToPass.get(1));

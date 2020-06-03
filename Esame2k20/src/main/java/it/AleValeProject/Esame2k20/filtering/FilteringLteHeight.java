@@ -11,7 +11,28 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  */
 public class FilteringLteHeight implements Filtering {
 
-	@Override
+	private String field = "height";
+	private String operator = "$lte";
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public String getField() {
+		return field;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public String getOperator() {
+		// TODO Auto-generated method stub
+		return this.operator;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public Boolean FilterFunction(ArrayList<String> valueToPass, SingleRecordInfo recordToPass) {
 		for (int i = 0; i < recordToPass.getImages().size(); i++)
 			if (!(Double.parseDouble(valueToPass.get(0)) > recordToPass.getImages().get(i).getHeight()))
@@ -19,16 +40,7 @@ public class FilteringLteHeight implements Filtering {
 		return true;
 	}
 
-	private String field = "height";
 
-	public String getField() {
-		return field;
-	}
-	private String operator = "$lte";
-	@Override
-	public String getOperator() {
-		// TODO Auto-generated method stub
-		return this.operator;
-	}
+
 
 }

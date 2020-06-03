@@ -10,11 +10,20 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
  * 
  */
 public class FilteringNot implements Filtering {
+	
 	private String operator="$not";
 	private String field="hashtags[]";
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField(){
 		return this.field;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}

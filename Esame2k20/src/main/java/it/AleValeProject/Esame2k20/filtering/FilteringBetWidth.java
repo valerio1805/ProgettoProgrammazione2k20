@@ -12,13 +12,18 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 public class FilteringBetWidth implements Filtering {
 
 	private String operator = "$bt";
+	private String field = "width";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
-	private String field = "width";
-
+	/**
+	 * {@inheritDoc}
+	 */
 	public String getField() {
 		return field;
 	}
