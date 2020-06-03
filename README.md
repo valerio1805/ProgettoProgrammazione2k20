@@ -2,23 +2,22 @@
 Exam project for the object programming course
 
 ## Table of contents
-* [Introduction](#Introduction)
-* [The models used](#The models used)
-* [Technologies](#Technologies)
-* [Launch](#Launch)
-* [How it works](#How it works)
-
+* [Introduction](Introduction)
+* [The models used](The_models_used)
+* [Technologies](Technologies)
+* [Launch](Launch)
+* [How it works](How_it_works)
 
 ## Introduction
-The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same command on a sample of all the data using filters.
+The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same commands on a sample of all the data, by using filters.
 
 ## How it works
 How the app works can be divided in two main parts:
-1. the download of the information from Twitter
-2. the show to the user what he has requested
+1. the download of the information from Twitter;
+2. the show what the user requested;
 
 ### The download of the informations
-When the app is launched, it automatically downloads from Twitter all the tweets that are rapresented in a file with their ids.
+When the app is launched, it automatically downloads all the tweets, from Twitter, that are represented in a file with their ids.
 If the file isn't found the user sees a message error. Each tweet is contained in a Record that is composed of the most important informations and all togheter composed the database. 
 
 (inserire sequence diagram inizializzazione)
