@@ -13,18 +13,16 @@ The designed application is aimed to show data and statistics on twitter posts c
 
 ## How it works
 How the app works can be divided in two main parts:
-1. the download of the information from Twitter;
-2. the show what the user requested;
+1. to download the information from Twitter;
+2. to show what the user requested;
 
-### The download of the informations
+### To download
 When the app is launched, it automatically downloads all the tweets, from Twitter, that are represented in a file with their ids.
-If the file isn't found the user sees a message error. Each tweet is contained in a Record that is composed of the most important informations and all togheter composed the database. 
+If the file isn't found the user sees a message error. Each tweet is contained in a Record that is composed of the most important informations and all togheter composed the database. After this, the general stats about the fields "height", "width" and "megapixel" are calcuted and stored in an ArrayList of variabiles Stats.
 
-(inserire sequence diagram inizializzazione)
+![tekst alternatywny](./umlDiagram/Initializing.jpg)
 
-After this, the general stats about the field "height", "width" and megapixel are calcuted and stored in an ArrayList of variabiles Stats.
-
-### The show to the user whats he has requested
+### To show
 After the inizialization, the user can insert some different roots (each root provides to show different informations from the database)
 | Root | Method | What the user sees | What the user has to add in the body |
 |---------|---------|---------|-------|
@@ -43,7 +41,7 @@ After that, the varibile TotalFilters is used to understand which type of filter
 
 
 ## Launch
-![tekst alternatywny](immagine)
+
 
 ## Technologies
 * [Eclipse](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
