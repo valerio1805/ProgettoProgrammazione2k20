@@ -16,6 +16,10 @@ How the app works can be divided in two main parts:
 1. to download the information from Twitter;
 2. to show what the user requested;
 
+![tekst alternatywny]("./umlDiagram/User Use Case Diagram.jpg")
+
+![tekst alternatywny](./umlDiagram/"System Use Case Diagram.jpg")
+
 ### To download
 When the app is launched, it automatically downloads all the tweets, from Twitter, that are represented in a file with their ids.
 If the file isn't found the user sees a message error. Each tweet is contained in a Record that is composed of the most important informations and all togheter composed the database. After this, the general stats about the fields "height", "width" and "megapixel" are calcuted and stored in an ArrayList of variabiles Stats.
