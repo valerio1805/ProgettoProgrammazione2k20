@@ -19,13 +19,15 @@ public class SingleInstruction {
 	private ArrayList<String> possibilities = new ArrayList<String>();
 
 	/**
-	 * @return the introduction
+	 * Getter for variable introduction
+	 * @return introduction
 	 */
 	public String getIntroduction() {
 		return introduction;
 	}
 
 	/**
+	 * Setter for variable introduction
 	 * @param intro the intro to set
 	 */
 	 public void setIntroduction(String intro) {
@@ -33,14 +35,16 @@ public class SingleInstruction {
 	}
 
 	/**
-	 * @return the possibilities
+	 * Getter for the ArrayList possibilities
+	 * @return possibilities
 	 */
 	public ArrayList<String> getPossibility() {
 		return possibilities;
 	}
 
 	/**
-	 * @param possibility to add a possibility to the array
+	 * Setter for the ArrayList possibilities
+	 * @param possibility to add at the end of the array
 	 */
 	 public void setPossibility(String[] possibility) {
 		for(int i=0;i<possibility.length;i++)

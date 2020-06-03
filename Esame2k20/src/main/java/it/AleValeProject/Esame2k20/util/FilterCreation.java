@@ -12,8 +12,8 @@ import it.AleValeProject.Esame2k20.model.SingleFilter;
 public class FilterCreation {
 	
 	/**
-	 * This function control the format of the filter, if all the  '{', '}', ecc are at their right place
-	 * If there are some problem, the function launch different exception due to the type of error
+	 * This function control the format of the filter, if all the  '{', '}', ecc are at their right place.
+	 * If there are some problem, the function launch different exception due to the type of error.
 	 * If is all ok, a Totalfilters will be created
 	 * @param body the filter that added the user
 	 * @return a TotalFilters
@@ -118,7 +118,7 @@ public class FilterCreation {
 	 * @return an Array of all the words found
 	 * @throws FormatException
 	 */
-	private String[] RecognizeWord(int position, String body) throws FormatException {
+	public String[] RecognizeWord(int position, String body) throws FormatException {
 		String[] result = new String[2];
 		try {
 			//here the function finds the words that are contained in the filter
@@ -145,7 +145,7 @@ public class FilterCreation {
 	 * @throws OperatorException
 	 * @throws MismatchTypeFilterException
 	 */
-	private void Check(SingleFilter tocheck)
+	public void Check(SingleFilter tocheck)
 			throws FieldException, FormatException, OperatorException, MismatchTypeFilterException {
 		// Start of user code for method controllo
 		boolean test = false;

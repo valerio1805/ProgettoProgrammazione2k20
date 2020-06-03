@@ -30,7 +30,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 * @return an Array of string with the all ids.
 	 * @throws DeleteFileException
 	 */
-	private String[] RequestId() throws DeleteFileException {
+	public String[] RequestId() throws DeleteFileException {
 		BufferedReader reader;
 		String support;
 		String[] importedId = new String[150];
@@ -52,7 +52,7 @@ public class DatabaseCreation extends SingleMetadata{
 	 * @return an Array of string which contains all the tweets downloaded from Twitter
 	 * @throws DeleteFileException
 	 */
-	private String[] RequestInformation() throws DeleteFileException {
+	public String[] RequestInformation() throws DeleteFileException {
 		String[] id =RequestId();
 		String[] info = new String[150];
 		int number=0;

@@ -99,6 +99,10 @@ public class SingleRecordInfo {
 	}
 
 
+	/**
+	 * Sets a value to attribute text. 
+	 * @param newText 
+	 */
 	public void setText(String newText) {
 		this.text = newText;
 	}
@@ -159,11 +163,20 @@ public class SingleRecordInfo {
 		return this.images;
 	}
 	
+	/**
+	 * Adds a value to ArrayList hashtags. 
+	 * @param newSource
+	 */
 	public void setHashtag(String s)
 	{
 		if(!(hashtags.contains(s)))
 			hashtags.add(s);
 	}
+	
+	/**
+	 * Adds a value to ArrayList images. 
+	 * @param newImage
+	 */
 	public void setImages(SingleImage newImage)
 	{
 		images.add(newImage);

@@ -16,7 +16,7 @@ public class StatsCreation {
 	 * @param field the field of which the average has to be calculated
 	 * @return the average
 	 */
-	protected double ComputeAverage(ArrayList<SingleRecordInfo> data, String field) {
+	public double ComputeAverage(ArrayList<SingleRecordInfo> data, String field) {
 
 		return ComputeSum(data, field) / ValueListOfImages(data, field).size();
 
@@ -28,7 +28,7 @@ public class StatsCreation {
 	 * @param field the field of which the sum has to be calculated
 	 * @return the sum
 	 */
-	protected double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
+	public double ComputeSum(ArrayList<SingleRecordInfo> data, String field) {
 		double sum = 0;
 		for (int i = 0; i < ValueListOfImages(data, field).size(); i++)
 			sum += ValueListOfImages(data, field).get(i);
@@ -41,7 +41,7 @@ public class StatsCreation {
 	 * @param field the field of which the max has to be founded
 	 * @return the max
 	 */
-	protected double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
+	public double ComputeMax(ArrayList<SingleRecordInfo> data, String field) {
 		double max = Double.MIN_VALUE;
 		ArrayList<Double> support = ValueListOfImages(data, field);
 		for (int i = 0; i < support.size(); i++) {
@@ -57,7 +57,7 @@ public class StatsCreation {
 	 * @param field the field of which the min has to be founded
 	 * @return the min
 	 */
-	protected double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
+	public double ComputeMin(ArrayList<SingleRecordInfo> data, String field) {
 		double min = Double.MAX_VALUE;
 		ArrayList<Double> support = ValueListOfImages(data, field);
 		for (int i = 0; i < support.size(); i++) {
@@ -73,7 +73,7 @@ public class StatsCreation {
 	 * @param field the field of which the variance has to be calculated
 	 * @return the variance
 	 */
-	protected double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
+	public double ComputeVariance(ArrayList<SingleRecordInfo> data, String field) {
 		double variance = 0;
 
 		ArrayList<Double> support = ValueListOfImages(data, field);
@@ -89,7 +89,7 @@ public class StatsCreation {
 	 * @param field the field of which the stats has to be calculated
 	 * @return an ArraList of the value of the images of the records that satisfy the field passed
 	 */
-	protected ArrayList<Double> ValueListOfImages(ArrayList<SingleRecordInfo> data, String field){
+	public ArrayList<Double> ValueListOfImages(ArrayList<SingleRecordInfo> data, String field){
 		
 		ArrayList<Double> result = new ArrayList<Double>();
 		//this for is used to take all the image information that are usefull to calculate the different stats, switching between the different field passed

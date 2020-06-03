@@ -69,14 +69,16 @@ public class SingleImage {
 	}
 	
 	/**
-	 * @return the megapixel
+	 *  
+	 * @return megapixel
 	 */
 	public Double getMegapixel() {
 		return megapixel;
 	}
 
 	/**
-	 * @param newMegapixel the megapixel to set
+	 * Sets a value to attribute megapixel.
+	 * @param newMegapixel
 	 */
 	public void setMegapixel(Double newMegapixel) {
 		this.megapixel = newMegapixel;
