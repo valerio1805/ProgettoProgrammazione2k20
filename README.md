@@ -12,13 +12,15 @@ Exam project for the object programming course
 The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same commands on a sample of all the data, by using filters.
 
 ## How it works
+
+![tekst image1](./umlDiagram/UserUseCaseDiagram.jpg)
+
+![tekst imge2](./umlDiagram/SystemUseCaseDiagram.jpg)
+
 How the app works can be divided in two main parts:
 1. to download the information from Twitter;
 2. to show what the user requested;
 
-![tekst alternatywny]("./umlDiagram/User Use Case Diagram.jpg")
-
-![tekst alternatywny](./umlDiagram/"System Use Case Diagram.jpg")
 
 ### To download
 When the app is launched, it automatically downloads all the tweets, from Twitter, that are represented in a file with their ids.
