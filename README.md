@@ -15,7 +15,7 @@ The designed application is aimed to show data and statistics on twitter posts c
 ## How it works
 The use case diagrams show what the user and the system do:
 ![tekst image1](./umlDiagram/UserUseCaseDiagram.jpg)
-![tekst imge2](./umlDiagram/SystemUseCaseDiagram.jpg)
+![tekst imge2](./umlDiagram/SystemUseCaseDiagram2.jpg)
 
 
 How the app works can be divided in two main parts:
