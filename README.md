@@ -3,7 +3,7 @@ Exam project for the object programming course
 
 ## Table of contents
 * [Introduction](#Introduction)
-* [The models used](HThe models used)
+* [The models used](#The models used)
 * [Technologies](#Technologies)
 * [Launch](#Launch)
 * [How it works](#How it works)
