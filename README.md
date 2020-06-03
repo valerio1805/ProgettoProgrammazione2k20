@@ -59,18 +59,18 @@ A very important part is to analize the filter that the user adds, that is alway
 
 | Macro-operator | Utility | Example |
 |--|--|--|
-| "$and" |to see the tweets that satisfy all the conditions added| {"$and":{"field1":{"<operator1>": values}},{"field2":{"<operator2>": values}},...}
-| "$or"  |to see all the tweet that satisfy almost one of the condition added|{"$or":{"field1":{"<operator1>": values}},{"field2":{"<operator2>": values}},...}
-|        |to see the tweets that satisfy the first filter| {"field":{"<operator1>": values}}
+| "$and" |to see the tweets that satisfy all the conditions added| {"$and":{"field1":{"operator1": values}},{"field2":{"operator2": values}},...}
+| "$or"  |to see all the tweet that satisfy almost one of the condition added|{"$or":{"field1":{"operator1": values}},{"field2":{"operator2": values}},...}
+|        |to see the tweets that satisfy the first filter| {"field":{"operator1": values}}
 
 The user can try to cheat adding a wrong filter but it will be unusefull because the program understands the different type of error and the user receives an error message; In the particular case that the user inserts 2 or more filters without using macro-operator only the first is read and if there are some garbage character outside the '{' and '}' the application will continue with noone problem. 
 | Examples of wrong filters | Error |
 |--|--|
-| "field":{"<operator>":values}}| FormatException|
-| {"not a field":{"<operator>" : values}}|FieldException|
-| {"field":{"<not an operator>" : values}}|OperatorException |
-| {"$and":{"field":{"<operator>":values}}"invalid character sequence"{"field":{"<operator>":values}}}| no error|
-| {{"field":{"<operator>":values}},{"field":{"<operator>":values}}}| no error, there will be only the first filter|
+| "field":{"operator":values}}| FormatException|
+| {"not a field":{"operator" : values}}|FieldException|
+| {"field":{"not an operator" : values}}|OperatorException |
+| {"$and":{"field":{"operator":values}}"invalid character sequence"{"field":{"operator":values}}}| no error|
+| {{"field":{"operator":values}},{"field":{"operator":values}}}| no error, there will be only the first filter|
   
 _(to see all the exception visualize the package Exception)_  
 
