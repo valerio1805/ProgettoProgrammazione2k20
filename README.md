@@ -17,6 +17,7 @@ The use case diagrams show what the user and the system do:
 ![tekst image1](./umlDiagram/UserUseCaseDiagram.jpg)
 ![tekst imge2](./umlDiagram/SystemUseCaseDiagram.jpg)
 
+
 How the app works can be divided in two main parts:
 1. to download the information from Twitter;
 2. to show what the user requested;
