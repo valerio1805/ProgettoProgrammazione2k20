@@ -5,7 +5,7 @@ Exam project for the object programming course
 * [Introduction](#Introduction)
 * [How it works](#How-it-works)
 * [Packages and classes](#Packages-and-classes)
-* [Java language and Object Oriented Programming: how the program exploits their capabilities](#Java-language-and-Object-Oriented-Programming:-how-the-program-exploits-their-capabilities)
+* [Java language and Object Oriented Programming: how the program exploits their capabilities](#Java-language-and-Object-Oriented-Programming\:-how-the-program-exploits-their-capabilities)
 * [Technologies](#Technologies)
 
 
