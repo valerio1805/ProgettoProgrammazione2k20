@@ -53,7 +53,8 @@ A very important part is to analize the filter that the user adds, that is alway
 |"$lte" |to see the post that have a field with a number lower or equal than the value added | val      |"hashtags[]","height","width","megapixel"
 |"$bt"  |to see the post that have a field with a number between the two added               |[val1,val2]|"hashtags[]","height","width","megapixel"
 
-Combining different operators and fields using macro-operator the user can create a multiple filter:
+**Combining different operators and fields using macro-operator the user can create a multiple filter:**
+
 | Macro-operator | Utility | Example |
 |--|--|--|
 | "$and" |to see the tweets that satisfy all the conditions added| {"$and":{"field1":{"<operator1>": values}},{"field2":{"<operator2>": values}},...}
@@ -62,11 +63,21 @@ Combining different operators and fields using macro-operator the user can creat
 
 The user can try to cheat adding a wrong filter but it will be unusefull because the program understands the different type of error and the user receives an error message; In the particular case that the user inserts 2 or more filters without using macro-operator only the first is read and if there are some garbage character outside the '{' and '}' the application will continue with noone problem. 
 | Examples of wrong filters | Error |
+|--|--|
 | "field":{"<operator>":values}}| FormatException|
 | {"not a field":{"<operator>" : values}}|FieldException|
 | {"field":{"<not an operator>" : values}}|OperatorException |
 | {"$and":{"field":{"<operator>":values}}"invalid character sequence"{"field":{"<operator>":values}}}| no error|
 | {{"field":{"<operator>":values}},{"field":{"<operator>":values}}}| no error, there will be only the first filter|
+  
+_(to see all the exception visualize the package Exception)_  
+
+|Examples of right filters|
+|--|
+|{"megapixel":{"$lt": 1200}}|
+|{"$or":[{"width":{"$bt" : [0,9000]}},{"hashtags[]":{"$in": [hello, world]}}]}|
+|{"$and":[{"height":{"$gte" : 300}},{"hashtags[]":{"$gt": 3 }}]}|
+
 The operation of control is automatically done by the application analizing each carachter that is been insered.
 Otherwise, the filter is convert in a variabile of type TotalFilters that is composed by a macroperator and an ArrayList of filters.
 After that, the varibile TotalFilters is used to understand which type of filtering the system has to do. Known the filters a function choice the records that satisfy the speficic. So the request wil be done only on the filtered dataset.
@@ -77,6 +88,8 @@ An example in the sequence diagram here displayed:
 
 ## Packages and classes
 
+![tekst alternatywny](./umlDiagram/Filtering.jpg)
+![tekst alternatywny](./umlDiagram/Filtering.jpg)
 
 ## Java language and Object Oriented Programming: how the program exploits their capabilities
 The program implements different aspects of OOP:
@@ -90,6 +103,6 @@ About Java language the program implements some of his feature structures:
 
 
 ## Technologies
-* [Eclipse](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-* [Spring Boot]()
-* [Maven]()
+* [Eclipse](https://www.eclipse.org/)
+* [Spring Boot](https://spring.io/projects/spring-boot)
+* [Maven](https://mvnrepository.com/)
