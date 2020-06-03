@@ -10,12 +10,13 @@ Exam project for the object programming course
 
 
 ## Introduction
-The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same commands on a sample of all the data, by using filters.
+The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same commands on a sample of all the data, by using filters. It implements three JUnit test and is correlated with the Javadoc Documentation, where the user can see the difference class, with their method and a short description of how they work.
 
 ## How it works
 The use case diagrams show what the user and the system do:
 ![tekst image1](./umlDiagram/UserUseCaseDiagram.jpg)
-![tekst imge2](./umlDiagram/SystemUseCaseDiagram.jpg)
+![tekst imge2](./umlDiagram/SystemUseCaseDiagram2.jpg)
+
 
 How the app works can be divided in two main parts:
 1. to download the information from Twitter;
@@ -88,9 +89,32 @@ An example in the sequence diagram here displayed:
 ![tekst alternatywny](./umlDiagram/Filtering.jpg)
 
 ## Packages and classes
+The different packages that are in the project with the classes
 
-![tekst alternatywny](./umlDiagram/Filtering.jpg)
-![tekst alternatywny](./umlDiagram/Filtering.jpg)
+* **package controller** -> the package that contains the controller                        
+
+![tekst image1](./umlDiagram/controller.png) 
+
+ **package exception** -> the package that contains all the exception that the programs implements
+ 
+![tekst image1](./umlDiagram/exception.png)
+
+* **package util** -> the package that contains all the classes used for the utility of the system
+
+![tekst image1](./umlDiagram/util.png)
+
+* **package filtering** -> the package that contains all the classes that implements the different types of filtering
+
+![tekst image1](./umlDiagram/filtering2.png)
+
+* **package dataservice** -> the package that contains the classes that provide all the service of the application
+
+![tekst alternatywny](./umlDiagram/dataservice.png)
+
+* **package model** -> the package that contains all the different structures used in the program
+
+![tekst alternatywny](./umlDiagram/model.png)
+
 
 ## How the program exploits the capabilities of Java language and Object Oriented Programming
 The program implements different aspects of OOP:
