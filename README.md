@@ -105,7 +105,7 @@ The different packages that are in the project with the classes
 
 * **package filtering** -> the package that contains all the classes that implements the different types of filtering
 
-![tekst image1](./umlDiagram/filtering.png)
+![tekst image1](./umlDiagram/filtering2.png)
 
 * **package dataservice** -> the package that contains the classes that provide all the service of the application
 
