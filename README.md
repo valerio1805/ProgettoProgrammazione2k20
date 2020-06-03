@@ -2,11 +2,11 @@
 Exam project for the object programming course
 
 ## Table of contents
-* [Introduction](Introduction)
-* [The models used](The_models_used)
-* [Technologies](Technologies)
-* [Launch](Launch)
-* [How it works](How_it_works)
+* [Introduction](#Introduction)
+* [The models used](#The_models_used)
+* [Technologies](#Technologies)
+* [Launch](#Launch)
+* [How it works](#How_it_works)
 
 ## Introduction
 The designed application is aimed to show data and statistics on twitter posts containing images. The user can apply the same commands on a sample of all the data, by using filters.
