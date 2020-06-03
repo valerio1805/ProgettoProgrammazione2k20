@@ -5,7 +5,7 @@ Exam project for the object programming course
 * [Introduction](#Introduction)
 * [How it works](#How-it-works)
 * [Packages and classes](#Packages-and-classes)
-* [Java language and Object Oriented Programming: how the program exploits their capabilities](#Java-language-and-Object-Oriented-Programming\:-how-the-program-exploits-their-capabilities)
+* [How the program exploits the capabilities of Java language and Object Oriented Programming](#How-the-program-exploits-the-capabilities-of-Java-language-and-Object-Oriented-Programming)
 * [Technologies](#Technologies)
 
 
@@ -92,7 +92,7 @@ An example in the sequence diagram here displayed:
 ![tekst alternatywny](./umlDiagram/Filtering.jpg)
 ![tekst alternatywny](./umlDiagram/Filtering.jpg)
 
-## Java language and Object Oriented Programming: how the program exploits their capabilities
+## How the program exploits the capabilities of Java language and Object Oriented Programming
 The program implements different aspects of OOP:
 * the dataservice is defined as an interface and the implementation class dataserviceimpl provides all the functions;
 * the filtering is also made with an interface. There are as many implementation as the different possibilities given by operator and filter ("Height" and "$lt", "Height" and "$lte", "Width" and "$lt",..). So each implementation has only his function of filtering;
