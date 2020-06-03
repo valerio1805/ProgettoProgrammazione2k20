@@ -4,8 +4,8 @@ Exam project for the object programming course
 ## Table of contents
 * [Introduction](#Introduction)
 * [How it works](#How-it-works)
-* [Packages and classes](#Packagesandclasses)
-* [Java language and Object Oriented Programming: how the program exploits their capabilities](#Java language and Object Oriented Programming: how the program exploits their capabilities)
+* [Packages and classes](#Packages-and-classes)
+* [Java language and Object Oriented Programming: how the program exploits their capabilities](#Java-language-and-Object-Oriented-Programming:-how-the-program-exploits-their-capabilities)
 * [Technologies](#Technologies)
 
 
