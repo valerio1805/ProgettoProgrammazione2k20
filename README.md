@@ -120,7 +120,7 @@ The different packages that are in the project with the classes
 ## How the program exploits the capabilities of Java language and Object Oriented Programming
 The program implements different aspects of OOP:
 * the dataservice is defined as an interface and the implementation class dataserviceimpl provides all the functions;
-* the filtering is also made with an interface. There are as many implementation as the different possibilities given by operator and filter ("Height" and "$lt", "Height" and "$lte", "Width" and "$lt",..). So each implementation has only his function of filtering;
+* the filtering is also made with an interface. There are as many implementation as the different possibilities given by operator and filter ("height" and "$lt", "height" and "$lte",..., "width" and "$lt",...). So each implementation has only his function of filtering;
 * the inheritance that is used in the class Stats (child) and the class StatsCreation (parent);
 
 About Java language the program implements some of his feature structures:
