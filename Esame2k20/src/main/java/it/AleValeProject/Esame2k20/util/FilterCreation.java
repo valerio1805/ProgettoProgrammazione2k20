@@ -35,15 +35,19 @@ public class FilterCreation {
 			if (primocampo.equals("$or")) {
 				result.setMacroOperator("$or");
 				i=5;
+				if (!(body.charAt(7)=='{'||body.charAt(7)=='['))
+					throw new FormatException("After the macro-operator the filter needs ':{' or ':[{'");
 			}
 			else if (primocampo.equals("$and")) {
 				result.setMacroOperator("$and");
 				i=6;
+				if (!(body.charAt(8)=='{'||body.charAt(8)=='['))
+					throw new FormatException("After the macro-operator the filter needs ':{' or ':[{'");
 			}
-			else {
-				body = "{ [" + body + "] }";
+			else{
+				body = "{ :[" + body + "] }";
 				result.setMacroOperator("");
-				i=2;
+				i=body.indexOf(':');
 			}
 
 			// this part is used to fill the array of SingleFilters unless the macroOperator is not ""

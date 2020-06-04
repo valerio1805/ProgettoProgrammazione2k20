@@ -15,7 +15,7 @@ public class FormatException extends Exception {
 	 * @param wrongValue The value that is not correct
 	 */
 	public FormatException(String wrongField, int wrongValue) {
-		super("For the field "+wrongField+" the expression is not valid: wrong parameter number ("+wrongValue+")");
+		super("For the field "+wrongField+" the expression is not valid: wrong number of parameter ("+wrongValue+")");
 	}
 	
 	/**
