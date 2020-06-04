@@ -6,7 +6,7 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 
 /**
  * The class that implements filtering for the field "hashtags[]" and the operator "$bt"
- * @author valeAle;
+ * @author Di Biase Alessandro, Donnini Valerio;
  * 
  */
 public class FilteringBetHash implements Filtering {
