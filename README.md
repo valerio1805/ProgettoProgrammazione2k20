@@ -7,6 +7,7 @@ Exam project for the object programming course
 * [Packages and classes](#Packages-and-classes)
 * [How the program exploits the capabilities of Java language and Object Oriented Programming](#How-the-program-exploits-the-capabilities-of-Java-language-and-Object-Oriented-Programming)
 * [Technologies](#Technologies)
+* [Authors](#Authors)
 
 
 ## Introduction
@@ -131,3 +132,8 @@ About Java language the program implements some of his feature structures:
 * [Eclipse](https://www.eclipse.org/)
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Maven](https://mvnrepository.com/)
+
+## Authors
+* Di Biase Alessandro
+* Donnini Valerio
+
