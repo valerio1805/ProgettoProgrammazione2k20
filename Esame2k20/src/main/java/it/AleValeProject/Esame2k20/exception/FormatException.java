@@ -10,13 +10,12 @@ public class FormatException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * One contrustor of the class
+	 * One constructor of the class
 	 * @param wrongField The field that is not correct
-	 * @param wrongValue The value thta is not correct
+	 * @param wrongValue The value that is not correct
 	 */
 	public FormatException(String wrongField, int wrongValue) {
 		super("For the field "+wrongField+" the expression is not valid: wrong parameter number ("+wrongValue+")");
-		//new ResponseStatusException(HttpStatus.BAD_REQUEST, "Filtro scritto male");
 	}
 	
 	/**

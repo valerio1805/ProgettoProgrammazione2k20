@@ -12,14 +12,15 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 public class FilteringLtHeight implements Filtering {
 
 	private String field = "height";
-
+	public String operator = "$lt";
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	public String getField() {
 		return field;
 	}
-	public String operator = "$lt";
+
 	
 	/**
 	 * {@inheritDoc}
