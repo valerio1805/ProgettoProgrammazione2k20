@@ -39,8 +39,8 @@ After the inizialization, the user can insert some different roots (each root pr
 | /GetStats | GET | The user sees all the stats calculated on the all set of data | |
 | /GetData | GET | The user sees all the tweets downloaded from Twitter | |
 | /GetData | POST | The user sees the Tweets that satisfy the filter added by the user | A correct filter |
-| /GetFieldStats?field="<param>" | GET | The user sees the stats of a particular field calculated using the all databse | |
-| /GetFieldStats?field="<param>" | POST | The user sees the stats of a particular field calcutaed using the records that satisfy the filter | A correct filter |
+| /GetFieldStats?field=<param> | GET | The user sees the stats of a particular field calculated using the all databse | |
+| /GetFieldStats?field=<param>| POST | The user sees the stats of a particular field calcutaed using the records that satisfy the filter | A correct filter |
 
 ![tekst alternatywny](./umlDiagram/Initializing2.jpg)
 
