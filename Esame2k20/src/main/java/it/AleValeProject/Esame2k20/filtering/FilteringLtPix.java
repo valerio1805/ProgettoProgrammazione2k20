@@ -12,14 +12,15 @@ import it.AleValeProject.Esame2k20.model.SingleRecordInfo;
 public class FilteringLtPix implements Filtering {
 	
 	private String field = "megapixel";
-
+	private String operator ="$lt";
+	
 	/**
 	 * {@inheritDoc}
 	 */
 	public String getField() {
 		return field;
 	}
-	private String operator ="$lt";
+
 
 	/**
 	 * {@inheritDoc}

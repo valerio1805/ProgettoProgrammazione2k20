@@ -159,7 +159,7 @@ public class DataServiceImpl implements DataService {
 	
 	
 	/**
-	 * The function that recognizes the field insered by the user
+	 * The function that recognizes the field inserted by the user
 	 * @param field
 	 * @return the field of what the program has to calculate the stats
 	 * @throws StatsParamException

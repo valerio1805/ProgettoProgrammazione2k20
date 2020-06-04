@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import it.AleValeProject.Esame2k20.model.SingleInstruction;
 
 /**
- * The class that creats the instruction manual for the app
+ * The class that creates the instruction manual for the app
  * @author Di Biase Alessandro, Donnini Valerio
  *
  */

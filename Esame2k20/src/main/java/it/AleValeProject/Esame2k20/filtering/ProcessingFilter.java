@@ -80,8 +80,8 @@ public class ProcessingFilter {
 		for (int i = 0; i < filterToAnalize.getAllFilters().size(); i++) {
 			//container has the records that satisfy the filter in the i posistion of AllFilter contained in FilterToAnalize
 			container = ApplyFilter(database, filterToAnalize.getAllFilters().get(i));
-			//int costant = result.size();
 			boolean in = false;
+			
 			//if result is empty, it is filled with container
 			//else there is a for that control if the records of container are already stored in result
 			if (result.size() == 0)
